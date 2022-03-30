@@ -1,0 +1,52 @@
+{
+  "name": "LinkCity",
+  "private": true,
+  "scripts": {
+    "dev": "cross-env NODE_OPTIONS='--inspect' next dev",
+    "build": "next build",
+    "start": "next start",
+    "svg": "svgr -d src/componants/icons src/componants/icons/svgs",
+    "lint": "next lint",
+    "prepare": "husky install",
+    "check-format": "prettier --check .",
+    "check-lint": "eslint . --ext ts --ext tsx --ext js",
+    "format": "prettier --write .",
+    "test-all": "npm run check-format && npm run check-lint && npm run build"
+  },
+  "dependencies": {
+    "@apollo/client": "^3.5.10",
+    "axios": "^0.24.0",
+    "classnames": "^2.3.1",
+    "cross-env": "^7.0.3",
+    "date-fns": "^2.28.0",
+    "framer-motion": "^5.5.5",
+    "graphql": "^16.3.0",
+    "lodash": "^4.17.21",
+    "lodash.isequal": "^4.5.0",
+    "next": "^12.1.0",
+    "nodemailer": "^6.7.2",
+    "nodemon": "^2.0.15",
+    "npm": "^8.5.5",
+    "prop-types": "^15.8.0",
+    "react": "^17.0.2",
+    "react-dom": "17.0.2",
+    "react-hook-form": "^7.27.1",
+    "sass": "^1.45.1",
+    "sharp": "^0.29.3"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.1",
+    "eslint": "^8.7.0",
+    "eslint-config-google": "^0.14.0",
+    "eslint-config-next": "12.0.7",
+    "eslint-config-prettier": "^8.3.0",
+    "husky": "^7.0.4",
+    "postcss": "^8.4.6",
+    "postcss-flexbugs-fixes": "^5.0.2",
+    "postcss-import": "^14.0.2",
+    "postcss-preset-env": "^7.1.0",
+    "precss": "^4.0.0",
+    "prettier": "^2.5.1",
+    "tailwindcss": "^3.0.15"
+  }
+}
