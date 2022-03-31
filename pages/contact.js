@@ -2,6 +2,7 @@ import { useForm } from "react-hook-form";
 import axios from "axios";
 import { motion } from "framer-motion";
 import { useRouter } from "next/router";
+import Layout from "../src/componants/Layout/Layout";
 
 const Contact = () => {
   const { register, handleSubmit } = useForm();
@@ -27,30 +28,9 @@ const Contact = () => {
   }
 
   return (
-    <div className="bg-body-dark">
-      <motion.div
-        initial="pageInitial"
-        exit={{ opacity: 0 }}
-        animate="pageAnimate"
-        className="bg-body-dark  py-11 flex justify-center text-white"
-        variants={{
-          pageInitial: {
-            opacity: 0,
-          },
-          pageAnimate: {
-            opacity: 1,
-          },
-        }}
-      >
-        <div className="text-6xl font-extrabold text-center  sm:text-5xl sm:text-6xl md:text-7xl sm:text-center md:text-center ">
-          <h1 className="pb-5 z-1 text-transparent sm:text-7xl sm:text-6xl md:text-7xl sm:text-center md:text-center bg-clip-text bg-gradient-to-br from-logo-pink via-fuscia-800 to-purple-600">
-            Contact Us
-          </h1>
-        </div>
-      </motion.div>
-
-      <section className=" place-items-center">
-        <div className="max-w-lg lg:max-w-none mx-auto lg:mx-0">
+    <Layout Herotitle={"Contact"}>
+      <section className=" place-items-center bg-white ">
+        <div className="max-w-lg lg:max-w-none mx-auto lg:mx-0 bg-white">
           <div className="">
             <div className="px-10 mx-auto max-w-7xl md:px-16">
               <div className="max-w-3xl mx-auto mb-10 md:mb-16"></div>
@@ -109,7 +89,7 @@ const Contact = () => {
                 <div className="flex items-center justify-between sm:col-span-2">
                   <input
                     type="submit"
-                    className="test inline-block px-8 py-3 text-sm font-semibold text-center text-white transition duration-100 rounded-md outline-none bg-gradient-to-br from-purple-600 via-fuscia-800 to-pink-500 md:text-base"
+                    className="test inline-block px-8 py-3 text-sm font-semibold text-center text-white transition duration-100 rounded-md outline-none bg-black"
                   />
                 </div>
               </form>
@@ -117,7 +97,7 @@ const Contact = () => {
           </div>
         </div>
       </section>
-    </div>
+    </Layout>
   );
 };
 

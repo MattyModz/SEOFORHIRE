@@ -2,25 +2,10 @@ import Link from "next/link";
 
 const Footer = () => {
   return (
-    <section class="bg-body-dark">
+    <section class="bg-gray-300">
       <div class="max-w-screen-xl px-4 py-12 mx-auto space-y-8 overflow-hidden sm:px-6 lg:px-8">
         <div class="flex flex-wrap justify-center -mx-5 -my-2">
           <ul className="flex flex-row justify-start space-between  pb-3 -ml-4 -mr-4 text-sm overflow-hidden">
-            <li className="px-5 text-gray-600">
-              <Link href="/linkbuilding-packages" passHref>
-                Services
-              </Link>
-            </li>
-            <li className="text-gray-600">
-              <Link href="/NicheEdits" passHref>
-                NicheEdits
-              </Link>
-            </li>
-            <li className="px-2 text-gray-600">
-              <Link href="/guest-posts" passHref>
-                GuestPosts
-              </Link>
-            </li>
             <li className=" px-2 text-gray-600">
               <Link href="/privacy-policy" passHref>
                 Policy
@@ -34,10 +19,7 @@ const Footer = () => {
           </ul>
         </div>
         <div class="flex justify-center mt-8 space-x-6">
-          <a
-            href="https://www.facebook.com/linkcityseo"
-            class="text-gray-400 hover:text-gray-500"
-          >
+          <a href="" class="text-gray-400 hover:text-gray-500">
             <span class="sr-only">Facebook</span>
             <svg
               class="w-6 h-6"
@@ -53,10 +35,7 @@ const Footer = () => {
             </svg>
           </a>
 
-          <a
-            href="https://twitter.com/LinkCityco"
-            class="text-gray-400 hover:text-gray-500"
-          >
+          <a href="" class="text-gray-400 hover:text-gray-500">
             <span class="sr-only">Twitter</span>
             <svg
               class="w-6 h-6"
@@ -69,8 +48,7 @@ const Footer = () => {
           </a>
         </div>
         <p class="mt-8 text-base leading-6 text-center text-gray-400">
-          LINK CITY LTD is a Registered Business in the Uk, Company Number:
-          SC669280
+          SEO for Hire is regsitered company
         </p>
       </div>
     </section>

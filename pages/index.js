@@ -1,42 +1,132 @@
-import Bcomp1 from "../src/componants/Blog/Blogcomp1";
-import { BLOG_COMP } from "../lib/wordpress/api";
-import client from "../lib/apollo";
-// import fetcher from "../lib/wordpress/fetcher";
+//import Bcomp1 from "../src/componants/Blog/Blogcomp1";
+//import { BLOG_COMP } from "../lib/wordpress/api";
+
+import Joblisting from "../src/componants/Hero/jobslist";
 
 import Container from "../src/componants/container";
-
+import client from "../lib/apollo";
 // import Pof from "../src/componants/sections/pof";
-// import { gql } from "@apollo/client";
+import { gql } from "@apollo/client";
 // import Productcard from "../src/componants/Prodcard";
 
-export default function Home({ posts }) {
-  const post = posts;
+export default function Home({ jobs }) {
+  const job = jobs;
 
   return (
-    <div className=" ">
-      <section id="home" className=""></section>
+    <>
+      <section class="w-full p-2">
+        <div class=" w-full  border-4 flex flex-col items-center px-8 pt-12 pb-24 mx-auto sm:rounded-lg bg-gradient-to-br from-indigo-600 to-purple-600 sm:pt-20 sm:pb-32 md:pb-48 lg:pb-56 xl:pb-64 sm:px-0">
+          <div class="w-full mb-5 sm:w-11/12 lg:w-2/3 lg:mb-10">
+            <h1 class="pt-5 text-2xl font-bold text-left text-white md:pt-8 sm:text-center lg:pt-20 sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl">
+              Your go to choice for help with <br class="hidden sm:block" /> SEO
+              recruitment
+            </h1>
+          </div>
+          <div class="flex flex-col items-center justify-center w-full mb-10 sm:flex-row sm:mb-20">
+            <a
+              href="#_"
+              class="w-full px-8 py-3 text-lg text-center text-indigo-600 transition duration-150 ease-in-out bg-white rounded-md sm:w-auto focus:outline-none"
+            >
+              Get Started
+            </a>
+            <a
+              href="#_"
+              class="w-full px-8 py-3 mt-5 ml-3 text-lg text-center text-white transition duration-150 ease-in-out bg-transparent border border-white rounded-md sm:ml-6 sm:w-auto sm:mt-0 focus:outline-none hover:bg-white hover:text-indigo-600"
+            >
+              Learn More
+            </a>
+          </div>
+        </div>
+        <div class="container   flex justify-center mx-auto -mt-20 md:-mt-56 sm:-mt-40">
+          <div class="relative w-11/12  sm:w-2/3">
+            <div class="overflow-hidden border  border-gray-300 rounded-b-none rounded-xl">
+              <div class=" box-content p-2 w-full h-auto bg-gray-100">
+                {jobs.map((job) => (
+                  <Joblisting
+                    key={job.slug}
+                    slug={job.slug}
+                    title={job.jobListing.positionTitle}
+                    salary={job.jobListing.salary}
+                    location={job.jobListing.location}
+                    type={job.jobListing.type}
+                  />
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <div>
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+      </div>
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
 
-      <div className=" pointer-cursor relative max-w-7xl mx-auto   ">
+      {/* <div className=" pointer-cursor relative  max-w-7xl mx-auto   ">
         <Container>
           <Bcomp1 posts={post} />
         </Container>
-      </div>
-    </div>
+      </div> */}
+    </>
   );
 }
 
-export async function getStaticProps() {
-  const { data: post } = await client.query({
-    query: BLOG_COMP,
-  });
+// export async function getStaticProps() {
+//   const { data: post } = await client.query({
+//     query: BLOG_COMP,
+//   });
 
-  return {
-    props: {
-      posts: post.posts.nodes,
-    },
-  };
-}
+//   return {
+//     props: {
+//       posts: post.posts.nodes,
+//     },
+//   };
+// }
 
 //  <Container className="">
 //    <Charting />
 //  </Container>;
+
+export async function getStaticProps() {
+  const { data: job } = await client.query({
+    query: gql`
+      query AllJobs {
+        jobs(first: 2, where: { orderby: { field: DATE, order: DESC } }) {
+          nodes {
+            slug
+            jobListing {
+              type
+              salary
+              responsibilities
+              positionTitle
+              fieldGroupName
+              candidateRequirements
+              benefits
+              location
+            }
+          }
+        }
+      }
+    `,
+  });
+
+  return {
+    props: {
+      jobs: job.jobs.nodes,
+    },
+  };
+}
