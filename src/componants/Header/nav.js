@@ -15,23 +15,29 @@ export default function Nav() {
             href="#_"
             className="flex items-center order-first font-medium text-gray-900 lg:order-none lg:w-auto title-font lg:items-center lg:justify-center"
           >
-            <span className="text-xl font-black leading-none text-gray-900 select-none logo">
+            <span className=" pt-2 text-xl font-black leading-none text-gray-900 select-none logo">
               <Link href={"/"} passHref>
-                <div>
-                  <Image src={"/logo.png"} width={50} height={50} alt="Logo" />
+                <div className="">
+                  <Image
+                    className=""
+                    src={"/logo.png"}
+                    width={50}
+                    height={50}
+                    alt="Logo"
+                  />
                 </div>
               </Link>
             </span>
           </a>
         </div>
         <div>
-          <div className="text-gray-500 cursor-pointer sm:block md:hidden lg:hidden hover:text-gray-700 focus:text-gray-700 focus:outline-none">
+          <div className="py-2 text-gray-500 cursor-pointer sm:block md:hidden lg:hidden hover:text-gray-700 focus:text-gray-700 focus:outline-none">
             <svg
               onClick={() => ShowMenu((state) => !Menu)}
               aria-haspopup="true"
               aria-label="Main Menu"
               xmlns="http://www.w3.org/2000/svg"
-              className="w-8 h-8"
+              className="w-8 h-8 "
               viewBox="0 0 24 24"
               stroke-width="1.5"
               stroke="white"
