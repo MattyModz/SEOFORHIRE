@@ -1,13 +1,14 @@
 import { useRouter } from "next/router";
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 export default function Nav() {
   //const router = useRouter;
 
   const [Menu, ShowMenu] = useState(false);
   console.log(Menu);
   return (
-    <nav className=" w-full select-none">
+    <nav className="absolute w-full select-none">
       <div className="flex items-center justify-between h-20 px-8 py-2 mx-auto max-w-7xl md:h-24 sm:box-content">
         <div className="flex items-center w-64">
           <a
@@ -17,7 +18,7 @@ export default function Nav() {
             <span className="text-xl font-black leading-none text-gray-900 select-none logo">
               <Link href={"/"} passHref>
                 <div>
-                  SeoforHire<span className="text-indigo-600">.</span>
+                  <Image src={"/logo.png"} width={50} height={50} alt="Logo" />
                 </div>
               </Link>
             </span>
@@ -33,7 +34,7 @@ export default function Nav() {
               className="w-8 h-8"
               viewBox="0 0 24 24"
               stroke-width="1.5"
-              stroke="currentColor"
+              stroke="white"
               fill="none"
               stroke-linecap="round"
               stroke-linejoin="round"
@@ -51,7 +52,7 @@ export default function Nav() {
                 className="w-8 h-8"
                 viewBox="0 0 24 24"
                 stroke-width="1.5"
-                stroke="currentColor"
+                stroke="white"
                 fill="none"
                 stroke-linecap="round"
                 stroke-linejoin="round"
@@ -61,7 +62,7 @@ export default function Nav() {
                 <line x1="6" y1="6" x2="18" y2="18"></line>
               </svg>
             </div>
-            <ul className="bg-white  fixed top-0 bottom-0 left-0 right-0 z-20 flex flex-col items-center justify-center py-8 space-y-8 text-3xl md:space-y-0 md:bg-none md:text-base md:flex md:flex-row md:relative">
+            <ul className="bg-gradient-to-br from-[#1A0976] via-[#100750] to-black  fixed top-0 bottom-0 left-0 right-0 z-20 flex flex-col items-center justify-center py-8 space-y-8 text-3xl md:space-y-0 md:bg-none md:text-base md:flex md:flex-row md:relative">
               <li
                 className="text-gray-600 cursor-pointer hover:text-gray-800 md:ml-10"
                 onClick={() => ShowMenu((state) => !Menu)}

@@ -12,7 +12,7 @@ export default function Home({ jobs }) {
   return (
     <>
       <section className="w-full p-2">
-        <div className=" w-full  border-4 flex flex-col items-center px-8 pt-12 pb-24 mx-auto sm:rounded-lg bg-gradient-to-br from-indigo-600 to-purple-600 sm:pt-20 sm:pb-32 md:pb-48 lg:pb-56 xl:pb-64 sm:px-0">
+        <div className=" w-full  border-4 flex flex-col items-center px-8 pt-12 pb-24 mx-auto sm:rounded-lg bg-gradient-to-br from-[#1A0976] via-[#100750] to-black sm:pt-20 sm:pb-32 md:pb-48 lg:pb-56 xl:pb-64 sm:px-0">
           <div className="w-full mb-5 sm:w-11/12 lg:w-2/3 lg:mb-10">
             <h1 className="pt-5 text-2xl font-bold text-left text-white md:pt-8 sm:text-center lg:pt-20 sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl">
               Your go to choice for help with <br className="hidden sm:block" />{" "}
