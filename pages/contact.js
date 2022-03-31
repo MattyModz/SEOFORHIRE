@@ -1,6 +1,6 @@
 import { useForm } from "react-hook-form";
 import axios from "axios";
-import { motion } from "framer-motion";
+
 import { useRouter } from "next/router";
 import Layout from "../src/componants/Layout/Layout";
 

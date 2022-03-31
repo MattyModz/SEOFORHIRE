@@ -2,14 +2,7 @@ import { gql } from "@apollo/client";
 import client from "../../lib/apollo";
 import Layout from "../../src/componants/Layout/Layout";
 import Joblisting from "../../src/componants/Hero/jobslist";
-import {
-  BriefcaseIcon,
-  CalendarIcon,
-  CurrencyPoundIcon,
-  LinkIcon,
-  LocationMarkerIcon,
-  PencilIcon,
-} from "@heroicons/react/solid";
+
 export default function PostPage({ job }) {
   const joblist = job;
   return (
