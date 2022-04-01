@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 export default function Layout({ children, Herotitle }) {
   return (
     <section class="w-full p-2">
-      <div class=" w-full   flex flex-col items-center px-8 pt-12 pb-24 mx-auto sm:rounded-lg bg-gradient-to-br from-[#190873] via-[#100750] to-black sm:pt-20 sm:pb-32 md:pb-48 lg:pb-56 xl:pb-64 sm:px-0">
+      <div class=" w-full   flex flex-col items-center px-8 pt-12 pb-24 mx-auto sm:rounded-lg bg-gradient-to-br from-royal via-accent to-black sm:pt-20 sm:pb-32 md:pb-48 lg:pb-56 xl:pb-64 sm:px-0">
         <div class="w-full mb-5 sm:w-11/12 lg:w-2/3 lg:mb-10">
           <motion.div
             initial="pageInitial"

@@ -6,15 +6,11 @@ module.exports = {
     },
     extend: {
       colors: {
-        "header-blue": "#054ADA",
-        "logo-pink": "#EF91C2",
-        "body-dark": "#1f2937",
-        primary: "#054ADA",
-        secondary: "var(--color-secondary)",
-        accent: "#EF91C2",
+        royal: "#190873",
+        accent: "#100750]",
       },
       fontfamily: {
-        Roboto: ["Robot", "sans-serif"],
+        Dela: ['"Dela Gothic One"', "cursive"],
       },
 
       screens: {

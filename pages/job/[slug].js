@@ -1,27 +1,36 @@
 import { gql } from "@apollo/client";
 import client from "../../lib/apollo";
-import Layout from "../../src/componants/Layout/Layout";
-import Joblisting from "../../src/componants/Hero/jobslist";
+import Joblayout from "../../src/componants/Layout/Joblayout";
 
 export default function PostPage({ job }) {
   const joblist = job;
   return (
-    <Layout Herotitle={joblist.jobListing.positionTitle}>
-      <div>
-        <Joblisting
-          title={joblist.jobListing.positionTitle}
-          salary={joblist.jobListing.salary}
-          location={joblist.jobListing.location}
-          type={joblist.jobListing.type}
-          date={joblist.jobListing.date}
-        />
-      </div>
-      <div className="text-black ">
+    <Joblayout
+      Herotitle={joblist.jobListing.positionTitle}
+      joblocation={joblist.jobListing.location}
+      jobsalary={joblist.jobListing.salary}
+      type={joblist.jobListing.type}
+    >
+      <div className="rounded-xl p-8 text-black ">
+        <h2 className="">Candidate Requirements</h2>
+        <br />
         <p>{joblist.jobListing.candidateRequirements}</p>
+        <h2>Responsibilities</h2>
+        <br />
         <p>{joblist.jobListing.responsibilities}</p>
+        <h2>Benefits</h2>
+        <br />
         <p>{joblist.jobListing.benefits}</p>
       </div>
-    </Layout>
+      <div>
+        <button class="learn-more">
+          <span class="circle" aria-hidden="true">
+            <span class="icon arrow"></span>
+          </span>
+          <span class="button-text">Learn More</span>
+        </button>
+      </div>
+    </Joblayout>
   );
 }
 

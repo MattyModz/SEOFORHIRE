@@ -31,7 +31,7 @@ export default function Nav() {
           </a>
         </div>
         <div>
-          <div className="py-2 text-gray-500 cursor-pointer sm:block md:hidden lg:hidden hover:text-gray-700 focus:text-gray-700 focus:outline-none">
+          <div className="py-2 text-white font-bold cursor-pointer sm:block md:hidden lg:hidden hover:text-gray-700 focus:text-gray-700 focus:outline-none">
             <svg
               onClick={() => ShowMenu((state) => !Menu)}
               aria-haspopup="true"
@@ -70,7 +70,7 @@ export default function Nav() {
             </div>
             <ul className="bg-gradient-to-br from-[#1A0976] via-[#100750] to-black  fixed top-0 bottom-0 left-0 right-0 z-20 flex flex-col items-center justify-center py-8 space-y-8 text-3xl md:space-y-0 md:bg-none md:text-base md:flex md:flex-row md:relative">
               <li
-                className="text-gray-600 cursor-pointer hover:text-gray-800 md:ml-10"
+                className="text-white font-bold cursor-pointer hover:text-gray-400 md:ml-10"
                 onClick={() => ShowMenu((state) => !Menu)}
               >
                 <Link href={"/contact"} passHref>
@@ -78,7 +78,7 @@ export default function Nav() {
                 </Link>
               </li>
               <li
-                className="text-gray-600 cursor-pointer hover:text-gray-800 md:ml-10"
+                className="text-white font-bold cursor-pointer hover:text-gray-400 md:ml-10"
                 onClick={() => ShowMenu((state) => !Menu)}
               >
                 <Link href={"/"} passHref>

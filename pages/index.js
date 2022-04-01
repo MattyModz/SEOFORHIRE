@@ -1,6 +1,7 @@
 // import Bcomp1 from "../src/componants/Blog/Blogcomp1";
 // import { BLOG_COMP } from "../lib/wordpress/api";
-
+import Link from "next/link";
+import Modal from "react-modal";
 import Joblisting from "../src/componants/Hero/jobslist";
 
 import client from "../lib/apollo";
@@ -22,13 +23,13 @@ export default function Home({ jobs }) {
           <div className="flex flex-col items-center justify-center w-full mb-10 sm:flex-row sm:mb-20">
             <a
               href="#_"
-              className="w-full px-8 py-3 text-lg text-center text-indigo-600 transition duration-150 ease-in-out bg-white rounded-md sm:w-auto focus:outline-none"
+              className="w-full font-bold px-8 py-3 text-lg text-center text-royal transition duration-150 ease-in-out bg-white rounded-md sm:w-auto focus:outline-none"
             >
               Get Started
             </a>
             <a
               href="#_"
-              className="w-full px-8 py-3 mt-5 ml-3 text-lg text-center text-white transition duration-150 ease-in-out bg-transparent border border-white rounded-md sm:ml-6 sm:w-auto sm:mt-0 focus:outline-none hover:bg-white hover:text-indigo-600"
+              className="w-full px-8 py-3 mt-5 ml-3 font-bold text-lg text-center text-white transition duration-150 ease-in-out bg-transparent border border-white rounded-md sm:ml-6 sm:w-auto sm:mt-0 focus:outline-none hover:bg-white hover:text-royal"
             >
               Learn More
             </a>
