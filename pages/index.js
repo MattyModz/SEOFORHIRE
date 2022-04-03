@@ -3,6 +3,8 @@
 
 import Joblisting from "../src/componants/Hero/jobslist";
 import Verticlemarquee from "../src/componants/Hero/VerticleMarquee";
+import Verticlemarquee2 from "../src/componants/Hero/VerticleMarquee/index2";
+import Verticlemarquee3 from "../src/componants/Hero/VerticleMarquee/index 3";
 import client from "../lib/apollo";
 
 import { gql } from "@apollo/client";
@@ -43,22 +45,19 @@ export default function Home({ jobs }) {
                 <Verticlemarquee />
               </div>
               <div className="opacity-60">
-                <Verticlemarquee />
+                <Verticlemarquee2 />
               </div>
               <div className="opacity-40">
-                <Verticlemarquee />
+                <Verticlemarquee3 />
               </div>
-              <h1 className="text-2xl relative z10 relative text-white -mt-20 md:-mt-40 sm:-mt-40">
-                hello
-              </h1>
             </div>
           </div>
         </div>
 
-        <div className="container rounded-xl flex justify-center mx-auto -mt-20 md:-mt-56 sm:-mt-40   ">
+        <div className="container rounded-xl flex justify-center mx-auto -mt-20 md:-mt-56 sm:-mt-20 mb-10  ">
           <div className=" w-11/12  rounded-xl sm:w-2/3">
-            <div className=" border rounded-xl  rounded-xl">
-              <div className=" box-content rounded-xl w-full h-auto bg-white">
+            <div className="  rounded-xl   rounded-xl">
+              <div className=" box-content  rounded-xl w-full bg-white h-auto ">
                 {jobs.map((job) => (
                   <Joblisting
                     key={job.slug}

@@ -17,7 +17,7 @@ export default function Joblayout({
   type,
 }) {
   return (
-    <section class="w-full">
+    <section class="w-full ">
       <div class=" w-full   flex flex-col items-center px-8 pt-12 pb-24 mx-auto  bg-gradient-to-br from-[#190873] via-[#100750] to-black sm:pt-20 sm:pb-32 md:pb-48 lg:pb-56 xl:pb-64 sm:px-0">
         <div class="w-full mb-5    sm:w-11/12 lg:w-2/3 lg:mb-10">
           <motion.div
@@ -41,14 +41,35 @@ export default function Joblayout({
             </div>
           </motion.div>
         </div>
+        <div className="flex ">
+          <div className=" mt-2 flex mr-1.5  text-white items-center text-sm text-gray-500">
+            <BriefcaseIcon
+              className="flex-shrink-0 mr-1.5 h-5 w-5 text-white"
+              aria-hidden="true"
+            />
+            {type}
+          </div>
+          <div className="mt-2 flex mr-1.5  text-white items-center text-sm text-gray-500">
+            <LocationMarkerIcon
+              className="flex-shrink-0 mr-1.5 h-5 w-5 text-white"
+              aria-hidden="true"
+            />
+            {joblocation}
+          </div>
+          <div className="mt-2 mr-1.5 flex items-center text-sm text-gray-100">
+            <CurrencyPoundIcon
+              className="flex-shrink-0 mr-1.5 h-5 w-5 text-white"
+              aria-hidden="true"
+            />
+            {jobsalary}
+          </div>
+        </div>
       </div>
 
       <div class="container   flex justify-center mx-auto -mt-20 md:-mt-56 sm:-mt-40">
-        <div class="relative bg-white w-11/12 rounded-xl  sm:w-2/3">
+        <div class="relative  w-11/12 rounded-xl  sm:w-2/3">
           <div class="overflow-hidden rounded-b-none rounded-xl">
-            <div class=" bg-white box-content w-full h-auto bg-gray-100">
-              {children}
-            </div>
+            <div class=" bg-white box-content w-full h-auto ">{children}</div>
           </div>
         </div>
       </div>

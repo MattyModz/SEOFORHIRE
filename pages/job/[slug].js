@@ -12,7 +12,15 @@ export default function PostPage({ job }) {
       type={joblist.jobListing.type}
     >
       <div className="rounded-xl bg-white p-8 text-black ">
-        <p className="text-3xl">Candidate Requirements</p>
+        <div className="">
+          <button className="learn-more rounded-full bg-gray-200 bg-opacity-50">
+            <span className="circle" aria-hidden="true">
+              <span className="icon arrow"></span>
+            </span>
+            <span className="button-text">Apply</span>
+          </button>
+        </div>
+        <p className="py-4 text-3xl">Candidate Requirements</p>
         <br />
         <div
           dangerouslySetInnerHTML={{
@@ -38,19 +46,21 @@ export default function PostPage({ job }) {
       </div>
 
       <div>
-        <button className="learn-more">
+        <button className="learn-more rounded-full bg-gray-200 bg-opacity-50">
           <span className="circle" aria-hidden="true">
             <span className="icon arrow"></span>
           </span>
-          <span className="button-text">Learn More</span>
+          <span className="button-text">Apply</span>
         </button>
       </div>
-      <button className="learn-more">
-        <span className="circle" aria-hidden="true">
-          <span className="icon arrow"></span>
-        </span>
-        <span className="button-text">Apply </span>
-      </button>
+      <div className="py-2">
+        <button className="learn-more rounded-full bg-blue-800 bg-opacity-60">
+          <span className="circle" aria-hidden="true">
+            <span className="icon arrow"></span>
+          </span>
+          <span className="button-text">Share </span>
+        </button>
+      </div>
     </Joblayout>
   );
 }
