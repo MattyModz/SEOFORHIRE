@@ -2,7 +2,7 @@ import Link from "next/link";
 
 const Footer = () => {
   return (
-    <section class="bg-black">
+    <section class="bg-royal">
       <div class="max-w-screen-xl px-4 py-12 mx-auto space-y-8 overflow-hidden sm:px-6 lg:px-8">
         <div class="flex flex-wrap justify-center -mx-5 -my-2">
           <ul className="flex flex-row justify-start space-between  pb-3 -ml-4 -mr-4 text-sm overflow-hidden">
