@@ -61,6 +61,14 @@ export default function Joblisting({ slug, salary, location, type, title }) {
             <span class="button-text">Apply</span>
           </button>
         </span>
+        <span className="">
+          <button class="learn-more" onClick={() => setShowModal(true)}>
+            <span class="circle" aria-hidden="true">
+              <span class="icon arrow"></span>
+            </span>
+            <span class="button-text">Learn More</span>
+          </button>
+        </span>
       </div>
       <div>
         <Modal open={showModal} onClose={() => setShowModal(false)}>
