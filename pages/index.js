@@ -72,7 +72,7 @@ export default function Home({ jobs }) {
         </div>
       </section>
 
-      <section className="py-12">
+      <section className="">
         <div className="relative  w-full">
           <svg
             className="fill-current text-gray-100"
@@ -83,6 +83,7 @@ export default function Home({ jobs }) {
               d="m0 4 50 3c50 3 150 9 250 13.7 100 4.6 200 8 300 4.3S800 10.7 850 5.3L900 0v45H0V4Z"
               fillRule="#fff"
             ></path>
+            sgsdf
           </svg>
         </div>
       </section>

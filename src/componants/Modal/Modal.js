@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import ReactDOM from "react-dom";
-import motion from "framer-motion";
+
 import Application from "./Applicationform";
 const MODAL_STYLES = {
   position: "fixed",
@@ -35,9 +35,9 @@ export default function Modal({ open, children, onClose }) {
           <button onClick={onClose}>X</button>
         </div>
         <div className=" flex justify-center text-white p-8 m-8 rounded-xl overflow-hidden">
-          <motion.div>
+          <div>
             <Application />
-          </motion.div>
+          </div>
         </div>
       </div>
     </>,
