@@ -30,7 +30,7 @@ export default function Application() {
             </div>
 
             <div class="w-full bg-white lg:w-6/12 xl:w-5/12">
-              <div class="flex flex-col items-start justify-start w-full h-full p-10 lg:p-16 xl:p-24">
+              <div class="flex flex-col items-start justify-start w-full h-full p-2 lg:p-4 xl:p-6">
                 <h4 class="w-full text-3xl font-bold">Signup</h4>
                 <p class="text-lg text-gray-500">
                   or, if you have an account you can{" "}

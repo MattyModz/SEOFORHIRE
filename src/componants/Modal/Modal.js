@@ -34,7 +34,7 @@ export default function Modal({ open, children, onClose }) {
         <div className="flex justify-end mr-4 mt-2">
           <button onClick={onClose}>X</button>
         </div>
-        <div className=" flex justify-center text-white p-8 m-8 rounded-xl overflow-hidden">
+        <div className=" flex justify-center text-white p-2 m-2 rounded-xl overflow-hidden">
           <div>
             <Application />
           </div>

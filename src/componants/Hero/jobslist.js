@@ -13,7 +13,7 @@ import {
 export default function Joblisting({ slug, salary, location, type, title }) {
   const [showModal, setShowModal] = useState(false);
   return (
-    <div className="lg:flex cursor-pointer  mb-2 p-2 lg:items-center rounded-xl lg:justify-between">
+    <div className="lg:flex cursor-pointer   mb-2 p-2 lg:items-center rounded-xl lg:justify-between">
       <div className="flex-1 rounded-xl  py-8 min-w-0">
         <Link href={`/job/${slug}`}>
           <h2 className="text-2xl font-bold leading-7 text-gray-600 sm:text-3xl sm:truncate">
@@ -61,15 +61,21 @@ export default function Joblisting({ slug, salary, location, type, title }) {
             <span class="button-text">Apply</span>
           </button>
         </span>
+      </div>
+
+      <div className="mt-5 mr-2 rounded-xl flex lg:mt-0 lg:ml-4">
         <span className="">
-          <button class="learn-more" onClick={() => setShowModal(true)}>
-            <span class="circle" aria-hidden="true">
-              <span class="icon arrow"></span>
-            </span>
-            <span class="button-text">Learn More</span>
-          </button>
+          <Link href={`/job/${slug}`}>
+            <button class="learn-more">
+              <span class="circle" aria-hidden="true">
+                <span class="icon arrow"></span>
+              </span>
+              <span class="button-text">Learn More</span>
+            </button>
+          </Link>
         </span>
       </div>
+
       <div>
         <Modal open={showModal} onClose={() => setShowModal(false)}>
           Hello

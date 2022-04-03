@@ -37,7 +37,7 @@ export default function Home({ jobs }) {
             </div>
           </div>
 
-          <div className="w-full   relative  xl:w-1/2  ">
+          <div className="absolute w-full   relative  xl:w-1/2  ">
             <div className="circlecclip  text-white h-full">
               <div className="w-full ">
                 <Verticlemarquee />
@@ -48,16 +48,16 @@ export default function Home({ jobs }) {
               <div className="opacity-40">
                 <Verticlemarquee />
               </div>
-              <div className=" z10 relative text-white -mt-20 md:-mt-40 sm:-mt-40">
+              <h1 className="text-2xl relative z10 relative text-white -mt-20 md:-mt-40 sm:-mt-40">
                 hello
-              </div>
+              </h1>
             </div>
           </div>
         </div>
 
         <div className="container rounded-xl flex justify-center mx-auto -mt-20 md:-mt-56 sm:-mt-40   ">
           <div className=" w-11/12  rounded-xl sm:w-2/3">
-            <div className=" border rounded-xl border-gray-300 rounded-b-none rounded-xl">
+            <div className=" border rounded-xl  rounded-xl">
               <div className=" box-content rounded-xl w-full h-auto bg-white">
                 {jobs.map((job) => (
                   <Joblisting
