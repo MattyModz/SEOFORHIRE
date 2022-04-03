@@ -52,28 +52,30 @@ export default function Joblisting({ slug, salary, location, type, title }) {
         </div>
       </div>
 
-      <div className="mt-5 mr-2 rounded-xl flex lg:mt-0 lg:ml-4">
-        <span className="">
-          <button class="learn-more" onClick={() => setShowModal(true)}>
-            <span class="circle" aria-hidden="true">
-              <span class="icon arrow"></span>
-            </span>
-            <span class="button-text">Apply</span>
-          </button>
-        </span>
-      </div>
-
-      <div className="mt-5 mr-2 rounded-xl flex lg:mt-0 lg:ml-4">
-        <span className="">
-          <Link href={`/job/${slug}`}>
-            <button class="learn-more">
+      <div className="flex">
+        <div className="mt-5 mr-2 rounded-xl  lg:mt-0 lg:ml-4">
+          <span className="">
+            <button class="learn-more" onClick={() => setShowModal(true)}>
               <span class="circle" aria-hidden="true">
                 <span class="icon arrow"></span>
               </span>
-              <span class="button-text">Learn More</span>
+              <span class="button-text">Apply</span>
             </button>
-          </Link>
-        </span>
+          </span>
+        </div>
+
+        <div className="mt-5 mr-2 rounded-xl  lg:mt-0 lg:ml-4">
+          <span className="">
+            <Link href={`/job/${slug}`}>
+              <button class="learn-more">
+                <span class="circle" aria-hidden="true">
+                  <span class="icon arrow"></span>
+                </span>
+                <span class="button-text">Learn More</span>
+              </button>
+            </Link>
+          </span>
+        </div>
       </div>
 
       <div>
