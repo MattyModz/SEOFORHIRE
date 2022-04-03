@@ -11,25 +11,46 @@ export default function PostPage({ job }) {
       jobsalary={joblist.jobListing.salary}
       type={joblist.jobListing.type}
     >
-      <div className="rounded-xl p-8 text-black ">
-        <h2 className="">Candidate Requirements</h2>
+      <div className="rounded-xl bg-white p-8 text-black ">
+        <p className="text-3xl">Candidate Requirements</p>
         <br />
-        <p>{joblist.jobListing.candidateRequirements}</p>
-        <h2>Responsibilities</h2>
+        <div
+          dangerouslySetInnerHTML={{
+            __html: joblist.jobListing.candidateRequirements,
+          }}
+        />
         <br />
-        <p>{joblist.jobListing.responsibilities}</p>
-        <h2>Benefits</h2>
+        <p className="text-3xl">Responsibilities</p>
         <br />
-        <p>{joblist.jobListing.benefits}</p>
+        <div
+          dangerouslySetInnerHTML={{
+            __html: joblist.jobListing.responsibilities,
+          }}
+        />
+        <br />
+        <p className="text-3xl">Benefits</p>
+        <br />
+        <div
+          dangerouslySetInnerHTML={{
+            __html: joblist.jobListing.benefits,
+          }}
+        />
       </div>
+
       <div>
-        <button class="learn-more">
-          <span class="circle" aria-hidden="true">
-            <span class="icon arrow"></span>
+        <button className="learn-more">
+          <span className="circle" aria-hidden="true">
+            <span className="icon arrow"></span>
           </span>
-          <span class="button-text">Learn More</span>
+          <span className="button-text">Learn More</span>
         </button>
       </div>
+      <button className="learn-more">
+        <span className="circle" aria-hidden="true">
+          <span className="icon arrow"></span>
+        </span>
+        <span className="button-text">Apply </span>
+      </button>
     </Joblayout>
   );
 }

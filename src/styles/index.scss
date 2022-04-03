@@ -158,3 +158,9 @@ button {
     }
   }
 }
+
+.circlecclip {
+  clip-path: circle(80.3% at 100% 2%);
+
+  background-image: linear-gradient(to right, rgba(255, 0, 0, 0), rgb(0, 0, 0));
+}

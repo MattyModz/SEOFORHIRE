@@ -8,7 +8,7 @@ export default function Nav() {
   const [Menu, ShowMenu] = useState(false);
   console.log(Menu);
   return (
-    <nav className="absolute w-full select-none">
+    <nav className="bg-royal w-full select-none">
       <div className="flex items-center justify-between h-20 px-8 py-2 mx-auto max-w-7xl md:h-24 sm:box-content">
         <div className="flex items-center w-64">
           <a
@@ -18,13 +18,7 @@ export default function Nav() {
             <span className=" pt-2 text-xl font-black leading-none text-gray-900 select-none logo">
               <Link href={"/"} passHref>
                 <div className="">
-                  <Image
-                    className=""
-                    src={"/logo.png"}
-                    width={50}
-                    height={50}
-                    alt="Logo"
-                  />
+                  <Image src={"/logo.png"} width={50} height={50} alt="Logo" />
                 </div>
               </Link>
             </span>
