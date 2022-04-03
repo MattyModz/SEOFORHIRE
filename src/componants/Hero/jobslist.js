@@ -42,18 +42,11 @@ export default function Joblisting({ slug, salary, location, type, title }) {
             />
             {salary}
           </div>
-          <div className="mt-2 flex items-center text-sm text-gray-500">
-            <CalendarIcon
-              className="flex-shrink-0 mr-1.5 h-5 w-5 text-gray-400"
-              aria-hidden="true"
-            />
-            Closing on
-          </div>
         </div>
       </div>
 
       <div className="flex">
-        <div className="mt-5 mr-2 rounded-xl  lg:mt-0 lg:ml-4">
+        <div className="mt-5 mr-2 rounded-full bg-gray-200 bg-opacity-50 lg:mt-0 lg:ml-4">
           <span className="">
             <button class="learn-more" onClick={() => setShowModal(true)}>
               <span class="circle" aria-hidden="true">
@@ -64,7 +57,7 @@ export default function Joblisting({ slug, salary, location, type, title }) {
           </span>
         </div>
 
-        <div className="mt-5 mr-2 rounded-xl  lg:mt-0 lg:ml-4">
+        <div className="mt-5 mr-2 rounded-full bg-blue-800 bg-opacity-60  lg:mt-0 lg:ml-4">
           <span className="">
             <Link href={`/job/${slug}`}>
               <button class="learn-more">
