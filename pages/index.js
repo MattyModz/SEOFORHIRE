@@ -64,6 +64,7 @@ export default function Home({ jobs }) {
                 salary={job.jobListing.salary}
                 location={job.jobListing.location}
                 type={job.jobListing.type}
+                intro={job.jobListing.intro}
               />
             ))}
           </div>
@@ -112,6 +113,7 @@ export async function getStaticProps() {
               candidateRequirements
               benefits
               location
+              intro
             }
           }
         }
