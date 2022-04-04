@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import ReactDOM from "react-dom";
-
+import Image from "next/image";
 import Application from "./Applicationform";
 const MODAL_STYLES = {
   position: "fixed",
@@ -8,7 +8,7 @@ const MODAL_STYLES = {
   left: "50%",
   transform: "translate(-50%, -50%)",
   paddingbottom: "20px",
-
+  overflowY: "scroll",
   zIndex: 1000,
 };
 
@@ -30,15 +30,14 @@ export default function Modal({ open, children, onClose }) {
       <div className="" style={OVERLAY_STYLES} />
       <div
         style={MODAL_STYLES}
-        className="bg-gradient-to-br from-[#190873] via-[#100750] to-black rounded-xl  w-full h-full text-white"
+        className="bg-royal rounded-xl fixed w-full h-full text-white"
       >
-        <div className="flex justify-end mr-4 mt-2">
-          <button onClick={onClose}>X</button>
-        </div>
-        <div className=" flex justify-center text-white p-2 m-2 rounded-xl ">
-          <div className="">
-            <Application />
-          </div>
+        <div className="justify-end p-4 mt-2">
+          <button className="" onClick={onClose}>
+            X
+          </button>
+
+          <Application children={children} />
         </div>
       </div>
     </>,

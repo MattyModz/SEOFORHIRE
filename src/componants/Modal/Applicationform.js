@@ -1,16 +1,74 @@
 import Container from "../container";
-
-export default function Application() {
+import Image from "next/image";
+import { motion } from "framer-motion";
+import {
+  BriefcaseIcon,
+  CalendarIcon,
+  CurrencyPoundIcon,
+  LinkIcon,
+  LocationMarkerIcon,
+  PencilIcon,
+} from "@heroicons/react/solid";
+export default function Application({ children }) {
   return (
     <>
       <Container>
-        <div class="py-8 bg-white md:py-16 h-full">
+        <motion.div
+          class="py-8 md:py-16 h-full bg-black bg-opacity-10 rounded-xl w-full"
+          initial="pageInitial"
+          exit={{ opacity: 0 }}
+          animate="pageAnimate"
+          className="py-11 flex justify-center text-white"
+          variants={{
+            pageInitial: {
+              opacity: 0,
+            },
+            pageAnimate: {
+              opacity: 1,
+            },
+          }}
+        >
           <div class="px-10 mx-auto max-w-7xl md:px-16">
             <div class="max-w-3xl  ">
+              <Image src={"/logo.png"} width={50} height={50} alt="Logo" />
               <p class="text-xs font-bold text-blue-500 uppercase">#Ao-453</p>
-              <h2 class="mt-1 text-2xl font-bold text-left text-gray-800 lg:text-3xl md:mt-2">
-                Apply for - SEO Manager
+              <h2 class="mt-1 text-2xl font-bold text-left text-white lg:text-3xl md:mt-2">
+                Apply for - {children}
               </h2>
+
+              <div className="py-8 md:flex sm:block  ">
+                <div className="flex">
+                  <div class="flex rounded-full  px-3 py-1.5 bg-gray-100 bg-opacity-10  text-gray-100 mb-4">
+                    <BriefcaseIcon
+                      className="flex-shrink-0 mr-1.5 h-5 w-5 text-white"
+                      aria-hidden="true"
+                    />
+                    Permentant
+                  </div>
+                </div>
+
+                <div className="flex">
+                  <div class="flex rounded-full px-3 py-1.5   bg-gray-100 bg-opacity-10  text-gray-100 mb-4">
+                    <LocationMarkerIcon
+                      className="flex-shrink-0 mr-1.5 h-5 w-5 text-white"
+                      aria-hidden="true"
+                    />
+
+                    <h6 class=""> joblocation</h6>
+                  </div>
+                </div>
+
+                <div className="flex">
+                  <div class="flex rounded-full  px-3 py-1.5 bg-gray-100 bg-opacity-10 text-gray-100 mb-4">
+                    <CurrencyPoundIcon
+                      className="flex-shrink-0 mr-1.5 h-5 w-5 text-gray-100"
+                      aria-hidden="true"
+                    />
+                    jobsalary
+                  </div>
+                </div>
+              </div>
+
               <p class="max-w-screen-md mx-auto mt-4 text-left text-gray-500 md:text-lg md:mt-6">
                 Fill out the form below and we'll do some research on our end
                 and get back to you within 24-48 hours. For specific technical
@@ -40,7 +98,7 @@ export default function Application() {
                   for="first-name"
                   class="inline-block mb-2 text-sm font-medium text-gray-500 sm:text-base"
                 >
-                  First name
+                  Last name
                 </label>
                 <input
                   name="first-name"
@@ -52,7 +110,7 @@ export default function Application() {
                   for="first-name"
                   class="inline-block mb-2 text-sm font-medium text-gray-500 sm:text-base"
                 >
-                  First name
+                  Email
                 </label>
                 <input
                   name="first-name"
@@ -64,12 +122,18 @@ export default function Application() {
                   for="first-name"
                   class="inline-block mb-2 text-sm font-medium text-gray-500 sm:text-base"
                 >
-                  First name
+                  Tel
                 </label>
                 <input
                   name="first-name"
                   class="w-full px-3 py-2 text-gray-800 transition duration-100 border rounded-md outline-none bg-gray-50 focus:ring ring-blue-300"
                 />
+              </div>
+              <div>
+                <label
+                  for="first-name"
+                  class="inline-block mb-2 text-sm font-medium text-gray-500 sm:text-base"
+                ></label>
               </div>
             </form>
 
@@ -77,7 +141,7 @@ export default function Application() {
               Please allow up to 24-48 hour response during the weekdays.
             </p>
           </div>
-        </div>
+        </motion.div>
       </Container>
     </>
   );

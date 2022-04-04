@@ -1,8 +1,10 @@
 import { gql } from "@apollo/client";
 import client from "../../lib/apollo";
 import Joblayout from "../../src/componants/Layout/Joblayout";
-
+import Modal from "../../src/componants/Modal/Modal";
+import { myContext } from "../../Context/Context";
 export default function PostPage({ job }) {
+  const { showModal, setShowModal } = myContext();
   const joblist = job;
   return (
     <Joblayout
@@ -13,7 +15,10 @@ export default function PostPage({ job }) {
     >
       <div className="rounded-xl bg-white p-8 text-black ">
         <div className="">
-          <button className="learn-more rounded-full bg-gray-200 bg-opacity-50">
+          <button
+            className="learn-more rounded-full bg-gray-200 bg-opacity-50"
+            onClick={() => setShowModal(true)}
+          >
             <span className="circle" aria-hidden="true">
               <span className="icon arrow"></span>
             </span>
@@ -53,7 +58,10 @@ export default function PostPage({ job }) {
       </div>
 
       <div>
-        <button className="learn-more rounded-full bg-gray-200 bg-opacity-50">
+        <button
+          className="learn-more rounded-full bg-gray-200 bg-opacity-50"
+          onClick={() => setShowModal(true)}
+        >
           <span className="circle" aria-hidden="true">
             <span className="icon arrow"></span>
           </span>
@@ -67,6 +75,11 @@ export default function PostPage({ job }) {
           </span>
           <span className="button-text">Share </span>
         </button>
+      </div>
+      <div>
+        <Modal open={showModal} onClose={() => setShowModal(false)}>
+          {joblist.jobListing.positionTitle}
+        </Modal>
       </div>
     </Joblayout>
   );

@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-
+import Container from "../container";
 import {
   BriefcaseIcon,
   CalendarIcon,
@@ -42,36 +42,30 @@ export default function Joblayout({
             </div>
           </motion.div>
         </div>
-        <div className="w-full ">
-          <div className="flex  justify-center">
-            <div className=" mt-2 flex mr-1.5  text-white items-center text-sm text-gray-100">
-              <div class="flex rounded-full inline-block px-3 py-1.5 bg-gray-100 bg-opacity-10  text-gray-100 mb-4">
-                <BriefcaseIcon
-                  className="flex-shrink-0 mr-1.5 h-5 w-5 text-white"
-                  aria-hidden="true"
-                />
-                {type}
-              </div>
-            </div>
-            <div className="mt-2 flex mr-1.5  text-white items-center text-sm text-gray-100">
-              <div class="flex rounded-full inline-block px-3 py-1.5 bg-gray-100 bg-opacity-10  text-gray-100 mb-4">
-                <LocationMarkerIcon
-                  className="flex-shrink-0 mr-1.5 h-5 w-5 text-white"
-                  aria-hidden="true"
-                />
+        <div className=" flex justify-center w-full  ">
+          <div class="flex rounded-full  px-3 py-1.5 bg-gray-100 bg-opacity-10  text-gray-100 mb-4">
+            <BriefcaseIcon
+              className="flex-shrink-0 mr-1.5 h-5 w-5 text-white"
+              aria-hidden="true"
+            />
+            {type}
+          </div>
 
-                <h6 class="font-normal text-xs uppercase"> {joblocation}</h6>
-              </div>
-            </div>
-            <div className="mt-2 mr-1.5 flex items-center text-sm text-gray-100">
-              <div class="flex rounded-full inline-block px-3 py-1.5 bg-gray-100 bg-opacity-10 text-gray-100 mb-4">
-                <CurrencyPoundIcon
-                  className="flex-shrink-0 mr-1.5 h-5 w-5 text-gray-100"
-                  aria-hidden="true"
-                />
-                {jobsalary}
-              </div>
-            </div>
+          <div class="flex rounded-full  px-3 py-1.5 bg-gray-100 bg-opacity-10  text-gray-100 mb-4">
+            <LocationMarkerIcon
+              className="flex-shrink-0 mr-1.5 h-5 w-5 text-white"
+              aria-hidden="true"
+            />
+
+            <h6 class="font-normal text-xs uppercase"> {joblocation}</h6>
+          </div>
+
+          <div class="flex rounded-full  px-3 py-1.5 bg-gray-100 bg-opacity-10 text-gray-100 mb-4">
+            <CurrencyPoundIcon
+              className="flex-shrink-0 mr-1.5 h-5 w-5 text-gray-100"
+              aria-hidden="true"
+            />
+            {jobsalary}
           </div>
         </div>
       </div>
@@ -86,28 +80,3 @@ export default function Joblayout({
     </section>
   );
 }
-
-//  <div className="text-white   sm:flex block w-full justify-center ">
-//           <div className="mt-1  flex text-l ml-2 text-white">
-//             <CurrencyPoundIcon
-//               className="flex-shrink-0   h-5 w-5 text-white"
-//               aria-hidden="true"
-//             />
-//             {jobsalary}
-//           </div>
-//           <div className="mt-1 ml-2  flex items-center text-l text-white">
-//             <BriefcaseIcon
-//               className="flex-shrink-0   h-5 w-5  text-white"
-//               aria-hidden="true"
-//             />
-//             {type}
-//           </div>
-//           <div className="mt-1 ml-2 flex items-center text-l text-white">
-//             <LocationMarkerIcon
-//               className="flex-shrink-0   h-5 w-5  text-white"
-//               aria-hidden="true"
-//             />
-//             {joblocation}
-//           </div>
-//         </div>
-//       </div>

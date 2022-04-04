@@ -40,7 +40,7 @@ export default function Home({ jobs }) {
           </div>
 
           <div className="absolute w-full   relative  xl:w-1/2  ">
-            <div className="circlecclip  text-white h-full">
+            <div className="circlecclip w-full  text-white h-full">
               <div className="w-full ">
                 <Verticlemarquee />
               </div>
@@ -54,7 +54,7 @@ export default function Home({ jobs }) {
           </div>
         </div>
 
-        <div className="container rounded-xl flex justify-center mx-auto -mt-20 md:-mt-56 sm:-mt-20 mb-10  ">
+        <div className="container rounded-xl flex justify-center mx-auto -mt-20 md:-mt-56 sm:-mt-20 mb-10 overflow-hidden ">
           <div className=" w-11/12  rounded-xl sm:w-2/3">
             {jobs.map((job) => (
               <Joblisting

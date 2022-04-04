@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Modal from "../Modal/Modal";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import {
   BriefcaseIcon,
   CalendarIcon,
@@ -10,8 +10,19 @@ import {
   PencilIcon,
 } from "@heroicons/react/solid";
 
-export default function Joblisting({ slug, salary, location, type, title }) {
+export default function Joblisting({
+  slug,
+  salary,
+  location,
+  type,
+  title,
+  ref,
+}) {
   const [showModal, setShowModal] = useState(false);
+  useEffect(() => {
+    const body = document.querySelector("body");
+    body.style.overflow = showModal ? "hidden" : "auto";
+  }, [showModal]);
   return (
     <div className="lg:flex bg-white cursor-pointer border-2  mb-2 p-2 lg:items-center rounded-xl lg:justify-between">
       <div className="flex-1 rounded-xl  py-8 min-w-0">
@@ -72,7 +83,9 @@ export default function Joblisting({ slug, salary, location, type, title }) {
       </div>
 
       <div>
-        <Modal open={showModal} onClose={() => setShowModal(false)}></Modal>
+        <Modal open={showModal} onClose={() => setShowModal(false)}>
+          {title}
+        </Modal>
       </div>
     </div>
   );
