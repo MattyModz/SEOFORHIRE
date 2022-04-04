@@ -4,7 +4,7 @@ export default function Application() {
   return (
     <>
       <Container>
-        <div class="py-8 bg-white md:py-16 h-full border-4">
+        <div class="py-8 bg-white md:py-16 h-full">
           <div class="px-10 mx-auto max-w-7xl md:px-16">
             <div class="max-w-3xl  ">
               <p class="text-xs font-bold text-blue-500 uppercase">#Ao-453</p>

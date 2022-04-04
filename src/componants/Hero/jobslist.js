@@ -13,7 +13,7 @@ import {
 export default function Joblisting({ slug, salary, location, type, title }) {
   const [showModal, setShowModal] = useState(false);
   return (
-    <div className="lg:flex cursor-pointer border-2  mb-2 p-2 lg:items-center rounded-xl lg:justify-between">
+    <div className="lg:flex bg-white cursor-pointer border-2  mb-2 p-2 lg:items-center rounded-xl lg:justify-between">
       <div className="flex-1 rounded-xl  py-8 min-w-0">
         <Link href={`/job/${slug}`}>
           <h2 className="text-2xl font-bold leading-7 text-gray-600 sm:text-3xl sm:truncate">
@@ -57,14 +57,14 @@ export default function Joblisting({ slug, salary, location, type, title }) {
           </span>
         </div>
 
-        <div className="mt-5 mr-2 rounded-full bg-blue-800 bg-opacity-50 overflow-hidden  lg:mt-0 lg:ml-4">
+        <div className="mt-5 mr-2 rounded-full bg-blue-800 bg-opacity-50  lg:mt-0 lg:ml-4">
           <span className="">
             <Link href={`/job/${slug}`}>
               <button class="learn-more">
                 <span class="circle" aria-hidden="true">
                   <span class="icon arrow"></span>
                 </span>
-                <span class="button-text">Learn More</span>
+                <span class="button-text">View</span>
               </button>
             </Link>
           </span>
@@ -77,3 +77,4 @@ export default function Joblisting({ slug, salary, location, type, title }) {
     </div>
   );
 }
+// <div class="flex rounded-full inline-block px-3 py-1.5 bg-royal bg-opacity-80  text-gray-100 mb-4"></div>

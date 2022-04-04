@@ -30,7 +30,7 @@ export default function Modal({ open, children, onClose }) {
       <div className="" style={OVERLAY_STYLES} />
       <div
         style={MODAL_STYLES}
-        className="border-4 bg-gradient-to-br from-[#190873] via-[#100750] to-black rounded-xl  w-full h-full text-white"
+        className="bg-gradient-to-br from-[#190873] via-[#100750] to-black rounded-xl  w-full h-full text-white"
       >
         <div className="flex justify-end mr-4 mt-2">
           <button onClick={onClose}>X</button>

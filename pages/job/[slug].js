@@ -20,8 +20,15 @@ export default function PostPage({ job }) {
             <span className="button-text">Apply</span>
           </button>
         </div>
-        <p className="py-4 text-3xl">Candidate Requirements</p>
+        <div
+          className="py-4"
+          dangerouslySetInnerHTML={{
+            __html: joblist.jobListing.intro,
+          }}
+        />
+        <p className="py-4  text-3xl">Candidate Requirements</p>
         <br />
+
         <div
           dangerouslySetInnerHTML={{
             __html: joblist.jobListing.candidateRequirements,
@@ -104,6 +111,7 @@ export async function getStaticProps({ params }) {
             responsibilities
             salary
             type
+            intro
           }
         }
       }
@@ -118,3 +126,7 @@ export async function getStaticProps({ params }) {
     },
   };
 }
+
+// <div>
+//   <Modal open={showModal} onClose={() => setShowModal(false)}></Modal>
+// </div>;

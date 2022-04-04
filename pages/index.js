@@ -6,7 +6,7 @@ import Verticlemarquee from "../src/componants/Hero/VerticleMarquee";
 import Verticlemarquee2 from "../src/componants/Hero/VerticleMarquee/index2";
 import Verticlemarquee3 from "../src/componants/Hero/VerticleMarquee/index 3";
 import client from "../lib/apollo";
-
+import Values from "../src/componants/Values";
 import { gql } from "@apollo/client";
 
 export default function Home({ jobs }) {
@@ -56,22 +56,19 @@ export default function Home({ jobs }) {
 
         <div className="container rounded-xl flex justify-center mx-auto -mt-20 md:-mt-56 sm:-mt-20 mb-10  ">
           <div className=" w-11/12  rounded-xl sm:w-2/3">
-            <div className="  rounded-xl   rounded-xl">
-              <div className=" box-content  rounded-xl w-full bg-white h-auto ">
-                {jobs.map((job) => (
-                  <Joblisting
-                    key={job.slug}
-                    slug={job.slug}
-                    title={job.jobListing.positionTitle}
-                    salary={job.jobListing.salary}
-                    location={job.jobListing.location}
-                    type={job.jobListing.type}
-                  />
-                ))}
-              </div>
-            </div>
+            {jobs.map((job) => (
+              <Joblisting
+                key={job.slug}
+                slug={job.slug}
+                title={job.jobListing.positionTitle}
+                salary={job.jobListing.salary}
+                location={job.jobListing.location}
+                type={job.jobListing.type}
+              />
+            ))}
           </div>
         </div>
+        <Values />
       </section>
 
       {/* <div className=" pointer-cursor relative  max-w-7xl mx-auto   ">

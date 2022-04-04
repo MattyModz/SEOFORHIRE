@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+
 import {
   BriefcaseIcon,
   CalendarIcon,
@@ -41,27 +42,36 @@ export default function Joblayout({
             </div>
           </motion.div>
         </div>
-        <div className="flex ">
-          <div className=" mt-2 flex mr-1.5  text-white items-center text-sm text-gray-500">
-            <BriefcaseIcon
-              className="flex-shrink-0 mr-1.5 h-5 w-5 text-white"
-              aria-hidden="true"
-            />
-            {type}
-          </div>
-          <div className="mt-2 flex mr-1.5  text-white items-center text-sm text-gray-500">
-            <LocationMarkerIcon
-              className="flex-shrink-0 mr-1.5 h-5 w-5 text-white"
-              aria-hidden="true"
-            />
-            {joblocation}
-          </div>
-          <div className="mt-2 mr-1.5 flex items-center text-sm text-gray-100">
-            <CurrencyPoundIcon
-              className="flex-shrink-0 mr-1.5 h-5 w-5 text-white"
-              aria-hidden="true"
-            />
-            {jobsalary}
+        <div className="w-full ">
+          <div className="flex  justify-center">
+            <div className=" mt-2 flex mr-1.5  text-white items-center text-sm text-gray-100">
+              <div class="flex rounded-full inline-block px-3 py-1.5 bg-gray-100 bg-opacity-10  text-gray-100 mb-4">
+                <BriefcaseIcon
+                  className="flex-shrink-0 mr-1.5 h-5 w-5 text-white"
+                  aria-hidden="true"
+                />
+                {type}
+              </div>
+            </div>
+            <div className="mt-2 flex mr-1.5  text-white items-center text-sm text-gray-100">
+              <div class="flex rounded-full inline-block px-3 py-1.5 bg-gray-100 bg-opacity-10  text-gray-100 mb-4">
+                <LocationMarkerIcon
+                  className="flex-shrink-0 mr-1.5 h-5 w-5 text-white"
+                  aria-hidden="true"
+                />
+
+                <h6 class="font-normal text-xs uppercase"> {joblocation}</h6>
+              </div>
+            </div>
+            <div className="mt-2 mr-1.5 flex items-center text-sm text-gray-100">
+              <div class="flex rounded-full inline-block px-3 py-1.5 bg-gray-100 bg-opacity-10 text-gray-100 mb-4">
+                <CurrencyPoundIcon
+                  className="flex-shrink-0 mr-1.5 h-5 w-5 text-gray-100"
+                  aria-hidden="true"
+                />
+                {jobsalary}
+              </div>
+            </div>
           </div>
         </div>
       </div>
