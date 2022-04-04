@@ -56,7 +56,7 @@ export default function Joblisting({
         </div>
       </div>
 
-      <div className="flex">
+      <div className="">
         <div className="mt-5 mr-2 rounded-full bg-gray-200 bg-opacity-50 lg:mt-0 lg:ml-4">
           <span className="">
             <button class="learn-more" onClick={() => setShowModal(true)}>

@@ -42,7 +42,7 @@ export default function Joblayout({
             </div>
           </motion.div>
         </div>
-        <div className=" flex justify-center w-full  ">
+        <div className="  justify-center lg:flex md:flex  ">
           <div class="flex rounded-full  px-3 py-1.5 bg-gray-100 bg-opacity-10  text-gray-100 mb-4">
             <BriefcaseIcon
               className="flex-shrink-0 mr-1.5 h-5 w-5 text-white"
