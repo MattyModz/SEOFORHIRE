@@ -22,7 +22,7 @@ const OVERLAY_STYLES = {
   zIndex: 1000,
 };
 
-export default function Modal({ open, children, onClose }) {
+export default function Modal({ open, children, onClose, ref }) {
   if (!open) return null;
 
   return ReactDOM.createPortal(
@@ -37,7 +37,7 @@ export default function Modal({ open, children, onClose }) {
             X
           </button>
 
-          <Application children={children} />
+          <Application children={children} ref={ref} />
         </div>
       </div>
     </>,

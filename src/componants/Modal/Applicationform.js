@@ -9,12 +9,12 @@ import {
   LocationMarkerIcon,
   PencilIcon,
 } from "@heroicons/react/solid";
-export default function Application({ children }) {
+export default function Application({ children, ref }) {
   return (
     <>
       <Container>
         <motion.div
-          class="py-8 md:py-16 h-full bg-black bg-opacity-10 rounded-xl w-full"
+          class="py-8 md:py-16bg-black bg-opacity-10 rounded-xl w-full"
           initial="pageInitial"
           exit={{ opacity: 0 }}
           animate="pageAnimate"
@@ -28,10 +28,10 @@ export default function Application({ children }) {
             },
           }}
         >
-          <div class="px-10 mx-auto max-w-7xl md:px-16">
+          <div class="px-10 mx-auto max-w-7xl md:px-16   ">
             <div class="max-w-3xl  ">
               <Image src={"/logo.png"} width={50} height={50} alt="Logo" />
-              <p class="text-xs font-bold text-blue-500 uppercase">#Ao-453</p>
+              <p class="text-xs font-bold text-blue-500 uppercase">{ref}</p>
               <h2 class="mt-1 text-2xl font-bold text-left text-white lg:text-3xl md:mt-2">
                 Apply for - {children}
               </h2>
@@ -69,22 +69,20 @@ export default function Application({ children }) {
                 </div>
               </div>
 
-              <p class="max-w-screen-md mx-auto mt-4 text-left text-gray-500 md:text-lg md:mt-6">
-                Fill out the form below and we'll do some research on our end
-                and get back to you within 24-48 hours. For specific technical
-                issues, please visit our{" "}
+              {/* <p class="max-w-screen-md mx-auto mt-2 text-left text-white md:text-lg md:mt-2">
+                We Value your privacy, please read our Privacy policy
                 <a href="#_" class="font-medium text-blue-500 underline">
                   developer help center
                 </a>
                 .
-              </p>
+              </p> */}
             </div>
 
             <form class="grid max-w-3xl gap-4 mx-auto sm:grid-cols-2">
               <div>
                 <label
                   for="first-name"
-                  class="inline-block mb-2 text-sm font-medium text-gray-500 sm:text-base"
+                  class="inline-block mb-2 text-sm font-medium text-white0 sm:text-base"
                 >
                   First name
                 </label>
@@ -96,7 +94,7 @@ export default function Application({ children }) {
               <div>
                 <label
                   for="first-name"
-                  class="inline-block mb-2 text-sm font-medium text-gray-500 sm:text-base"
+                  class="inline-block mb-2 text-sm font-medium text-white sm:text-base"
                 >
                   Last name
                 </label>
@@ -108,7 +106,7 @@ export default function Application({ children }) {
               <div>
                 <label
                   for="first-name"
-                  class="inline-block mb-2 text-sm font-medium text-gray-500 sm:text-base"
+                  class="inline-block mb-2 text-sm font-medium text-white sm:text-base"
                 >
                   Email
                 </label>
@@ -120,7 +118,7 @@ export default function Application({ children }) {
               <div>
                 <label
                   for="first-name"
-                  class="inline-block mb-2 text-sm font-medium text-gray-500 sm:text-base"
+                  class="inline-block mb-2 text-sm font-medium text-white sm:text-base"
                 >
                   Tel
                 </label>
@@ -135,11 +133,20 @@ export default function Application({ children }) {
                   class="inline-block mb-2 text-sm font-medium text-gray-500 sm:text-base"
                 ></label>
               </div>
-            </form>
 
-            <p class="max-w-3xl mx-auto mt-5 text-xs text-gray-400">
-              Please allow up to 24-48 hour response during the weekdays.
-            </p>
+              <div class="sm:col-span-2">
+                <label
+                  for="message"
+                  class="inline-block mb-2 text-sm font-medium text-white sm:text-base"
+                >
+                  Cover Note
+                </label>
+                <textarea
+                  name="Cover Note"
+                  class="w-full h-64 px-3 py-2 text-gray-800 transition duration-100 border rounded-md outline-none bg-gray-50 focus:ring ring-blue-300"
+                ></textarea>
+              </div>
+            </form>
           </div>
         </motion.div>
       </Container>

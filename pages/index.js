@@ -65,6 +65,7 @@ export default function Home({ jobs }) {
                 location={job.jobListing.location}
                 type={job.jobListing.type}
                 intro={job.jobListing.intro}
+                ref={job.jobListing.ref}
               />
             ))}
           </div>
@@ -114,6 +115,7 @@ export async function getStaticProps() {
               benefits
               location
               intro
+              ref
             }
           }
         }
