@@ -4,7 +4,7 @@ export default function Review() {
     <div className=" mr-8 pr-28 mb-4">
       <div className="bg-royal rounded-xl ">
         <a class="col-span-3 rounded-xl h-52 md:h-80" href="">
-          <Image src={"/logo.png"} width={330} height={200} alt="podcastimg" />
+          <Image src={"/PC.png"} width={330} height={200} alt="podcastimg" />
 
           <p class="text-xl md:text-3xl text-gray-50 pt-5 pl-3">
             {" "}
