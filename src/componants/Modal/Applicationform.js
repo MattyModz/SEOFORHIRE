@@ -9,7 +9,7 @@ import {
   LocationMarkerIcon,
   PencilIcon,
 } from "@heroicons/react/solid";
-export default function Application({ children, ref }) {
+export default function Application({ children }) {
   return (
     <>
       <Container>
@@ -31,7 +31,7 @@ export default function Application({ children, ref }) {
           <div class="px-10 mx-auto max-w-7xl md:px-16   ">
             <div class="max-w-3xl  ">
               <Image src={"/logo.png"} width={50} height={50} alt="Logo" />
-              <p class="text-xs font-bold text-blue-500 uppercase">{ref}</p>
+              <p class="text-xs font-bold text-blue-500 uppercase"></p>
               <h2 class="mt-1 text-2xl font-bold text-left text-white lg:text-3xl md:mt-2">
                 Apply for - {children}
               </h2>

@@ -16,7 +16,7 @@ export default function Joblisting({
   location,
   type,
   title,
-  ref,
+
   intro,
 }) {
   const [showModal, setShowModal] = useState(false);
@@ -32,7 +32,7 @@ export default function Joblisting({
             {title}
           </h2>
         </Link>
-        {ref}
+
         <div className="mt-1 flex flex-col sm:flex-row sm:flex-wrap sm:mt-0 sm:space-x-6">
           <div className="flex">
             <div className="mt-2 flex items-center text-sm  bg-royal bg-opacity-90 flex rounded-full px-3 py-1.5   text-white font-bold mb-4">

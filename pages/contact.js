@@ -29,8 +29,8 @@ const Contact = () => {
 
   return (
     <Layout Herotitle={"Contact"}>
-      <section className=" place-items-center bg-white ">
-        <div className="max-w-lg lg:max-w-none mx-auto lg:mx-0 bg-white">
+      <section className=" place-items-center py-8 bg-white rounded-xl ">
+        <div className="max-w-lg lg:max-w-none mx-auto lg:mx-0">
           <div className="">
             <div className="px-10 mx-auto max-w-7xl md:px-16">
               <div className="max-w-3xl mx-auto mb-10 md:mb-16"></div>
