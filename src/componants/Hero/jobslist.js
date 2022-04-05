@@ -25,17 +25,11 @@ export default function Joblisting({
     body.style.overflow = showModal ? "hidden" : "auto";
   }, [showModal]);
   return (
-    <div className="lg:flex bg-white cursor-pointer border-2  mb-2 p-2 lg:items-center rounded-xl lg:justify-between">
-      <div className="flex-1 rounded-xl  py-8 min-w-0">
-        <Link href={`/job/${slug}`}>
-          <h2 className="text-2xl font-bold leading-7 text-black sm:text-3xl sm:truncate">
-            {title}
-          </h2>
-        </Link>
-
-        <div className="mt-1 flex flex-col sm:flex-row sm:flex-wrap sm:mt-0 sm:space-x-6">
+    <div className="lg:flex bg-white cursor-pointer border  mb-2 p-2 lg:items-center rounded-xl lg:justify-between">
+      <div className="flex-1 rounded-xl  py-4 min-w-0">
+        <div className="mt-1 flex  sm:flex sm:flex-row sm:flex-wrap sm:mt-0 sm:space-x-2 space-x-2">
           <div className="flex">
-            <div className="mt-2 flex items-center text-sm  bg-royal bg-opacity-90 flex rounded-full px-3 py-1.5   text-white font-bold mb-4">
+            <div className="mt-2 flex  items-center text-sm  bg-royal bg-opacity-90 flex rounded-full px-3 py-1.5   text-white font-bold mb-4">
               <BriefcaseIcon
                 className="flex-shrink-0 mr-1.5 h-5 w-5 text-white"
                 aria-hidden="true"
@@ -44,7 +38,7 @@ export default function Joblisting({
             </div>
           </div>
           <div className="flex">
-            <div className="mt-2 flex items-center text-sm  flex rounded-full px-3 py-1.5   bg-royal bg-opacity-90   text-white font-bold mb-4">
+            <div className="mt-2 flex  items-center text-sm  bg-royal bg-opacity-90 flex rounded-full px-3 py-1.5   text-white font-bold mb-4">
               <LocationMarkerIcon
                 className="flex-shrink-0 mr-1.5 h-5 w-5 text-white"
                 aria-hidden="true"
@@ -52,8 +46,8 @@ export default function Joblisting({
               {location}
             </div>
           </div>
-          <div className="flex">
-            <div className="mt-2 flex items-center text-sm flex rounded-full px-3 py-1.5  bg-royal bg-opacity-90   text-white font-bold mb-4">
+          <div className="flex sm:block hidden">
+            <div className="mt-2 flex  items-center text-sm  bg-royal bg-opacity-90 flex rounded-full px-3 py-1.5   text-white font-bold mb-4">
               <CurrencyPoundIcon
                 className="flex-shrink-0 mr-1.5 h-5 w-5 text-white"
                 aria-hidden="true"
@@ -62,6 +56,11 @@ export default function Joblisting({
             </div>
           </div>
         </div>
+        <Link href={`/job/${slug}`}>
+          <h2 className="text-2xl px-3 font-bold leading-7 text-black sm:text-3xl sm:truncate">
+            {title}
+          </h2>
+        </Link>
       </div>
 
       <div class="block md:flex flex-wrap ">
