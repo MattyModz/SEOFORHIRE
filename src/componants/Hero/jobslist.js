@@ -25,7 +25,7 @@ export default function Joblisting({
     body.style.overflow = showModal ? "hidden" : "auto";
   }, [showModal]);
   return (
-    <div className="lg:flex bg-white cursor-pointer border  mb-2 p-2 lg:items-center rounded-xl lg:justify-between">
+    <div className="lg:flex bg-white cursor-pointer border p-4 mb-2 p-2 lg:items-center rounded-xl lg:justify-between">
       <div className="flex-1 rounded-xl  py-4 min-w-0">
         <div className="mt-1 flex  sm:flex sm:flex-row sm:flex-wrap sm:mt-0 sm:space-x-2 space-x-2">
           <div className="flex">
@@ -99,6 +99,9 @@ export default function Joblisting({
       <div>
         <Modal open={showModal} onClose={() => setShowModal(false)}>
           {title}
+          {type}
+          {location}
+          {salary}
         </Modal>
       </div>
     </div>

@@ -1,6 +1,7 @@
 // import Bcomp1 from "../src/componants/Blog/Blogcomp1";
 // import { BLOG_COMP } from "../lib/wordpress/api";
-
+import Image from "next/image";
+import Trust from "../src/componants/Trustwidget";
 import Joblisting from "../src/componants/Hero/jobslist";
 import Verticlemarquee from "../src/componants/Hero/VerticleMarquee";
 import Verticlemarquee2 from "../src/componants/Hero/VerticleMarquee/index2";
@@ -35,6 +36,12 @@ export default function Home({ jobs }) {
                 >
                   Learn More
                 </a>
+              </div>
+              <div>
+                <div className="flex pb-2 justify-center">
+                  <Image src={"/star.png"} width={130} height={25} />
+                </div>
+                <Trust />
               </div>
             </div>
           </div>
