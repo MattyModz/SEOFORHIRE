@@ -39,7 +39,12 @@ export default function Home({ jobs }) {
               </div>
               <div>
                 <div className="flex pb-2 justify-center">
-                  <Image src={"/star.png"} width={130} height={25} />
+                  <Image
+                    src={"/star.png"}
+                    width={130}
+                    height={25}
+                    alt={"Trustpilotreviews"}
+                  />
                 </div>
                 <Trust />
               </div>

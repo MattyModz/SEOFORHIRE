@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import ReactDOM from "react-dom";
 import Image from "next/image";
-import Application from "./Applicationform";
+import Form from "./Applicationform";
 const MODAL_STYLES = {
   position: "fixed",
   top: "50%",
@@ -44,7 +44,7 @@ export default function Modal({
             X
           </button>
 
-          <Application
+          <Form
             children={children}
             type={type}
             location={location}
