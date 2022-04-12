@@ -82,10 +82,3 @@ export default function Applicationform({ children }) {
     </>
   );
 }
-
-//  <div
-//    className="relative block"
-//    style={{ display: formStatus ? "" : "none" }}
-//  >
-//    <h2>Your Application has been has been succesfully submitted</h2>
-//  </div>;

@@ -87,7 +87,6 @@ export default function Form() {
           onChange={handleChange()}
         />
       </div>
-
       <div>
         <label
           for="first-name"
@@ -106,7 +105,6 @@ export default function Form() {
           className="w-full px-3 py-2 text-gray-800 transition duration-100 border rounded-md outline-none bg-gray-50 focus:ring ring-blue-300"
         />
       </div>
-
       <div>
         <label
           for="first-name"
@@ -126,7 +124,6 @@ export default function Form() {
           className="w-full px-3 py-2 text-gray-800 transition duration-100 border rounded-md outline-none bg-gray-50 focus:ring ring-blue-300"
         />
       </div>
-
       <div>
         <label
           for="Telephonenumber"
@@ -145,7 +142,6 @@ export default function Form() {
           onChange={handleChange()}
         />
       </div>
-
       <div className="sm:col-span-2">
         <label className="inline-block mb-2 text-sm font-medium sm:text-base">
           Cover Note
@@ -161,7 +157,6 @@ export default function Form() {
           onChange={handleChange()}
         ></textarea>
       </div>
-
       <div className=" ">
         <div className="form-group mt-3">
           <label className="mr-2">Upload your CV:</label>
@@ -173,17 +168,29 @@ export default function Form() {
           />
         </div>
       </div>
-
       <div className="flex items-center justify-between sm:col-span-2">
         <button
-          className="learn-more rounded-full bg-white bg-opacity-50"
+          className="learn-more rounded-full bg-white bg-opacity-50 "
           type="submit"
         >
-          <span className="circle" aria-hidden="true">
+          <span
+            className="circle border-2 border-opacity-50"
+            aria-hidden="true"
+          >
             <span className="icon arrow"></span>
           </span>
           <span className="button-text">Apply</span>
         </button>
+        <div
+          className=""
+          style={{
+            display: formStatus ? (
+              ""
+            ) : (
+              <h2>Your Application has been has been succesfully submitted</h2>
+            ),
+          }}
+        ></div>
       </div>
     </form>
   );
