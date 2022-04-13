@@ -189,6 +189,16 @@ input[type="file"]::file-selector-button:hover {
   opacity: 100%;
 }
 
-.form-submitted {
-  display: none;
+.submitted {
+  display: block;
+}
+
+.presubmit {
+  display: hidden;
+}
+
+.hiddentran {
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s 2s, opacity 2s linear;
 }

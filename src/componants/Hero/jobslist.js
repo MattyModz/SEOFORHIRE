@@ -3,11 +3,8 @@ import Modal from "../Modal/Modal";
 import { useState, useEffect } from "react";
 import {
   BriefcaseIcon,
-  CalendarIcon,
   CurrencyPoundIcon,
-  LinkIcon,
   LocationMarkerIcon,
-  PencilIcon,
 } from "@heroicons/react/solid";
 
 export default function Joblisting({
@@ -24,6 +21,7 @@ export default function Joblisting({
     const body = document.querySelector("body");
     body.style.overflow = showModal ? "hidden" : "auto";
   }, [showModal]);
+
   return (
     <div className="lg:flex bg-white cursor-pointer border p-4 mb-2 p-2 lg:items-center rounded-xl lg:justify-between">
       <div className="flex-1 rounded-xl  py-4 min-w-0">

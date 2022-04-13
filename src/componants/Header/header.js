@@ -4,8 +4,9 @@ const Header = () => {
   return (
     <>
       <head>
-        <title>LinkCity</title>
+        <title>SeoforHire</title>
         <link rel="stylesheet" href="../src/styles/index.scss" />
+        <link rel="icon" href="./logo.png"></link>
 
         <script
           type="text/javascript"

@@ -68,14 +68,7 @@ export default function PostPage({ job }) {
           <span className="button-text">Apply</span>
         </button>
       </div>
-      <div className="py-2">
-        <button className="learn-more rounded-full bg-blue-800 bg-opacity-60">
-          <span className="circle" aria-hidden="true">
-            <span className="icon arrow"></span>
-          </span>
-          <span className="button-text">Share </span>
-        </button>
-      </div>
+
       <div>
         <Modal open={showModal} onClose={() => setShowModal(false)}>
           {joblist.jobListing.positionTitle}
@@ -143,3 +136,12 @@ export async function getStaticProps({ params }) {
 // <div>
 //   <Modal open={showModal} onClose={() => setShowModal(false)}></Modal>
 // </div>;
+
+//  <div className="py-2">
+//    <button className="learn-more rounded-full bg-blue-800 bg-opacity-60">
+//      <span className="circle" aria-hidden="true">
+//        <span className="icon arrow"></span>
+//      </span>
+//      <span className="button-text">Share </span>
+//    </button>
+//  </div>;

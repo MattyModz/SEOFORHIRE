@@ -18,7 +18,7 @@ export default function Applicationform({ children }) {
     <>
       <Container className="">
         <motion.div
-          className="py-8 md:py-16bg-black bg-opacity-10 rounded-xl w-full py-11 flex justify-center text-white"
+          className="w-full py-8 md:py-16bg-black bg-opacity-10 rounded-xl w-full py-11 flex justify-center text-white"
           initial="pageInitial"
           exit={{ opacity: 0 }}
           animate="pageAnimate"
@@ -73,7 +73,7 @@ export default function Applicationform({ children }) {
               </div>
             </div>
 
-            <div>
+            <div className="w-full">
               <Form />
             </div>
           </div>

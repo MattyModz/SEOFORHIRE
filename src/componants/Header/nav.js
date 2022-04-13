@@ -87,14 +87,19 @@ export default function Nav() {
   );
 }
 
-//{
-// [...Array(5)].map((_, i) => );
-// }
-//  <li
-//    className="text-gray-600 cursor-pointer hover:text-gray-800 md:ml-10"
-//    onClick={() => ShowMenu((state) => !Menu)}
-//  >
-//    <Link href={"/about"} passHref>
-//      About
-//    </Link>
-//  </li>;
+// <li
+//               className="text-white font-bold cursor-pointer hover:text-gray-400 md:ml-10"
+//               onClick={() => ShowMenu((state) => !Menu)}
+//             >
+//               <Link href={"/About"} passHref>
+//                 About
+//               </Link>
+//             </li>
+//             <li
+//               className="text-white font-bold cursor-pointer hover:text-gray-400 md:ml-10"
+//               onClick={() => ShowMenu((state) => !Menu)}
+//             >
+//               <Link href={"/Podcasts"} passHref>
+//                 Podcasts
+//               </Link>
+//             </li>
