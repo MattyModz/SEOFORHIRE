@@ -11,7 +11,6 @@ import {
   LocationMarkerIcon,
   PencilIcon,
 } from "@heroicons/react/solid";
-import Thankyou from "./Thankyou";
 
 export default function Applicationform({ children }) {
   return (

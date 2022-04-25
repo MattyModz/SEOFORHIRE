@@ -65,7 +65,7 @@ export default function Form() {
     <Container className="border-4 border-red-400">
       <div>
         <div>
-          <motion.form
+          <form
             acceptCharset="UTF-8"
             method="POST"
             enctype="multipart/form-data"
@@ -188,7 +188,7 @@ export default function Form() {
                 <span className="button-text">Apply</span>
               </button>
             </div>
-          </motion.form>
+          </form>
         </div>
         <div style={formStatus ? { display: "" } : { display: "none" }}>
           <Link href={"/About"}>

@@ -110,6 +110,10 @@ export default function Home({ jobs }) {
 // }
 
 export async function getStaticProps() {
+  const MY_PLAYLIST = process.env.YOUTUBE_PLAYLIST_ID;
+  const API_KEY = process.env.YOUTUBE_API_KEY;
+  const REQUEST_URL = ``;
+
   const { data: job } = await client.query({
     query: gql`
       query AllJobs {
@@ -136,6 +140,8 @@ export async function getStaticProps() {
   return {
     props: {
       jobs: job.jobs.nodes,
+      results: "test",
     },
+    revalidate: 10,
   };
 }

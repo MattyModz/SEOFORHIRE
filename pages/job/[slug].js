@@ -57,7 +57,7 @@ export default function PostPage({ job }) {
         />
       </div>
 
-      <div>
+      <div className="p-4">
         <button
           className="learn-more rounded-full bg-gray-200 bg-opacity-50"
           onClick={() => setShowModal(true)}
