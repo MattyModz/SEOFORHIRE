@@ -79,19 +79,17 @@ export default function Nav() {
                   Home
                 </Link>
               </li>
+
               <li
                 className="text-white font-bold cursor-pointer hover:text-gray-400 md:ml-10"
                 onClick={() => ShowMenu((state) => !Menu)}
               >
-                <Link href={"/About"} passHref>
-                  About
-                </Link>
-              </li>
-              <li
-                className="text-white font-bold cursor-pointer hover:text-gray-400 md:ml-10"
-                onClick={() => ShowMenu((state) => !Menu)}
-              >
-                <Link href={"/Podcasts"} passHref>
+                <Link
+                  href={
+                    "https://www.youtube.com/playlist?list=PLfB1NYSwR98S0z51PF7-p52gZFqaJnv4m"
+                  }
+                  passHref
+                >
                   Podcasts
                 </Link>
               </li>
