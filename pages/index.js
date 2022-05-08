@@ -7,10 +7,10 @@ import Verticlemarquee from "../src/componants/Hero/VerticleMarquee";
 import Verticlemarquee2 from "../src/componants/Hero/VerticleMarquee/index2";
 import Verticlemarquee3 from "../src/componants/Hero/VerticleMarquee/index 3";
 import client from "../lib/apollo";
-import Values from "../src/componants/Values";
+// import Values from "../src/componants/Values";
 import { gql } from "@apollo/client";
-import Josh from "../src/componants/josh";
-import Core from "../src/componants/valuesslider/corevalues";
+// import Josh from "../src/componants/josh";
+// import Core from "../src/componants/valuesslider/corevalues";
 // import Blogindex from "../src/componants/Blog/Indexsingle";
 // import Postcollection from "../src/componants/Blog/Postcollection";
 import Container from "../src/componants/container";
@@ -85,14 +85,10 @@ export default function Home({ jobs, posts }) {
             ))}
           </div>
         </div>
-        <Core />
-        <Container>
-          <div className=" flex justify-center bg-royal rounded-xl">
-            <Josh />
-          </div>
-        </Container>
 
-        <Values />
+        <Container>
+          <div className=" flex justify-center bg-royal rounded-xl"></div>
+        </Container>
       </section>
 
       {/* <div className=" pointer-cursor relative  max-w-7xl mx-auto   ">
