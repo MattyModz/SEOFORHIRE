@@ -67,14 +67,6 @@ export default function Nav() {
                 className="text-white font-bold cursor-pointer hover:text-gray-400 md:ml-10"
                 onClick={() => ShowMenu((state) => !Menu)}
               >
-                <Link href={"/contact"} passHref>
-                  Contact
-                </Link>
-              </li>
-              <li
-                className="text-white font-bold cursor-pointer hover:text-gray-400 md:ml-10"
-                onClick={() => ShowMenu((state) => !Menu)}
-              >
                 <Link href={"/"} passHref>
                   Home
                 </Link>
@@ -97,8 +89,8 @@ export default function Nav() {
                 className="text-white font-bold cursor-pointer hover:text-gray-400 md:ml-10"
                 onClick={() => ShowMenu((state) => !Menu)}
               >
-                <Link href={"/news"} passHref>
-                  News
+                <Link href={"/contact"} passHref>
+                  Contact
                 </Link>
               </li>
             </ul>
