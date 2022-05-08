@@ -9,8 +9,12 @@ import Verticlemarquee3 from "../src/componants/Hero/VerticleMarquee/index 3";
 import client from "../lib/apollo";
 import Values from "../src/componants/Values";
 import { gql } from "@apollo/client";
-
-export default function Home({ jobs }) {
+import Josh from "../src/componants/josh";
+import Core from "../src/componants/valuesslider/corevalues";
+// import Blogindex from "../src/componants/Blog/Indexsingle";
+import Postcollection from "../src/componants/Blog/Postcollection";
+import Container from "../src/componants/container";
+export default function Home({ jobs, posts }) {
   return (
     <>
       <section className="   relative ">
@@ -81,6 +85,13 @@ export default function Home({ jobs }) {
             ))}
           </div>
         </div>
+        <Core />
+        <Container>
+          <div className=" flex justify-center bg-royal rounded-xl">
+            <Josh />
+          </div>
+        </Container>
+
         <Values />
       </section>
 
@@ -96,18 +107,6 @@ export default function Home({ jobs }) {
 //  <Modal open={isOpen} onClose={() => setIsOpen(false)}>
 //    Fancy Mo dal
 //  </Modal>;
-
-// export async function getStaticProps() {
-//   const { data: post } = await client.query({
-//     query: BLOG_COMP,
-//   });
-
-//   return {
-//     props: {
-//       posts: post.posts.nodes,
-//     },
-//   };
-// }
 
 export async function getStaticProps() {
   const { data: job } = await client.query({
@@ -133,10 +132,40 @@ export async function getStaticProps() {
     `,
   });
 
+  const { data: post } = await client.query({
+    query: gql`
+      query Blog {
+        posts(first: 3, where: { orderby: { field: DATE, order: DESC } }) {
+          nodes {
+            slug
+            title
+            excerpt
+            date
+            id
+            author {
+              node {
+                name
+                avatar {
+                  url
+                }
+              }
+            }
+
+            featuredImage {
+              node {
+                sourceUrl
+              }
+            }
+          }
+        }
+      }
+    `,
+  });
+
   return {
     props: {
       jobs: job.jobs.nodes,
-      results: "test",
+      posts: post.posts.nodes,
     },
     revalidate: 10,
   };

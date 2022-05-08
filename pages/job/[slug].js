@@ -72,6 +72,9 @@ export default function PostPage({ job }) {
       <div>
         <Modal open={showModal} onClose={() => setShowModal(false)}>
           {joblist.jobListing.positionTitle}
+          {joblist.jobListing.type}
+          {joblist.jobListing.location}
+          {joblist.jobListing.salary}
         </Modal>
       </div>
     </Joblayout>

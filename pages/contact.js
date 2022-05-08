@@ -22,7 +22,7 @@ const Contact = () => {
       const response = await axios(config);
       console.log(response);
       if (response.status == 200) {
-        router.push("/index");
+        router.push("/");
       }
     } catch (err) {}
   }

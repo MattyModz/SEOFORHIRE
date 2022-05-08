@@ -1,5 +1,7 @@
 import Marquee from "react-fast-marquee";
 import Review from "./review";
+import ReviewCharlie from "./Charlie";
+import ReviewMark from "./Gary";
 export default function Verticlemarquee2() {
   return (
     <>
@@ -10,7 +12,8 @@ export default function Verticlemarquee2() {
         direction={"right"}
         pauseOnHover={true}
       >
-        <Review />
+        <ReviewMark />
+        <ReviewCharlie />
         <Review />
       </Marquee>
     </>

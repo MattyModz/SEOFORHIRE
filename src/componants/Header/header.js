@@ -6,6 +6,7 @@ const Header = () => {
       <head>
         <title>SeoforHire</title>
         <link rel="stylesheet" href="../src/styles/index.scss" />
+
         <link rel="icon" href="./logo.png"></link>
 
         <script

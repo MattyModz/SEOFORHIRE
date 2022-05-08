@@ -93,6 +93,14 @@ export default function Nav() {
                   Podcasts
                 </Link>
               </li>
+              <li
+                className="text-white font-bold cursor-pointer hover:text-gray-400 md:ml-10"
+                onClick={() => ShowMenu((state) => !Menu)}
+              >
+                <Link href={"/news"} passHref>
+                  News
+                </Link>
+              </li>
             </ul>
           </div>
         </div>
