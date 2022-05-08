@@ -9,7 +9,7 @@ export default function ReviewGary() {
           href="https://www.youtube.com/watch?v=3qcomA9xLJo&t"
         >
           <Image
-            src={"/Garywilson.jpg"}
+            src={"/Garywilson.png"}
             width={330}
             height={200}
             alt="podcastimg"
