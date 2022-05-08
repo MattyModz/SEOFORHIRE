@@ -12,7 +12,7 @@ import { gql } from "@apollo/client";
 import Josh from "../src/componants/josh";
 import Core from "../src/componants/valuesslider/corevalues";
 // import Blogindex from "../src/componants/Blog/Indexsingle";
-import Postcollection from "../src/componants/Blog/Postcollection";
+// import Postcollection from "../src/componants/Blog/Postcollection";
 import Container from "../src/componants/container";
 export default function Home({ jobs, posts }) {
   return (
