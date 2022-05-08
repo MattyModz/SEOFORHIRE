@@ -7,7 +7,7 @@ export default function Verticlemarquee3() {
     <>
       <Marquee className="" gradientColor={[0, 0, 0]} delay={3} speed={44}>
         <Review />
-
+        <ReviewGary />
         <ReviewCharlie />
       </Marquee>
     </>
