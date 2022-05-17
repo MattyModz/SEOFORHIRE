@@ -20,8 +20,8 @@ export default function CandidatePage({ app }) {
       experience={application.candidate.yearsOfExperience}
       salary={application.candidate.salary}
     >
-      <div className="rounded-xl bg-white p-8 text-black ">
-        <div class="max-w-4xl  bg-white w-full rounded-lg shadow-xl ">
+      <div className="rounded-xl bg-white p-8 text-black w- ">
+        <div class="max-w-9xl  bg-white w-full rounded-lg shadow-xl ">
           <div class="p-4 border-b py-8">
             <h2 class="text-2xl ">Applicant Information</h2>
             <p class="text-sm text-gray-500">
@@ -118,7 +118,7 @@ export default function CandidatePage({ app }) {
               <button
                 className="learn-more rounded-full bg-gray-200 bg-opacity-50"
                 onClick={() => {
-                  setShowModal(true, setForm(<Formone />));
+                  setShowModal(true, setForm("Form1"));
                 }}
               >
                 <span className="circle" aria-hidden="true">

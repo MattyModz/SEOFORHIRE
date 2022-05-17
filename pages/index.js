@@ -7,7 +7,7 @@ import Verticlemarquee from "../src/componants/Hero/VerticleMarquee";
 import Verticlemarquee2 from "../src/componants/Hero/VerticleMarquee/index2";
 import Verticlemarquee3 from "../src/componants/Hero/VerticleMarquee/index 3";
 import client from "../lib/apollo";
-// import Link from "next/link";
+import Link from "next/link";
 
 import Values from "../src/componants/Values";
 import { gql } from "@apollo/client";
@@ -17,7 +17,7 @@ import Candlisting from "../src/componants/Candidates/candidatelist";
 // import Blogindex from "../src/componants/Blog/Indexsingle";
 // import Postcollection from "../src/componants/Blog/Postcollection";
 import Container from "../src/componants/container";
-// import Applic from "../src/componants/appplic";
+import Applic from "../src/componants/appplic";
 import Candhero from "../src/componants/Candidates/candidatehero";
 
 export default function Home({ jobs, posts, applicant }) {
@@ -39,18 +39,19 @@ export default function Home({ jobs, posts, applicant }) {
                 </h1>
               </div>
               <div className="flex flex-col items-center justify-center w-full mb-10 sm:flex-row sm:mb-20">
-                <a
-                  href="#_"
-                  className="w-full font-bold px-8 py-3 text-lg text-center text-royal transition duration-150 ease-in-out bg-white rounded-md sm:w-auto focus:outline-none"
-                >
-                  Get Started
-                </a>
-                <a
-                  href="#_"
-                  className="w-full px-8 py-3 mt-5 ml-3 font-bold text-lg text-center text-white transition duration-150 ease-in-out bg-transparent border border-white rounded-md sm:ml-6 sm:w-auto sm:mt-0 focus:outline-none hover:bg-white hover:text-royal"
-                >
-                  Learn More
-                </a>
+                <Link href="#candidate">
+                  <a className="w-full font-bold px-8 py-3 text-lg text-center text-royal transition duration-150 ease-in-out bg-white rounded-md sm:w-auto focus:outline-none">
+                    Explore candidates
+                  </a>
+                </Link>
+                <Link href="#job">
+                  <a
+                    href="#_"
+                    className="w-full px-8 py-3 mt-5  font-bold text-lg text-center text-white transition duration-150 ease-in-out bg-transparent border border-white rounded-md sm:ml-6 sm:w-auto sm:mt-0 focus:outline-none hover:bg-white hover:text-royal"
+                  >
+                    View Jobs
+                  </a>
+                </Link>
               </div>
 
               <div>
@@ -82,7 +83,10 @@ export default function Home({ jobs, posts, applicant }) {
           </div>
         </div>
 
-        <div className="container rounded-xl flex justify-center mx-auto -mt-20 md:-mt-56 sm:-mt-20 mb-10 overflow-hidden ">
+        <div
+          id="job"
+          className="container rounded-xl flex justify-center mx-auto -mt-20 md:-mt-56 sm:-mt-20 mb-10 overflow-hidden "
+        >
           <div className=" w-11/12  rounded-xl sm:w-2/3">
             {jobs.map((job) => (
               <Joblisting
@@ -100,12 +104,15 @@ export default function Home({ jobs, posts, applicant }) {
       </section>
 
       <section>
+        <div id="candidate" className="">
+          <Applic />
+        </div>
         <Container>
-          <div className="p-4">
-            <div className="">
+          <div className="p-4 ">
+            <div className="lg:grid grid-cols-2 gap-3">
               {applicant.map((app, index) =>
                 index === 0 ? (
-                  <div className="grid grid-cols-1">
+                  <div className="col-span-2 -mt-40 md:-mt-48 sm:-mt-20 mb-10 overflow-hidden z-999 ">
                     <Candhero
                       key={app.slug}
                       slug={app.slug}
@@ -116,7 +123,7 @@ export default function Home({ jobs, posts, applicant }) {
                     />
                   </div>
                 ) : (
-                  <div className="mt-12 max-w-lg mx-auto grid gap-5 grid-cols-2 lg:max-w-none pointer-cursor w-full">
+                  <div className="w-full max-w-lg mx-auto mt-4 lg:max-w-none pointer-cursor">
                     <Candlisting
                       key={app.slug}
                       slug={app.slug}
@@ -131,8 +138,6 @@ export default function Home({ jobs, posts, applicant }) {
             </div>
           </div>
         </Container>
-
-        <Values />
       </section>
 
       {/* <div className=" pointer-cursor relative  max-w-7xl mx-auto   ">

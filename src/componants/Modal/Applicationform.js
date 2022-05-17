@@ -19,13 +19,6 @@ export default function Applicationform({ children }) {
   const { form, setForm } = myContextform();
   console.log(form);
 
-  //  {
-  //    form ? candidate(hire) : candidate(apply);
-  //  }
-  //  {
-  //    children[0];
-  //  }
-
   return (
     <>
       <Container className="">
@@ -48,7 +41,7 @@ export default function Applicationform({ children }) {
               <Image src={"/logo.png"} width={50} height={50} alt="Logo" />
               <p className="text-xs font-bold text-blue-500 uppercase"></p>
               <h2 className="mt-1 text-2xl font-bold text-left text-white lg:text-3xl md:mt-2">
-                Hire for - {children[0]}
+                {form === "Form1" ? "Hire" : "Apply"} - {children[0]}
               </h2>
 
               <div className="py-8 md:flex sm:block  ">
@@ -58,7 +51,7 @@ export default function Applicationform({ children }) {
                       className="flex-shrink-0 mr-1.5 h-5 w-5 text-white"
                       aria-hidden="true"
                     />
-                    <div>{children[1]}</div>
+                    <div>{children[1]} Years experience</div>
                   </div>
                 </div>
 
@@ -85,7 +78,9 @@ export default function Applicationform({ children }) {
               </div>
             </div>
 
-            <div className="w-full">{form} </div>
+            <div className="w-full">
+              {form === "Form1" ? <Form1 /> : <Form />}
+            </div>
           </div>
         </motion.div>
       </Container>

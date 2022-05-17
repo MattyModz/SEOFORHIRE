@@ -1,82 +1,51 @@
+import Candhero from "./Candidates/candidatehero";
+
 export default function Applic() {
   return (
-    <div>
-      <div class="w-full h-full mt-2">
-        <div class="mx-auto max-w-7xl lg:px-10">
-          <div class="flex flex-col items-start justify-center py-12 bg-gray-100 lg:rounded-xl px-14 md:py-20 xl:px-20 xl:py-20 md:flex-row">
-            <div class="flex flex-col items-start justify-center w-full space-y-10 text-left md:w-1/2 sm:text-center md:text-left sm:items-center md:items-start">
-              <div class="relative">
-                <h1 class="font-serif text-4xl leading-tight text-gray-900 xl:text-5xl">
-                  Explore New Design
-                  <br />
-                  Concepts with Tails
-                </h1>
-              </div>
-              <p class="max-w-lg text-gray-600 md:max-w-none">
-                Choose from hundreds of templates you can combine together to
-                create a unique experience for your users.
-              </p>
+    <section className="">
+      <div className="relative  w-full">
+        <svg
+          className="fill-royal text-gray-100"
+          viewBox="0 0 900 45"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="m0 4 50 3c50 3 150 9 250 13.7 100 4.6 200 8 300 4.3S800 10.7 850 5.3L900 0v45H0V4Z"
+            fillRule="#fff"
+          ></path>
+        </svg>
+      </div>
+      <div className="w-full bg-royal">
+        <section class=" w-full pt-20 bg-gradient-to-b from-royal via-blue-900 to-royal">
+          <div class="  max-w-3xl px-12 mx-auto space-y-5 text-center lg:px-0">
+            <h1 class="text-6xl font-black text-white lg:text-7xl">
+              Candidate Showcase.
+            </h1>
+            <p class="text-lg font-medium text-gray-200">
+              Show casing our brightest talent across all things SEO, digital
+              marketing and web development.
+            </p>
+            <div className="py-4">
               <a
-                href="#_"
-                class="w-full px-12 py-5 text-sm font-medium text-center text-white uppercase bg-gray-900 rounded-full sm:w-auto"
+                href="/contact"
+                className="w-full font-bold px-8 py-3 text-lg text-center text-royal transition duration-150 ease-in-out bg-white rounded-md sm:w-auto focus:outline-none"
               >
-                Join for Free
+                Help me hire
               </a>
-            </div>
-            <div class="relative flex justify-end md:w-1/2">
-              <img
-                src="https://cdn.devdojo.com/images/october2021/ghost-design.png"
-                class="top-0 w-1/2 mx-auto mt-16 transform -translate-x-8 md:absolute md:mt-0 md:translate-x-0 md:w-5/6"
-              />
             </div>
           </div>
 
-          <div class="flex flex-col w-full lg:flex-row lg:space-x-10 lg:mt-10 sm:pb-10">
-            <div class="flex flex-col items-center justify-between w-full p-0 overflow-hidden bg-yellow-100 lg:rounded-2xl sm:flex-row lg:justify-start sm:p-10">
-              <div class="relative flex items-center p-8 sm:p-0">
-                <img
-                  src="https://cdn-icons-png.flaticon.com/512/1089/1089430.png"
-                  class="w-20 mr-5"
-                />
-                <div class="relative pr-5">
-                  <h2 class="font-medium text-yellow-800">Get Started Today</h2>
-                  <p class="mt-1 text-sm text-yellow-600">
-                    Start crafting the page of your dreams
-                  </p>
-                </div>
-              </div>
-              <a
-                href="#_"
-                class="inline-flex justify-center flex-shrink-0 w-full px-5 py-3 mt-2 text-xs font-medium text-center text-white uppercase bg-yellow-400 sm:rounded-full sm:w-auto"
-              >
-                Join for Free
-              </a>
-            </div>
-            <div class="flex flex-col items-center justify-between w-full p-0 overflow-hidden bg-purple-100 lg:rounded-2xl sm:flex-row lg:justify-start sm:p-10">
-              <div class="relative flex items-center p-8 sm:p-0">
-                <img
-                  src="https://cdn-icons-png.flaticon.com/512/1089/1089434.png"
-                  class="w-20 mr-5"
-                />
-                <div class="relative pr-5">
-                  <h2 class="font-medium text-purple-800">
-                    Everyone Loves Candy
-                  </h2>
-                  <p class="mt-1 text-sm text-purple-600">
-                    It's eye-candy to delight your users
-                  </p>
-                </div>
-              </div>
-              <a
-                href="#_"
-                class="inline-flex justify-center flex-shrink-0 w-full px-5 py-3 mt-2 text-xs font-medium text-center text-white uppercase bg-purple-400 sm:rounded-full sm:w-auto"
-              >
-                Join for Free
-              </a>
-            </div>
-          </div>
-        </div>
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+        </section>
       </div>
-    </div>
+    </section>
   );
 }

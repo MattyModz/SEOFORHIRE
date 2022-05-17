@@ -49,7 +49,7 @@ export default function Candidatelayout({
               className="flex-shrink-0 mr-1.5 h-5 w-5 text-white"
               aria-hidden="true"
             />
-            {experience} Years experience
+            {experience} Years
           </div>
 
           <div class="flex rounded-full  px-3 py-1.5 bg-gray-100 bg-opacity-10  text-gray-100 mb-4">
@@ -58,7 +58,7 @@ export default function Candidatelayout({
               aria-hidden="true"
             />
 
-            <h6 class="font-normal text-xs uppercase"> {joblocation}</h6>
+            <h6 class=""> {joblocation}</h6>
           </div>
 
           <div class="flex rounded-full  px-3 py-1.5 bg-gray-100 bg-opacity-10 text-gray-100 mb-4">

@@ -71,10 +71,13 @@ export default function Joblisting({
               <button
                 class="learn-more bg-gray-100 rounded-full"
                 onClick={() => {
-                  setShowModal(true, setForm(<Form />));
+                  setShowModal(true, setForm("Form"));
                 }}
               >
-                <span class="circle" aria-hidden="true">
+                <span
+                  class="circle border-2 border-opacity-50 border-blue-300"
+                  aria-hidden="true"
+                >
                   <span class="icon arrow"></span>
                 </span>
                 <span class="button-text">Apply</span>
@@ -87,11 +90,14 @@ export default function Joblisting({
           <div className="mt-5 mr-2   lg:mt-0 lg:ml-4">
             <span className="">
               <Link href={`/job/${slug}`}>
-                <button class="learn-more bg-blue-300 bg-opacity-30 rounded-full">
-                  <span class="circle" aria-hidden="true">
+                <button class="learn-more bg-blue-300 bg-opacity-30 rounded-full ">
+                  <span
+                    class="circle border-2 border-opacity-50 border-blue-300"
+                    aria-hidden="true"
+                  >
                     <span class="icon arrow"></span>
                   </span>
-                  <span class="button-text">View</span>
+                  <span class="button-text ">View</span>
                 </button>
               </Link>
             </span>
