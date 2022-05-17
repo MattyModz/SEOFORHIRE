@@ -78,7 +78,7 @@ export default function Nav() {
               >
                 <Link
                   href={
-                    "https://www.youtube.com/playlist?list=PLfB1NYSwR98S0z51PF7-p52gZFqaJnv4m"
+                    "https://www.youtube.com/channel/UCoTNdJ9rrEhQuAhbXo35oNw"
                   }
                   passHref
                 >

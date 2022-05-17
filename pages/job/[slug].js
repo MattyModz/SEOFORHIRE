@@ -3,8 +3,12 @@ import client from "../../lib/apollo";
 import Joblayout from "../../src/componants/Layout/Joblayout";
 import Modal from "../../src/componants/Modal/Modal";
 import { myContext } from "../../Context/Context";
+// import Form from "../../src/componants/Modal/Form";
+import { myContextform } from "../../Context/Contextform";
 export default function PostPage({ job }) {
   const { showModal, setShowModal } = myContext();
+  const { form, setForm } = myContextform();
+  console.log(form);
   const joblist = job;
   return (
     <Joblayout
@@ -17,7 +21,9 @@ export default function PostPage({ job }) {
         <div className="">
           <button
             className="learn-more rounded-full bg-gray-200 bg-opacity-50"
-            onClick={() => setShowModal(true)}
+            onClick={() => {
+              setShowModal(true, setForm("Form"));
+            }}
           >
             <span className="circle" aria-hidden="true">
               <span className="icon arrow"></span>
@@ -60,7 +66,9 @@ export default function PostPage({ job }) {
       <div className="p-4">
         <button
           className="learn-more rounded-full bg-gray-200 bg-opacity-50"
-          onClick={() => setShowModal(true)}
+          onClick={() => {
+            setShowModal(true, setForm("Form"));
+          }}
         >
           <span className="circle" aria-hidden="true">
             <span className="icon arrow"></span>
@@ -85,7 +93,7 @@ export async function getStaticPaths() {
   const result = await client.query({
     query: gql`
       query JobsBySlug {
-        jobs(first: 3) {
+        jobs(first: 5) {
           nodes {
             slug
           }

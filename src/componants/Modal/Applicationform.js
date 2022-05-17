@@ -1,8 +1,10 @@
 import { useState } from "react";
 import Form from "./Form";
+import Form1 from "./Form1";
 import Container from "../container";
 import Image from "next/image";
 import { motion } from "framer-motion";
+import { myContextform } from "../../../Context/Contextform";
 import {
   BriefcaseIcon,
   CalendarIcon,
@@ -10,9 +12,13 @@ import {
   LinkIcon,
   LocationMarkerIcon,
   PencilIcon,
+  CollectionIcon,
 } from "@heroicons/react/solid";
 
 export default function Applicationform({ children }) {
+  const { form, setForm } = myContextform();
+  console.log(form);
+
   return (
     <>
       <Container className="">
@@ -35,17 +41,17 @@ export default function Applicationform({ children }) {
               <Image src={"/logo.png"} width={50} height={50} alt="Logo" />
               <p className="text-xs font-bold text-blue-500 uppercase"></p>
               <h2 className="mt-1 text-2xl font-bold text-left text-white lg:text-3xl md:mt-2">
-                Apply for - {children[0]}
+                {form === "Form1" ? "Hire" : "Apply"} - {children[0]}
               </h2>
 
               <div className="py-8 md:flex sm:block  ">
                 <div className="flex ">
                   <div className="flex rounded-full  px-3 py-1.5 bg-gray-100 bg-opacity-10  text-gray-100 mb-4">
-                    <BriefcaseIcon
+                    <CollectionIcon
                       className="flex-shrink-0 mr-1.5 h-5 w-5 text-white"
                       aria-hidden="true"
                     />
-                    <div>{children[1]}</div>
+                    <div>{children[1]} Years experience</div>
                   </div>
                 </div>
 
@@ -73,7 +79,7 @@ export default function Applicationform({ children }) {
             </div>
 
             <div className="w-full">
-              <Form />
+              {form === "Form1" ? <Form1 /> : <Form />}
             </div>
           </div>
         </motion.div>

@@ -48,7 +48,7 @@ const Footer = () => {
           </a>
         </div>
         <p class="mt-8 text-base leading-6 text-center text-gray-400">
-          SEO for Hire is regsitered company
+          SEO for Hire is registered company
         </p>
       </div>
     </section>
