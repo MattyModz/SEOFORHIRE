@@ -1,6 +1,8 @@
 import Link from "next/link";
 import Modal from "../Modal/Modal";
 import { useState, useEffect } from "react";
+import Form from "../Modal/Form";
+import { myContextform } from "../../../Context/Contextform";
 import {
   BriefcaseIcon,
   CurrencyPoundIcon,
@@ -21,7 +23,8 @@ export default function Joblisting({
     const body = document.querySelector("body");
     body.style.overflow = showModal ? "hidden" : "auto";
   }, [showModal]);
-
+  const { form, setForm } = myContextform();
+  console.log(form);
   return (
     <div className="lg:flex bg-white cursor-pointer border p-4 mb-2 p-2 lg:items-center rounded-xl lg:justify-between">
       <div className="flex-1 rounded-xl  py-4 min-w-0">
@@ -67,7 +70,9 @@ export default function Joblisting({
             <span className="">
               <button
                 class="learn-more bg-gray-100 rounded-full"
-                onClick={() => setShowModal(true)}
+                onClick={() => {
+                  setShowModal(true, setForm(<Form />));
+                }}
               >
                 <span class="circle" aria-hidden="true">
                   <span class="icon arrow"></span>

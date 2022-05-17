@@ -7,19 +7,30 @@ import Verticlemarquee from "../src/componants/Hero/VerticleMarquee";
 import Verticlemarquee2 from "../src/componants/Hero/VerticleMarquee/index2";
 import Verticlemarquee3 from "../src/componants/Hero/VerticleMarquee/index 3";
 import client from "../lib/apollo";
-// import Values from "../src/componants/Values";
+// import Link from "next/link";
+
+import Values from "../src/componants/Values";
 import { gql } from "@apollo/client";
+import Candlisting from "../src/componants/Candidates/candidatelist";
 // import Josh from "../src/componants/josh";
 // import Core from "../src/componants/valuesslider/corevalues";
 // import Blogindex from "../src/componants/Blog/Indexsingle";
 // import Postcollection from "../src/componants/Blog/Postcollection";
 import Container from "../src/componants/container";
-export default function Home({ jobs, posts }) {
+// import Applic from "../src/componants/appplic";
+import Candhero from "../src/componants/Candidates/candidatehero";
+
+export default function Home({ jobs, posts, applicant }) {
+  const app = applicant;
+  console.log(applicant);
   return (
     <>
       <section className="   relative ">
         <div className="flex flex-wrap w-full bg-gradient-to-br from-[#1A0976] via-[#100750] to-black ">
-          <div className="w-full xl:w-1/2  ">
+          <div className="group  w-full xl:w-1/2 flex items-stretch  ">
+            {/* <div className="group-item absolute ">
+              <img src="logo.svg" className="opacity-5 rotate-45 self-end" />
+            </div> */}
             <div className=" w-full   flex flex-col items-center px-8 pt-12 pb-24 mx-auto sm:rounded-lg  sm:pt-20 sm:pb-32 md:pb-48 lg:pb-56 xl:pb-64 sm:px-0">
               <div className="w-full mb-5 sm:w-11/12 lg:w-2/3 lg:mb-10">
                 <h1 className="pt-5 text-2xl font-bold text-left text-white md:pt-8 sm:text-center lg:pt-20 sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl">
@@ -41,6 +52,7 @@ export default function Home({ jobs, posts }) {
                   Learn More
                 </a>
               </div>
+
               <div>
                 <div className="flex pb-2 justify-center">
                   <Image
@@ -85,10 +97,42 @@ export default function Home({ jobs, posts }) {
             ))}
           </div>
         </div>
+      </section>
 
+      <section>
         <Container>
-          <div className=" flex justify-center bg-royal rounded-xl"></div>
+          <div className="p-4">
+            <div className="">
+              {applicant.map((app, index) =>
+                index === 0 ? (
+                  <div className="grid grid-cols-1">
+                    <Candhero
+                      key={app.slug}
+                      slug={app.slug}
+                      jobTitle={app.candidate.jobTitle}
+                      salary={app.candidate.salary}
+                      yearsOfExperience={app.candidate.yearsOfExperience}
+                      locaiton={app.candidate.locaiton}
+                    />
+                  </div>
+                ) : (
+                  <div className="mt-12 max-w-lg mx-auto grid gap-5 grid-cols-2 lg:max-w-none pointer-cursor w-full">
+                    <Candlisting
+                      key={app.slug}
+                      slug={app.slug}
+                      jobTitle={app.candidate.jobTitle}
+                      salary={app.candidate.salary}
+                      yearsOfExperience={app.candidate.yearsOfExperience}
+                      locaiton={app.candidate.locaiton}
+                    />
+                  </div>
+                )
+              )}
+            </div>
+          </div>
         </Container>
+
+        <Values />
       </section>
 
       {/* <div className=" pointer-cursor relative  max-w-7xl mx-auto   ">
@@ -158,11 +202,68 @@ export async function getStaticProps() {
     `,
   });
 
+  const { data: app } = await client.query({
+    query: gql`
+      query Getcandidates {
+        candiates(first: 10) {
+          nodes {
+            id
+            slug
+            candidate {
+              id
+              additionalInfo
+              availability
+              jobTitle
+              locaiton
+              name
+              yearsOfExperience
+              specialism
+              salary
+              portfolio
+            }
+          }
+        }
+      }
+    `,
+  });
+
   return {
     props: {
       jobs: job.jobs.nodes,
       posts: post.posts.nodes,
+      applicant: app.candiates.nodes,
     },
     revalidate: 10,
   };
 }
+
+// <div>
+//   {" "}
+//   {applicant.map((app) => {
+//     return (
+//       <div key={app.id}>
+//         <div className="">
+//           <section className=" place-items-center py-8  rounded-xl ">
+//             <div className="max-w-lg lg:max-w-none mx-auto lg:mx-0">
+//               <div className="px-10 mx-auto max-w-7xl md:px-16 text-2xl">
+//                 <div className="max-w-3xl mx-auto bg-royal rounded-xl  text-white  b-10 md:mb-16">
+//                   <Link href={`/candidate/${app.candidate.slug}`}>
+//                     <h2 className="text-2xl px-3 font-bold leading-7 text-black sm:text-3xl sm:truncate">
+//                       {app.candidate.jobTitle}
+//                     </h2>
+//                   </Link>
+//                   <br />
+//                   <br />
+//                 </div>
+//               </div>
+//             </div>
+//           </section>
+//         </div>
+//       </div>
+//     );
+//   })}
+// </div>;
+
+// <div className="flex text-center opacity-30 font-bold text-7xl ">
+//   <div>Candidate Showcase</div>
+// </div>;
