@@ -5,10 +5,10 @@ import Modal from "../../src/componants/Modal/Modal";
 import { myContext } from "../../Context/Context";
 import { myContextform } from "../../Context/Contextform";
 
-import Formone from "../../src/componants/Modal/Form1";
+// import Formone from "../../src/componants/Modal/Form1";
 export default function CandidatePage({ app }) {
   const { showModal, setShowModal } = myContext();
-  const { form, setForm } = myContextform();
+
   console.log(app);
   const application = app;
 

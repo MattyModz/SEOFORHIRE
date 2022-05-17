@@ -21,7 +21,6 @@ import Applic from "../src/componants/appplic";
 import Candhero from "../src/componants/Candidates/candidatehero";
 
 export default function Home({ jobs, posts, applicant }) {
-  const app = applicant;
   console.log(applicant);
   return (
     <>
