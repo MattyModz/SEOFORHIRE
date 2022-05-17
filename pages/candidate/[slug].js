@@ -3,7 +3,7 @@ import client from "../../lib/apollo";
 import Candidatelayout from "../../src/componants/Layout/candidatelayout";
 import Modal from "../../src/componants/Modal/Modal";
 import { myContext } from "../../Context/Context";
-import { myContextform } from "../../Context/Contextform";
+// import { myContextform } from "../../Context/Contextform";
 
 // import Formone from "../../src/componants/Modal/Form1";
 export default function CandidatePage({ app }) {
