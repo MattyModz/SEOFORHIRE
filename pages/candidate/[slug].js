@@ -21,16 +21,16 @@ export default function CandidatePage({ app }) {
       salary={application.candidate.salary}
     >
       <div className="rounded-xl bg-white p-8 text-black w- ">
-        <div class="max-w-9xl  bg-white w-full rounded-lg shadow-xl ">
-          <div class="p-4 border-b py-8">
-            <h2 class="text-2xl ">Applicant Information</h2>
-            <p class="text-sm text-gray-500">
+        <div className="max-w-9xl  bg-white w-full rounded-lg shadow-xl ">
+          <div className="p-4 border-b py-8">
+            <h2 className="text-2xl ">Applicant Information</h2>
+            <p className="text-sm text-gray-500">
               Personal details and application.
             </p>
           </div>
           <div>
-            <div class="md:grid md:grid-cols-2 hover:bg-gray-50 md:space-y-0 space-y-1 p-4 border-b">
-              <p class="text-gray-600">Job ID</p>
+            <div className="md:grid md:grid-cols-2 hover:bg-gray-50 md:space-y-0 space-y-1 p-4 border-b">
+              <p className="text-gray-600">Job ID</p>
               <div className="flex">
                 <div
                   className=" flex  items-center text-sm  -ml-2 bg-royal bg-opacity-90 flex rounded-full px-3 py-1.5   text-white font-bold "
@@ -40,8 +40,8 @@ export default function CandidatePage({ app }) {
                 />
               </div>
             </div>
-            <div class="md:grid md:grid-cols-2 hover:bg-gray-50 md:space-y-0 space-y-1 p-4 border-b">
-              <p class="text-gray-600">Application for</p>
+            <div className="md:grid md:grid-cols-2 hover:bg-gray-50 md:space-y-0 space-y-1 p-4 border-b">
+              <p className="text-gray-600">Application for</p>
               <div className="flex">
                 <div
                   className=" flex  items-center text-sm  -ml-2 bg-royal bg-opacity-90 flex rounded-full px-3 py-1.5   text-white font-bold "
@@ -51,8 +51,8 @@ export default function CandidatePage({ app }) {
                 />
               </div>
             </div>
-            <div class="md:grid md:grid-cols-2 hover:bg-gray-50 md:space-y-0 space-y-1 p-4 border-b">
-              <p class="text-gray-600">Location</p>
+            <div className="md:grid md:grid-cols-2 hover:bg-gray-50 md:space-y-0 space-y-1 p-4 border-b">
+              <p className="text-gray-600">Location</p>
 
               <div className="flex">
                 <div
@@ -63,8 +63,8 @@ export default function CandidatePage({ app }) {
                 />
               </div>
             </div>
-            <div class="md:grid md:grid-cols-2 hover:bg-gray-50 md:space-y-0 space-y-1 p-4 border-b">
-              <p class="text-gray-600">Years of experience</p>
+            <div className="md:grid md:grid-cols-2 hover:bg-gray-50 md:space-y-0 space-y-1 p-4 border-b">
+              <p className="text-gray-600">Years of experience</p>
               <div className="flex">
                 <div
                   className=" flex  items-center text-sm  -ml-2 bg-royal bg-opacity-90 flex rounded-full px-5 py-1.5   text-white font-bold "
@@ -74,8 +74,8 @@ export default function CandidatePage({ app }) {
                 />
               </div>
             </div>
-            <div class="md:grid md:grid-cols-2 hover:bg-gray-50 md:space-y-0 space-y-1 p-4 border-b">
-              <p class="text-gray-600">Salary</p>
+            <div className="md:grid md:grid-cols-2 hover:bg-gray-50 md:space-y-0 space-y-1 p-4 border-b">
+              <p className="text-gray-600">Salary</p>
               <div className="flex">
                 <div
                   className=" flex  items-center text-sm  -ml-2 bg-royal bg-opacity-90 flex rounded-full px-3 py-1.5   text-white font-bold "
@@ -85,8 +85,8 @@ export default function CandidatePage({ app }) {
                 />
               </div>
             </div>
-            <div class="md:grid md:grid-cols-2 hover:bg-gray-50 md:space-y-0 space-y-1 p-4 border-b">
-              <p class="text-gray-600">specialism</p>
+            <div className="md:grid md:grid-cols-2 hover:bg-gray-50 md:space-y-0 space-y-1 p-4 border-b">
+              <p className="text-gray-600">specialism</p>
               <div className="flex">
                 <div
                   className=" flex  items-center text-sm  -ml-2 bg-royal bg-opacity-90 flex rounded-full px-3 py-1.5   text-white font-bold "
@@ -96,8 +96,8 @@ export default function CandidatePage({ app }) {
                 />
               </div>
             </div>
-            <div class="md:grid md:grid-cols-2 hover:bg-gray-50 md:space-y-0 space-y-1 p-4 border-b">
-              <p class="text-gray-600">About</p>
+            <div className="md:grid md:grid-cols-2 hover:bg-gray-50 md:space-y-0 space-y-1 p-4 border-b">
+              <p className="text-gray-600">About</p>
               <div
                 className=""
                 dangerouslySetInnerHTML={{
@@ -105,8 +105,8 @@ export default function CandidatePage({ app }) {
                 }}
               />
             </div>
-            <div class="md:grid md:grid-cols-2 hover:bg-gray-50 md:space-y-0 space-y-1 p-4 border-b">
-              <p class="text-gray-600">Portfolio</p>
+            <div className="md:grid md:grid-cols-2 hover:bg-gray-50 md:space-y-0 space-y-1 p-4 border-b">
+              <p className="text-gray-600">Portfolio</p>
               <div
                 className=""
                 dangerouslySetInnerHTML={{
@@ -213,14 +213,14 @@ export async function getStaticProps({ params }) {
 //    </button>
 //  </div>;
 
-// <div class="md:grid md:grid-cols-2 hover:bg-gray-50 md:space-y-0 space-y-1 p-4">
-//             <p class="text-gray-600">Attachments</p>
-//             <div class="space-y-2">
-//               <div class="border-2 flex items-center p-2 rounded justify-between space-x-2">
-//                 <div class="space-x-2 truncate">
+// <div className="md:grid md:grid-cols-2 hover:bg-gray-50 md:space-y-0 space-y-1 p-4">
+//             <p className="text-gray-600">Attachments</p>
+//             <div className="space-y-2">
+//               <div className="border-2 flex items-center p-2 rounded justify-between space-x-2">
+//                 <div className="space-x-2 truncate">
 //                   <svg
 //                     xmlns="http://www.w3.org/2000/svg"
-//                     class="fill-current inline text-gray-500"
+//                     className="fill-current inline text-gray-500"
 //                     width="24"
 //                     height="24"
 //                     viewBox="0 0 24 24"
@@ -229,16 +229,16 @@ export async function getStaticProps({ params }) {
 //                   </svg>
 //                   <span>resume_for_manager.pdf</span>
 //                 </div>
-//                 <a href="#" class="text-purple-700 hover:underline">
+//                 <a href="#" className="text-purple-700 hover:underline">
 //                   Download
 //                 </a>
 //               </div>
 
-//               <div class="border-2 flex items-center p-2 rounded justify-between space-x-2">
-//                 <div class="space-x-2 truncate">
+//               <div className="border-2 flex items-center p-2 rounded justify-between space-x-2">
+//                 <div className="space-x-2 truncate">
 //                   <svg
 //                     xmlns="http://www.w3.org/2000/svg"
-//                     class="fill-current inline text-gray-500"
+//                     className="fill-current inline text-gray-500"
 //                     width="24"
 //                     height="24"
 //                     viewBox="0 0 24 24"
@@ -247,7 +247,7 @@ export async function getStaticProps({ params }) {
 //                   </svg>
 //                   <span>resume_for_manager.pdf</span>
 //                 </div>
-//                 <a href="#" class="text-purple-700 hover:underline">
+//                 <a href="#" className="text-purple-700 hover:underline">
 //                   Download
 //                 </a>
 //               </div>

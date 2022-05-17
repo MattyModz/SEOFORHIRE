@@ -9,7 +9,7 @@ import Verticlemarquee3 from "../src/componants/Hero/VerticleMarquee/index 3";
 import client from "../lib/apollo";
 import Link from "next/link";
 
-import Values from "../src/componants/Values";
+// import Values from "../src/componants/Values";
 import { gql } from "@apollo/client";
 import Candlisting from "../src/componants/Candidates/candidatelist";
 // import Josh from "../src/componants/josh";

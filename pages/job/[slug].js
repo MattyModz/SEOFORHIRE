@@ -3,7 +3,7 @@ import client from "../../lib/apollo";
 import Joblayout from "../../src/componants/Layout/Joblayout";
 import Modal from "../../src/componants/Modal/Modal";
 import { myContext } from "../../Context/Context";
-import Form from "../../src/componants/Modal/Form";
+// import Form from "../../src/componants/Modal/Form";
 import { myContextform } from "../../Context/Contextform";
 export default function PostPage({ job }) {
   const { showModal, setShowModal } = myContext();
