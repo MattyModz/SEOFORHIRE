@@ -11,7 +11,7 @@ export default function CandidatePage({ app }) {
   const { form, setForm } = myContextform();
   console.log(app);
   const application = app;
-
+  console.log(form);
   return (
     <Candidatelayout
       Herotitle={application.candidate.jobTitle}
