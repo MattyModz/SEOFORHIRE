@@ -189,6 +189,7 @@ export async function getStaticProps({ params }) {
     props: {
       app: result.data.candidateBy,
     },
+    revalidate: 1,
   };
 }
 

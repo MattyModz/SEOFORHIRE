@@ -141,6 +141,7 @@ export async function getStaticProps({ params }) {
     props: {
       job: result.data.jobBy,
     },
+    revalidate: 10,
   };
 }
 
