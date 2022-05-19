@@ -22,8 +22,7 @@ export default function Applic() {
               Candidate Showcase.
             </h1>
             <p class="text-lg font-medium text-gray-200">
-              Show casing our brightest talent across all things SEO, digital
-              marketing and web development.
+              Show casing our brightest talent across all things SEO.
             </p>
             <div className="py-4">
               <a

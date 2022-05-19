@@ -168,12 +168,17 @@ export default function Formone() {
                 value={queryhire.salary}
                 onChange={handleChange()}
               >
-                <option value="Orange">£18k+</option>
-                <option value="Radish">£18-£24k</option>
-                <option value="Cherry">£24k - £30k</option>
-                <option value="Orange">£30k - £45k</option>
-                <option value="Radish">£45k - £60k</option>
-                <option value="Cherry">£60k+</option>
+                <option value="Orange">£25k</option>
+                <option value="Radish">£30k</option>
+                <option value="Cherry">£35k</option>
+                <option value="Orange">£40k</option>
+                <option value="Radish">£45k</option>
+                <option value="Cherry">£50k</option>
+                <option value="Cherry">£55k</option>
+                <option value="Cherry">£60k</option>
+                <option value="Cherry">£65k</option>
+                <option value="Cherry">£70k</option>
+                <option value="Cherry">£75k</option>
               </select>
             </div>
             <div className="sm:block hidden">
@@ -187,22 +192,16 @@ export default function Formone() {
               >
                 Niche / specialism
               </label>
-              <select
+              <input
                 className="w-full px-3 py-2 text-gray-800 transition duration-100 border rounded-md outline-none bg-gray-50 focus:ring ring-blue-300"
                 type="select"
                 id="niche"
+                placeholder="What specialism / niche are you looking for?"
                 required
                 name="niche"
                 value={queryhire.niche}
                 onChange={handleChange()}
-              >
-                <option value="Tech SEO">Technichal SEO </option>
-                <option value="Content">Content </option>
-                <option value="E-commerce ">Ecommerce </option>
-                <option value="Link-building">Link building</option>
-                <option value="Copy writing">Copy writing</option>
-                <option value="Web development">Web development</option>
-              </select>
+              ></input>
             </div>
             <div className="sm:block hidden">
               <br />

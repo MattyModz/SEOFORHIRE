@@ -105,15 +105,7 @@ export default function CandidatePage({ app }) {
                 }}
               />
             </div>
-            <div className="md:grid md:grid-cols-2 hover:bg-gray-50 md:space-y-0 space-y-1 p-4 border-b">
-              <p className="text-gray-600">Portfolio</p>
-              <div
-                className=""
-                dangerouslySetInnerHTML={{
-                  __html: application.candidate.portfolio,
-                }}
-              />
-            </div>
+
             <div className="p-4">
               <button
                 className="learn-more rounded-full bg-gray-200 bg-opacity-50"

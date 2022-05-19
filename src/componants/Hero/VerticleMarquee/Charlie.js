@@ -17,7 +17,7 @@ export default function ReviewCharlie() {
 
           <p class="text-xl md:text-3xl text-gray-50 pt-5 pl-3">
             {" "}
-            Ft. Charlie clarke{" "}
+            Ft. Charlie clark{" "}
           </p>
 
           <p class="text-xs md:text-lg font-light text-gray-50 pt-3 pl-3 pb-10">
