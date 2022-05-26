@@ -168,17 +168,17 @@ export default function Formone() {
                 value={queryhire.salary}
                 onChange={handleChange()}
               >
-                <option value="Orange">£25k</option>
-                <option value="Radish">£30k</option>
-                <option value="Cherry">£35k</option>
-                <option value="Orange">£40k</option>
-                <option value="Radish">£45k</option>
-                <option value="Cherry">£50k</option>
-                <option value="Cherry">£55k</option>
-                <option value="Cherry">£60k</option>
-                <option value="Cherry">£65k</option>
-                <option value="Cherry">£70k</option>
-                <option value="Cherry">£75k</option>
+                <option value="25">£25k</option>
+                <option value="30">£30k</option>
+                <option value="35">£35k</option>
+                <option value="40">£40k</option>
+                <option value="45">£45k</option>
+                <option value="50">£50k</option>
+                <option value="55">£55k</option>
+                <option value="60">£60k</option>
+                <option value="65">£65k</option>
+                <option value="70">£70k</option>
+                <option value="75">£75k</option>
               </select>
             </div>
             <div className="sm:block hidden">
@@ -196,7 +196,7 @@ export default function Formone() {
                 className="w-full px-3 py-2 text-gray-800 transition duration-100 border rounded-md outline-none bg-gray-50 focus:ring ring-blue-300"
                 type="select"
                 id="niche"
-                placeholder="What specialism / niche are you looking for?"
+                placeholder="specialism / niche?"
                 required
                 name="niche"
                 value={queryhire.niche}
@@ -225,10 +225,10 @@ export default function Formone() {
               >
                 <option value="1 year">Apprentice</option>
                 <option value="2 year">1+ years experience </option>
-                <option value="1 year ">3+ years experience </option>
-                <option value="1 year">5+ years experience</option>
-                <option value="1 year">8+ years experience</option>
-                <option value="1 year">10+ years experience</option>
+                <option value="3 year ">3+ years experience </option>
+                <option value="5 year">5+ years experience</option>
+                <option value="8 year">8+ years experience</option>
+                <option value="10 year">10+ years experience</option>
               </select>
             </div>
             <div className="sm:col-span-2">

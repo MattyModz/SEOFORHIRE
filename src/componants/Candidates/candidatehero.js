@@ -92,7 +92,7 @@ export default function Candhero({
                   >
                     <span class="icon arrow"></span>
                   </span>
-                  <span class="button-text">Apply</span>
+                  <span class="button-text">Hire</span>
                 </button>
               </span>
             </div>

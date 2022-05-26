@@ -91,7 +91,7 @@ export default function Candlisting({
                     <span className="circle" aria-hidden="true">
                       <span className="icon arrow"></span>
                     </span>
-                    <span className="button-text">Apply</span>
+                    <span className="button-text">Hire</span>
                   </button>
                 </span>
               </div>
