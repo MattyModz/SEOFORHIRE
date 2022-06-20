@@ -8,7 +8,7 @@ export default function Review() {
           class="col-span-3 rounded-xl h-52 md:h-80"
           href="https://www.youtube.com/watch?v=kUf9qk39UnM&list=PLfB1NYSwR98S0z51PF7-p52gZFqaJnv4m&index=2&t=195s"
         >
-          <Image src={"/PC.png"} width={330} height={200} alt="podcastimg" />
+          <Image src={"/PC.png"} width={375} height={211} alt="podcastimg" />
 
           <p class="text-xl md:text-3xl text-gray-50 pt-5 pl-3">
             {" "}
