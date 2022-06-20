@@ -1,9 +1,14 @@
 const path = require("path");
+
+const withBundleAnalyzer = require("@next/bundle-analyzer")({
+  enabled: process.env.ANALYZE === "true",
+});
+
 const allowedImageWordPressDomain = new URL(
   process.env.NEXT_PUBLIC_WORDPRESS_SITE_URL
 ).hostname;
 
-module.exports = {
+module.exports = withBundleAnalyzer({
   trailingSlash: false,
   webpackDevMiddleware: (config) => {
     config.watchOptions = {
@@ -24,4 +29,4 @@ module.exports = {
       "2.gravatar.com",
     ],
   },
-};
+});

@@ -2,6 +2,7 @@
   "name": "SeoforHire",
   "private": true,
   "scripts": {
+    "analyze": "cross-env ANALYZE=true next build",
     "dev": "cross-env NODE_OPTIONS='--inspect' next dev",
     "build": "next build",
     "start": "next start",
@@ -16,6 +17,7 @@
   "dependencies": {
     "@apollo/client": "^3.5.10",
     "@heroicons/react": "^1.0.6",
+    "@next/bundle-analyzer": "^12.1.6",
     "axios": "^0.24.0",
     "classnames": "^2.3.1",
     "cross-env": "^7.0.3",

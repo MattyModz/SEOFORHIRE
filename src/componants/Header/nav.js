@@ -33,11 +33,11 @@ export default function Nav() {
               xmlns="http://www.w3.org/2000/svg"
               className="w-8 h-8 "
               viewBox="0 0 24 24"
-              stroke-width="1.5"
+              strokeWidth="1.5"
               stroke="white"
               fill="none"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             >
               <path stroke="none" d="M0 0h24v24H0z"></path>
               <line x1="4" y1="8" x2="20" y2="8"></line>
@@ -51,11 +51,11 @@ export default function Nav() {
                 xmlns="http://www.w3.org/2000/svg"
                 className="w-8 h-8"
                 viewBox="0 0 24 24"
-                stroke-width="1.5"
+                strokeWidth="1.5"
                 stroke="white"
                 fill="none"
-                stroke-linecap="round"
-                stroke-linejoin="round"
+                strokeLinecap="round"
+                strokeLinejoin="round"
               >
                 <path stroke="none" d="M0 0h24v24H0z"></path>
                 <line x1="18" y1="6" x2="6" y2="18"></line>

@@ -1,7 +1,5 @@
-// import Bcomp1 from "../src/componants/Blog/Blogcomp1";
-// import { BLOG_COMP } from "../lib/wordpress/api";
 import Image from "next/image";
-import Trust from "../src/componants/Trustwidget";
+
 import Joblisting from "../src/componants/Hero/jobslist";
 import Verticlemarquee from "../src/componants/Hero/VerticleMarquee";
 import Verticlemarquee2 from "../src/componants/Hero/VerticleMarquee/index2";
@@ -9,19 +7,14 @@ import Verticlemarquee3 from "../src/componants/Hero/VerticleMarquee/index 3";
 import client from "../lib/apollo";
 import Link from "next/link";
 
-// import Values from "../src/componants/Values";
 import { gql } from "@apollo/client";
 import Candlisting from "../src/componants/Candidates/candidatelist";
-// import Josh from "../src/componants/josh";
-// import Core from "../src/componants/valuesslider/corevalues";
-// import Blogindex from "../src/componants/Blog/Indexsingle";
-// import Postcollection from "../src/componants/Blog/Postcollection";
+
 import Container from "../src/componants/container";
 import Applic from "../src/componants/appplic";
 import Candhero from "../src/componants/Candidates/candidatehero";
 
-export default function Home({ jobs, posts, applicant }) {
-  console.log(applicant);
+export default function Home({ jobs, applicant }) {
   return (
     <>
       <section className="   relative ">
@@ -53,21 +46,32 @@ export default function Home({ jobs, posts, applicant }) {
                 </Link>
               </div>
 
-              <div>
-                <div className="flex pb-2 justify-center">
-                  <Image
-                    src={"/star.png"}
-                    width={130}
-                    height={25}
-                    alt={"Trustpilotreviews"}
-                  />
+              <div className="flex  ">
+                <Image
+                  src={"/star.png"}
+                  width={130}
+                  height={25}
+                  alt={"Trustpilotreviews"}
+                />
+              </div>
+              <div className="flex flex-col items-center justify-center sm:flex-row ">
+                <p className="text-gray-200 pr-2">see our reviews on</p>
+                <div>
+                  <div className="pt-2">
+                    <Image
+                      src={"/trustpilot-1.svg"}
+                      width={75}
+                      height={75}
+                      alt={"Trustpilot Logo"}
+                      className=""
+                    />
+                  </div>
                 </div>
-                <Trust />
               </div>
             </div>
           </div>
 
-          <div className="absolute w-full   relative  xl:w-1/2  ">
+          <div className=" w-full   relative  xl:w-1/2  ">
             <div className="circlecclip w-full  text-white h-full">
               <div className="w-full ">
                 <Verticlemarquee />
@@ -176,36 +180,6 @@ export async function getStaticProps() {
     `,
   });
 
-  const { data: post } = await client.query({
-    query: gql`
-      query Blog {
-        posts(first: 3, where: { orderby: { field: DATE, order: DESC } }) {
-          nodes {
-            slug
-            title
-            excerpt
-            date
-            id
-            author {
-              node {
-                name
-                avatar {
-                  url
-                }
-              }
-            }
-
-            featuredImage {
-              node {
-                sourceUrl
-              }
-            }
-          }
-        }
-      }
-    `,
-  });
-
   const { data: app } = await client.query({
     query: gql`
       query Getcandidates {
@@ -234,7 +208,7 @@ export async function getStaticProps() {
   return {
     props: {
       jobs: job.jobs.nodes,
-      posts: post.posts.nodes,
+
       applicant: app.candiates.nodes,
     },
     revalidate: 10,
