@@ -66,7 +66,7 @@ export default function Contactform() {
               type="submit"
               class="inline-block px-8 py-3 text-sm font-semibold text-center text-white transition duration-100 rounded-md outline-none bg-gradient-to-br from-purple-600 via-fuscia-800 to-pink-500 md:text-base"
             >
-              Send Message
+              Send Message.
             </button>
           </div>
         </form>

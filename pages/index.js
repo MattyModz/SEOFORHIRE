@@ -27,7 +27,7 @@ export default function Home({ jobs, applicant }) {
               <div className="w-full mb-5 sm:w-11/12 lg:w-2/3 lg:mb-10">
                 <h1 className="pt-5 text-2xl font-bold text-left text-white md:pt-8 sm:text-center lg:pt-20 sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl">
                   Your go to choice for help with{" "}
-                  <br className="hidden sm:block" /> SEO recruitment
+                  <br className="hidden sm:block" /> SEO recruitment.
                 </h1>
               </div>
               <div className="flex flex-col items-center justify-center w-full mb-10 sm:flex-row sm:mb-20">
