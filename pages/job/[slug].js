@@ -31,52 +31,88 @@ export default function PostPage({ job }) {
             <span className="button-text">Apply</span>
           </button>
         </div>
-        <div
-          className="py-4"
-          dangerouslySetInnerHTML={{
-            __html: joblist.jobListing.intro,
-          }}
-        />
-        <p className="py-4  text-3xl">Candidate Requirements</p>
-        <br />
-
-        <div
-          dangerouslySetInnerHTML={{
-            __html: joblist.jobListing.candidateRequirements,
-          }}
-        />
-        <br />
-        <p className="text-3xl">Responsibilities</p>
-        <br />
-        <div
-          dangerouslySetInnerHTML={{
-            __html: joblist.jobListing.responsibilities,
-          }}
-        />
-        <br />
-        <p className="text-3xl">Benefits</p>
-        <br />
-        <div
-          dangerouslySetInnerHTML={{
-            __html: joblist.jobListing.benefits,
-          }}
-        />
       </div>
 
-      <div className="p-4">
-        <button
-          className="learn-more rounded-full bg-gray-200 bg-opacity-50"
-          onClick={() => {
-            setShowModal(true, setForm("Form"));
-          }}
-        >
-          <span className="circle" aria-hidden="true">
-            <span className="icon arrow"></span>
-          </span>
-          <span className="button-text">Apply</span>
-        </button>
-      </div>
+      <div className="rounded-xl bg-white p-8 text-black w- ">
+        <div className="max-w-9xl  bg-white w-full rounded-lg shadow-xl ">
+          <div className="p-4 border-b ">
+            <h2 className="text-2xl ">Job description</h2>
+            <p className="text-sm text-gray-500">
+              position desceiption and information.
+            </p>
+          </div>
+          <div>
+            <div className="md:grid md:grid-cols-2 hover:bg-gray-50 md:space-y-0 space-y-1 p-4 border-b">
+              <p className="text-gray-600">Application for</p>
+              <div className="flex">
+                <div className=" flex  items-center text-sm  -ml-2 bg-royal bg-opacity-90 flex rounded-full px-3 py-1.5   text-white font-bold ">
+                  {joblist.jobListing.positionTitle}
+                </div>
+              </div>
+            </div>
+            <div className="md:grid md:grid-cols-2 hover:bg-gray-50 md:space-y-0 space-y-1 p-4 border-b">
+              <p className="text-gray-600">Location</p>
 
+              <div className="flex">
+                <div className=" flex  items-center text-sm  -ml-2 bg-royal bg-opacity-90 flex rounded-full px-3 py-1.5   text-white font-bold ">
+                  {joblist.jobListing.location}
+                </div>
+              </div>
+            </div>
+            <div className="md:grid md:grid-cols-2 hover:bg-gray-50 md:space-y-0 space-y-1 p-4 border-b">
+              <p className="text-gray-600">Salary</p>
+              <div className="flex">
+                <div className=" flex  items-center text-sm  -ml-2 bg-royal bg-opacity-90 flex rounded-full px-3 py-1.5   text-white font-bold ">
+                  {joblist.jobListing.salary}
+                </div>
+              </div>
+            </div>
+
+            <div className=" hover:bg-gray-50 md:space-y-0 space-y-1 p-4 border-b">
+              <p className="text-gray-600 font-bold">About</p>
+              <div
+                dangerouslySetInnerHTML={{
+                  __html: joblist.jobListing.responsibilities,
+                }}
+                className="py-2"
+              ></div>
+            </div>
+          </div>
+          <div className=" hover:bg-gray-50 md:space-y-0 space-y-1 p-4 border-b">
+            <p className="text-gray-600 font-bold">Requirements</p>
+            <div
+              dangerouslySetInnerHTML={{
+                __html: joblist.jobListing.candidateRequirements,
+              }}
+              className="py-2"
+            ></div>
+          </div>
+          <div className=" hover:bg-gray-50 md:space-y-0 space-y-1 p-4 border-b">
+            <p className="text-gray-600 font-bold">Benefits</p>
+            <div
+              dangerouslySetInnerHTML={{
+                __html: joblist.jobListing.benefits,
+              }}
+              className="py-2"
+            />
+          </div>
+          <div />
+        </div>
+
+        <div className="p-4">
+          <button
+            className="learn-more rounded-full bg-gray-200 bg-opacity-50"
+            onClick={() => {
+              setShowModal(true, setForm("Form1"));
+            }}
+          >
+            <span className="circle" aria-hidden="true">
+              <span className="icon arrow"></span>
+            </span>
+            <span className="button-text">Apply</span>
+          </button>
+        </div>
+      </div>
       <div>
         <Modal open={showModal} onClose={() => setShowModal(false)}>
           {joblist.jobListing.positionTitle}
