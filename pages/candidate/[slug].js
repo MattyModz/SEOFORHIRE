@@ -4,7 +4,7 @@ import Candidatelayout from "../../src/componants/Layout/candidatelayout";
 import Modal from "../../src/componants/Modal/Modal";
 import { myContext } from "../../Context/Context";
 import { myContextform } from "../../Context/Contextform";
-
+import useRouter from "next/router";
 // import Formone from "../../src/componants/Modal/Form1";
 export default function CandidatePage({ app }) {
   const { showModal, setShowModal } = myContext();
@@ -12,6 +12,13 @@ export default function CandidatePage({ app }) {
   console.log(app);
   const application = app;
   console.log(form);
+
+  const router = useRouter();
+
+  if (router.isFallback) {
+    return <p>Loading...</p>;
+  }
+
   return (
     <Candidatelayout
       Herotitle={application.candidate.jobTitle}
