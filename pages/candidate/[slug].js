@@ -4,7 +4,7 @@ import Candidatelayout from "../../src/componants/Layout/candidatelayout";
 import Modal from "../../src/componants/Modal/Modal";
 import { myContext } from "../../Context/Context";
 import { myContextform } from "../../Context/Contextform";
-import useRouter from "next/router";
+import { useRouter } from "next/router";
 // import Formone from "../../src/componants/Modal/Form1";
 export default function CandidatePage({ app }) {
   const { showModal, setShowModal } = myContext();
@@ -12,11 +12,9 @@ export default function CandidatePage({ app }) {
   console.log(app);
   const application = app;
   console.log(form);
-
-  const router = useRouter();
-
-  if (router.isFallback) {
-    return <p>Loading...</p>;
+  const Router = useRouter();
+  if (Router.isFallback) {
+    return <h1>Loading Jobs</h1>;
   }
 
   return (
@@ -63,7 +61,7 @@ export default function CandidatePage({ app }) {
 
               <div className="flex">
                 <div
-                  className=" flex  items-center text-sm  -ml-2 bg-royal bg-opacity-90 flex rounded-full px-3 py-1.5   text-white font-bold "
+                  className="  items-center text-sm  -ml-2 bg-royal bg-opacity-90 flex rounded-full px-3 py-1.5   text-white font-bold "
                   dangerouslySetInnerHTML={{
                     __html: application.candidate.locaiton,
                   }}
@@ -159,11 +157,9 @@ export async function getStaticPaths() {
     paths: result.data.candiates.nodes.map(({ slug }) => {
       return {
         params: { slug },
-        fallback: true,
       };
     }),
-
-    revalidate: 60,
+    fallback: true,
   };
 }
 

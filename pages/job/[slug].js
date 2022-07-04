@@ -4,18 +4,16 @@ import Joblayout from "../../src/componants/Layout/Joblayout";
 import Modal from "../../src/componants/Modal/Modal";
 import { myContext } from "../../Context/Context";
 // import Form from "../../src/componants/Modal/Form";
+import { useRouter } from "next/router";
 import { myContextform } from "../../Context/Contextform";
-import useRouter from "next/router";
 export default function PostPage({ job }) {
   const { showModal, setShowModal } = myContext();
   const { form, setForm } = myContextform();
   console.log(form);
   const joblist = job;
-
-  const router = useRouter();
-
-  if (router.isFallback) {
-    return <p>Loading...</p>;
+  const Router = useRouter();
+  if (Router.isFallback) {
+    return <h1>Loading Jobs</h1>;
   }
 
   return (
@@ -150,11 +148,9 @@ export async function getStaticPaths() {
     paths: result.data.jobs.nodes.map(({ slug }) => {
       return {
         params: { slug },
-        fallback: true,
       };
     }),
-
-    revalidate: 60,
+    fallback: true,
   };
 }
 
