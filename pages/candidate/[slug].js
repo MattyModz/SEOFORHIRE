@@ -152,9 +152,9 @@ export async function getStaticPaths() {
     paths: result.data.candiates.nodes.map(({ slug }) => {
       return {
         params: { slug },
-        fallback: "blocking",
       };
     }),
+    fallback: blocking,
     revalidate: 60,
   };
 }

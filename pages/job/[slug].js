@@ -144,7 +144,8 @@ export async function getStaticPaths() {
         params: { slug },
       };
     }),
-    fallback: false,
+    fallback: blocking,
+    revalidate: 60,
   };
 }
 
