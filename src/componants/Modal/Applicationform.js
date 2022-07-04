@@ -23,7 +23,7 @@ export default function Applicationform({ children }) {
     <>
       <Container className="">
         <motion.div
-          className="w-full py-8 md:py-16bg-black bg-opacity-10 rounded-xl w-full py-11 flex justify-center text-white"
+          className=" py-8 md:py-16bg-black bg-opacity-10 rounded-xl w-full  flex justify-center text-white"
           initial="pageInitial"
           exit={{ opacity: 0 }}
           animate="pageAnimate"
@@ -51,7 +51,7 @@ export default function Applicationform({ children }) {
                       className="flex-shrink-0 mr-1.5 h-5 w-5 text-white"
                       aria-hidden="true"
                     />
-                    <div>{children[1]} Years experience</div>
+                    <div>{children[1]} </div>
                   </div>
                 </div>
 
