@@ -5,11 +5,19 @@ import Modal from "../../src/componants/Modal/Modal";
 import { myContext } from "../../Context/Context";
 // import Form from "../../src/componants/Modal/Form";
 import { myContextform } from "../../Context/Contextform";
+import useRouter from "next/router";
 export default function PostPage({ job }) {
   const { showModal, setShowModal } = myContext();
   const { form, setForm } = myContextform();
   console.log(form);
   const joblist = job;
+
+  const router = useRouter();
+
+  if (router.isFallback) {
+    return <p>Loading...</p>;
+  }
+
   return (
     <Joblayout
       Herotitle={joblist.jobListing.positionTitle}
@@ -142,9 +150,10 @@ export async function getStaticPaths() {
     paths: result.data.jobs.nodes.map(({ slug }) => {
       return {
         params: { slug },
+        fallback: true,
       };
     }),
-    fallback: blocking,
+
     revalidate: 60,
   };
 }
