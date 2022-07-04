@@ -62,8 +62,8 @@ export default function Podcasts({ results }) {
 }
 
 export async function getStaticProps() {
-  const MY_PLAYLIST = process.env.YOUTUBE_PLAYLIST_ID;
-  const API_KEY = process.env.YOUTUBE_API_KEY;
+  // const MY_PLAYLIST = process.env.YOUTUBE_PLAYLIST_ID;
+  // const API_KEY = process.env.YOUTUBE_API_KEY;
   const REQUEST_URL = `https://youtube.googleapis.com/youtube/v3/playlistItems?part=snippet&playlistId=PLddfICrcF15Erloc1JRHMghdqxONKmiDP&key=AIzaSyAII8CfbChK6ZZHAQH-r1hdorxVmPXB3kE&maxResults=15`;
   const response = await fetch(REQUEST_URL);
   const results = await response.json();
