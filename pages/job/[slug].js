@@ -51,7 +51,7 @@ export default function PostPage({ job }) {
             <div className="md:grid md:grid-cols-2 hover:bg-gray-50 md:space-y-0 space-y-1 p-4 border-b">
               <p className="text-gray-600">Application for</p>
               <div className="flex">
-                <div className=" flex  items-center text-sm  -ml-2 bg-royal bg-opacity-90 flex rounded-full px-3 py-1.5   text-white font-bold ">
+                <div className="  items-center text-sm  -ml-2 bg-royal bg-opacity-90 flex rounded-full px-3 py-1.5   text-white font-bold ">
                   {joblist.jobListing.positionTitle}
                 </div>
               </div>
@@ -60,7 +60,7 @@ export default function PostPage({ job }) {
               <p className="text-gray-600">Location</p>
 
               <div className="flex">
-                <div className=" flex  items-center text-sm  -ml-2 bg-royal bg-opacity-90 flex rounded-full px-3 py-1.5   text-white font-bold ">
+                <div className="   items-center text-sm  -ml-2 bg-royal bg-opacity-90 flex rounded-full px-3 py-1.5   text-white font-bold ">
                   {joblist.jobListing.location}
                 </div>
               </div>
@@ -68,7 +68,7 @@ export default function PostPage({ job }) {
             <div className="md:grid md:grid-cols-2 hover:bg-gray-50 md:space-y-0 space-y-1 p-4 border-b">
               <p className="text-gray-600">Salary</p>
               <div className="flex">
-                <div className=" flex  items-center text-sm  -ml-2 bg-royal bg-opacity-90 flex rounded-full px-3 py-1.5   text-white font-bold ">
+                <div className="  items-center text-sm  -ml-2 bg-royal bg-opacity-90 flex rounded-full px-3 py-1.5   text-white font-bold ">
                   {joblist.jobListing.salary}
                 </div>
               </div>
