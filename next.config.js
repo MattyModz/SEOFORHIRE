@@ -27,6 +27,7 @@ module.exports = withBundleAnalyzer({
       allowedImageWordPressDomain,
       "via.placeholder.com",
       "2.gravatar.com",
+      "i.ytimg.com",
     ],
   },
 });

@@ -6,7 +6,6 @@ export default function Nav() {
   //const router = useRouter;
 
   const [Menu, ShowMenu] = useState(false);
-  console.log(Menu);
   return (
     <nav className="bg-royal w-full select-none">
       <div className="flex items-center justify-between h-20 px-8 py-2 mx-auto max-w-7xl md:h-24 sm:box-content">

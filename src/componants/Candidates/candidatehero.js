@@ -30,7 +30,7 @@ export default function Candhero({
   }, [showModal]);
 
   return (
-    <div className="w-full">
+    <div className="w-full border-4">
       <div className="lg:flex bg-white  cursor-pointer border p-4 mb-2 p-2 lg:items-center w-full rounded-xl lg:justify-between">
         <div className="flex-1 rounded-xl  py-4 min-w-0">
           <div className="flex justify-start pb-2">
