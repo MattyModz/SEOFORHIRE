@@ -2,7 +2,7 @@
 const SANITY_PREVIEW_SECRET = "mlrfhnjcRI";
 
 // Replace `remoteUrl` with your deployed Next.js site
-const remoteUrl = `https://mcp-rust.vercel.app`;
+const remoteUrl = `https://seoforhire.co`;
 const localUrl = `http://localhost:3000`;
 const baseUrl = window.location.hostname === "localhost" ? localUrl : remoteUrl;
 
