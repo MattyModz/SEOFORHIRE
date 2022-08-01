@@ -43,7 +43,13 @@ export default function Blog({ posts }) {
                     <span>Featured</span>
                   </div>
                   <h1 className="text-4xl font-bold leading-none lg:text-5xl xl:text-6xl text-black">
-                    <a href="#_">{post.title}.</a>
+                    <Link
+                      key={post._id}
+                      href={`/post/${post.slug.current}`}
+                      passHref
+                    >
+                      <a href="#_">{post.title}.</a>
+                    </Link>
                   </h1>
                   <p className="pt-2 text-sm font-medium text-black">
                     by{" "}
