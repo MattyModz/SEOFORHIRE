@@ -6,24 +6,24 @@ const remoteUrl = `https://seoforhire.co`;
 const localUrl = `http://localhost:3000`;
 const baseUrl = window.location.hostname === "localhost" ? localUrl : remoteUrl;
 
-const previewUrl = new URL(baseUrl);
+const pUrl = new URL(baseUrl);
 
 export default function resolveProductionUrl(doc) {
   switch (doc._type) {
     case "job":
-      return `${previewUrl}/api/preview?secret=${SANITY_PREVIEW_SECRET}&slug=job/${doc.slug.current}`;
+      return `${pUrl}/api/preview?secret=${SANITY_PREVIEW_SECRET}&slug=job/${doc.slug.current}`;
   }
   switch (doc._type) {
     case "candidate":
-      return `${previewUrl}/api/preview?secret=${SANITY_PREVIEW_SECRET}&slug=candidate/${doc.slug.current}`;
+      return `${pUrl}/api/preview?secret=${SANITY_PREVIEW_SECRET}&slug=candidate/${doc.slug.current}`;
   }
   switch (doc._type) {
     case "post":
-      return `${previewUrl}/api/preview?secret=${SANITY_PREVIEW_SECRET}&slug=post/${doc.slug.current}`;
+      return `${pUrl}/api/preview?secret=${SANITY_PREVIEW_SECRET}&slug=post/${doc.slug.current}`;
   }
   switch (doc._type) {
     case "policy":
-      return `${previewUrl}/api/preview?secret=${SANITY_PREVIEW_SECRET}&slug=policy/${doc.slug.current}`;
+      return `${pUrl}/api/preview?secret=${SANITY_PREVIEW_SECRET}&slug=policy/${doc.slug.current}`;
   }
 }
 
