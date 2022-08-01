@@ -2,25 +2,28 @@
 const SANITY_PREVIEW_SECRET = "mlrfhnjcRI";
 
 // Replace `remoteUrl` with your deployed Next.js site
-const remoteUrl = `http://localhost:3000`;
+const remoteUrl = `https://mcp-rust.vercel.app`;
 const localUrl = `http://localhost:3000`;
+const baseUrl = window.location.hostname === "localhost" ? localUrl : remoteUrl;
+
+const previewUrl = new URL(baseUrl);
 
 export default function resolveProductionUrl(doc) {
   switch (doc._type) {
     case "job":
-      return `http://localhost:3000/api/preview?secret=${SANITY_PREVIEW_SECRET}&slug=job/${doc.slug.current}`;
+      return `${previewUrl}/api/preview?secret=${SANITY_PREVIEW_SECRET}&slug=job/${doc.slug.current}`;
   }
   switch (doc._type) {
     case "candidate":
-      return `http://localhost:3000/api/preview?secret=${SANITY_PREVIEW_SECRET}&slug=candidate/${doc.slug.current}`;
+      return `${previewUrl}/api/preview?secret=${SANITY_PREVIEW_SECRET}&slug=candidate/${doc.slug.current}`;
   }
   switch (doc._type) {
     case "post":
-      return `http://localhost:3000/api/preview?secret=${SANITY_PREVIEW_SECRET}&slug=post/${doc.slug.current}`;
+      return `${previewUrl}/api/preview?secret=${SANITY_PREVIEW_SECRET}&slug=post/${doc.slug.current}`;
   }
   switch (doc._type) {
     case "policy":
-      return `http://localhost:3000/api/preview?secret=${SANITY_PREVIEW_SECRET}&slug=policy/${doc.slug.current}`;
+      return `${previewUrl}/api/preview?secret=${SANITY_PREVIEW_SECRET}&slug=policy/${doc.slug.current}`;
   }
 }
 
