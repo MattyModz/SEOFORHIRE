@@ -76,7 +76,7 @@ export default function Blog({ posts }) {
                 />
               </Link>
               <div className="bg-blue-500  items-center px-3  py-1.5 leading-none rounded-full text-xs font-medium uppercase text-white inline-block">
-                <span>Content writing</span>
+                <span>SEO</span>
               </div>
               <h2 className="text-lg font-bold sm:text-xl md:text-2xl py-1.5">
                 {post.title}
@@ -87,7 +87,7 @@ export default function Blog({ posts }) {
                   {post.author.name}
                 </a>{" "}
                 · <span className="mx-1">April 20th, 2022</span> ·{" "}
-                <span className="mx-1 text-gray-600">3 min. read</span>
+                <span className="mx-1 text-gray-200">3 min. read</span>
               </p>
             </motion.div>
           )
