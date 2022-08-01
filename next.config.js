@@ -28,6 +28,7 @@ module.exports = withBundleAnalyzer({
       "via.placeholder.com",
       "2.gravatar.com",
       "i.ytimg.com",
+      "cdn.sanity.io",
     ],
   },
 });

@@ -7,7 +7,7 @@ export default function Nav() {
 
   const [Menu, ShowMenu] = useState(false);
   return (
-    <nav className="bg-royal w-full select-none">
+    <nav className="bg-royal w-full select-none shadow-sm">
       <div className="flex items-center justify-between h-20 px-8 py-2 mx-auto max-w-7xl md:h-24 sm:box-content">
         <div className="flex items-center w-64">
           <a
@@ -90,6 +90,14 @@ export default function Nav() {
               >
                 <Link href={"/contact"} passHref>
                   Contact
+                </Link>
+              </li>
+              <li
+                className="text-white font-bold cursor-pointer hover:text-gray-400 md:ml-10"
+                onClick={() => ShowMenu((state) => !Menu)}
+              >
+                <Link href={"/blog"} passHref>
+                  Blog
                 </Link>
               </li>
             </ul>

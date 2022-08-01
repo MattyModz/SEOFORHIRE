@@ -13,7 +13,7 @@ import {
 export default function Candhero({
   jobTitle,
   availability,
-  locaiton,
+  location,
   specialism,
   yearsOfExperience,
   salary,
@@ -36,7 +36,7 @@ export default function Candhero({
           <div className="flex justify-start pb-2">
             <Image src={"/logoblack.png"} width={50} height={50} alt="Logo" />
           </div>
-          <div className="mt-1 flex  sm:flex sm:flex-row sm:flex-wrap sm:mt-0 sm:space-x-2 space-x-2">
+          <div className="mt-1 ml-3 flex  sm:flex sm:flex-row sm:flex-wrap sm:mt-0 sm:space-x-2 space-x-2">
             <div className="flex">
               <div className="mt-2 flex  items-center text-sm  bg-royal  flex rounded-full px-3 py-1.5   text-white font-bold mb-4">
                 <CollectionIcon
@@ -52,7 +52,7 @@ export default function Candhero({
                   className="flex-shrink-0 mr-1.5 h-5 w-5 text-white"
                   aria-hidden="true"
                 />
-                {locaiton}
+                {location}
               </div>
             </div>
 
@@ -67,7 +67,7 @@ export default function Candhero({
             </div>
           </div>
           <Link href={`/candidate/${slug}`}>
-            <h2 className="text-2xl px-3 font-bold leading-7  sm:text-3xl text-black sm:truncate">
+            <h2 className="text-2xl ml-4 font-bold leading-7  sm:text-3xl text-black sm:truncate">
               {jobTitle}
             </h2>
           </Link>
@@ -122,7 +122,7 @@ export default function Candhero({
           <Modal open={showModal} onClose={() => setShowModal(false)}>
             {jobTitle}
             {yearsOfExperience}
-            {locaiton}
+            {location}
             {salary}
           </Modal>
         </div>

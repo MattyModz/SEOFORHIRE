@@ -4,17 +4,20 @@ import Joblisting from "../src/componants/Hero/jobslist";
 import Verticlemarquee from "../src/componants/Hero/VerticleMarquee";
 import Verticlemarquee2 from "../src/componants/Hero/VerticleMarquee/index2";
 import Verticlemarquee3 from "../src/componants/Hero/VerticleMarquee/index 3";
-import client from "../lib/apollo";
+
 import Link from "next/link";
 
-import { gql } from "@apollo/client";
-import Candlisting from "../src/componants/Candidates/candidatelist";
+import { sanityClient } from "../sanity";
 
+import Candlisting from "../src/componants/Candidates/candidatelist";
+import Blog from "../src/componants/Blog/index";
 import Container from "../src/componants/container";
 import Applic from "../src/componants/appplic";
 import Candhero from "../src/componants/Candidates/candidatehero";
+// import candidate from "../seoforhire/schemas/candidate";
 
-export default function Home({ jobs, applicant }) {
+export default function Home({ jobs, candidates, posts }) {
+  console.log(posts);
   return (
     <>
       <section className="   relative ">
@@ -94,12 +97,11 @@ export default function Home({ jobs, applicant }) {
             {jobs.map((job) => (
               <Joblisting
                 key={job.slug}
-                slug={job.slug}
-                title={job.jobListing.positionTitle}
-                salary={job.jobListing.salary}
-                location={job.jobListing.location}
-                type={job.jobListing.type}
-                intro={job.jobListing.intro}
+                slug={job.slug.current}
+                title={job.title}
+                salary={job.salary}
+                location={job.location}
+                term={job.term}
               />
             ))}
           </div>
@@ -113,33 +115,34 @@ export default function Home({ jobs, applicant }) {
         <Container>
           <div className="p-4 ">
             <div className="lg:grid grid-cols-2 gap-3">
-              {applicant.map((app, index) =>
+              {candidates.map((candidate, index) =>
                 index === 0 ? (
                   <div className="col-span-2 -mt-40 md:-mt-48 sm:-mt-20 mb-10 overflow-hidden z-999 ">
                     <Candhero
-                      key={app.slug}
-                      slug={app.slug}
-                      jobTitle={app.candidate.jobTitle}
-                      salary={app.candidate.salary}
-                      yearsOfExperience={app.candidate.yearsOfExperience}
-                      locaiton={app.candidate.locaiton}
+                      key={candidate.slug}
+                      slug={candidate.slug.current}
+                      jobTitle={candidate.candidaterole}
+                      salary={candidate.salary}
+                      yearsOfExperience={candidate.experience}
+                      location={candidate.location}
                     />
                   </div>
                 ) : (
                   <div className="w-full max-w-lg mx-auto mt-4 lg:max-w-none pointer-cursor">
                     <Candlisting
-                      key={app.slug}
-                      slug={app.slug}
-                      jobTitle={app.candidate.jobTitle}
-                      salary={app.candidate.salary}
-                      yearsOfExperience={app.candidate.yearsOfExperience}
-                      locaiton={app.candidate.locaiton}
+                      key={candidate.slug}
+                      slug={candidate.slug.current}
+                      jobTitle={candidate.candidaterole}
+                      salary={candidate.salary}
+                      yearsOfExperience={candidate.experience}
+                      location={candidate.location}
                     />
                   </div>
                 )
               )}
             </div>
           </div>
+          <Blog posts={posts} />
         </Container>
       </section>
 
@@ -157,63 +160,80 @@ export default function Home({ jobs, applicant }) {
 //  </Modal>;
 
 export async function getStaticProps() {
-  const { data: job } = await client.query({
-    query: gql`
-      query AllJobs {
-        jobs(first: 4, where: { orderby: { field: DATE, order: DESC } }) {
-          nodes {
-            slug
-            jobListing {
-              type
-              salary
-              responsibilities
-              positionTitle
-              fieldGroupName
-              candidateRequirements
-              benefits
-              location
-              intro
-            }
-          }
-        }
-      }
-    `,
-  });
+  const jobquery = `*[_type == "job"]{
+   _id,
+   title,
+   slug,
+location,
+term,
+salary,
+about,
+requirements,
+benefits,
+   }`;
 
-  const { data: app } = await client.query({
-    query: gql`
-      query Getcandidates {
-        candiates(first: 10) {
-          nodes {
-            id
-            slug
-            candidate {
-              id
-              additionalInfo
-              availability
-              jobTitle
-              locaiton
-              name
-              yearsOfExperience
-              specialism
-              salary
-              portfolio
-            }
-          }
-        }
-      }
-    `,
-  });
+  const candidatequery = `*[_type == "candidate"]{
+   _id,
+   candidaterole,
+   slug,
+location,
+jobid,
+salary,
+experience,
+specialism,
+about,
+}`;
+
+  const query = `*[_type == "post"][0..0]{
+  _id,
+  title,
+
+  author -> {
+  name,
+  image
+},
+description,
+mainImage,
+slug
+}`;
+
+  const jobs = await sanityClient.fetch(jobquery);
+  const candidates = await sanityClient.fetch(candidatequery);
+  const posts = await sanityClient.fetch(query);
 
   return {
     props: {
-      jobs: job.jobs.nodes,
-
-      applicant: app.candiates.nodes,
+      jobs,
+      candidates,
+      posts,
     },
     revalidate: 10,
   };
 }
+
+// export const getServerSideProps = async () => {
+//   const query = `*[_type == "post"]{
+//   _id,
+//     _createdAt,
+//   title,
+
+//   author -> {
+//   name,
+//   image
+// },
+// description,
+// mainImage,
+// slug
+// }`;
+
+//   const posts = await sanityClient.fetch(query);
+
+//   return {
+//     props: {
+//       posts,
+//     },
+//   };
+// };
 
 // <div>
 //   {" "}

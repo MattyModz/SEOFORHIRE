@@ -1,29 +1,53 @@
-import { gql } from "@apollo/client";
-import client from "../../lib/apollo";
+import { getClient, sanityClient, usePreviewSubscription } from "../../sanity";
 import Candidatelayout from "../../src/componants/Layout/candidatelayout";
 import Modal from "../../src/componants/Modal/Modal";
 import { myContext } from "../../Context/Context";
 import { myContextform } from "../../Context/Contextform";
 import { useRouter } from "next/router";
 // import Formone from "../../src/componants/Modal/Form1";
-export default function CandidatePage({ app }) {
+
+function filterDataToSingleItem(data, preview) {
+  if (!Array.isArray(data)) {
+    return data;
+  }
+
+  if (data.length === 1) {
+    return data[0];
+  }
+
+  if (preview) {
+    return data.find((item) => item._id.startsWith(`drafts.`)) || data[0];
+  }
+
+  return data[0];
+}
+
+function CandidatePage({ data, preview }) {
+  const { data: previewData } = usePreviewSubscription(data?.query, {
+    params: data?.queryParams ?? {},
+    // The hook will return this on first render
+    // This is why it's important to fetch *draft* content server-side!
+    initialData: data?.candidate,
+    // The passed-down preview context determines whether this function does anything
+    enabled: preview,
+  });
   const { showModal, setShowModal } = myContext();
-  const { form, setForm } = myContextform();
-  console.log(app);
-  const application = app;
-  console.log(form);
+  const { setForm } = myContextform();
+
   const Router = useRouter();
   if (Router.isFallback) {
     return <h1>Loading Jobs</h1>;
   }
 
+  const candidate = filterDataToSingleItem(previewData, preview);
+
   return (
     <Candidatelayout
-      Herotitle={application.candidate.jobTitle}
-      joblocation={application.candidate.locaiton}
-      specialism={application.candidate.specialism}
-      experience={application.candidate.yearsOfExperience}
-      salary={application.candidate.salary}
+      Herotitle={candidate.candidaterole}
+      joblocation={candidate.location}
+      specialism={candidate.specialism}
+      experience={candidate.experience}
+      salary={candidate.salary}
     >
       <div className="rounded-xl bg-white p-8 text-black w- ">
         <div className="max-w-9xl  bg-white w-full rounded-lg shadow-xl ">
@@ -37,78 +61,60 @@ export default function CandidatePage({ app }) {
             <div className="md:grid md:grid-cols-2 hover:bg-gray-50 md:space-y-0 space-y-1 p-4 border-b">
               <p className="text-gray-600">Job ID</p>
               <div className="flex">
-                <div
-                  className=" flex  items-center text-sm  -ml-2 bg-royal bg-opacity-90 flex rounded-full px-3 py-1.5   text-white font-bold "
-                  dangerouslySetInnerHTML={{
-                    __html: application.candidate.id,
-                  }}
-                />
+                {" "}
+                <div className="  items-center text-sm  -ml-2 bg-royal bg-opacity-90 flex rounded-full px-3 py-1.5   text-white font-bold ">
+                  {candidate.jobid}
+                </div>
               </div>
             </div>
             <div className="md:grid md:grid-cols-2 hover:bg-gray-50 md:space-y-0 space-y-1 p-4 border-b">
               <p className="text-gray-600">Application for</p>
               <div className="flex">
-                <div
-                  className=" flex  items-center text-sm  -ml-2 bg-royal bg-opacity-90 flex rounded-full px-3 py-1.5   text-white font-bold "
-                  dangerouslySetInnerHTML={{
-                    __html: application.candidate.jobTitle,
-                  }}
-                />
+                <div className="  items-center text-sm  -ml-2 bg-royal bg-opacity-90 flex rounded-full px-3 py-1.5   text-white font-bold ">
+                  {candidate.candidaterole}
+                </div>
               </div>
             </div>
             <div className="md:grid md:grid-cols-2 hover:bg-gray-50 md:space-y-0 space-y-1 p-4 border-b">
               <p className="text-gray-600">Location</p>
 
               <div className="flex">
-                <div
-                  className="  items-center text-sm  -ml-2 bg-royal bg-opacity-90 flex rounded-full px-3 py-1.5   text-white font-bold "
-                  dangerouslySetInnerHTML={{
-                    __html: application.candidate.locaiton,
-                  }}
-                />
+                {" "}
+                <div className="  items-center text-sm  -ml-2 bg-royal bg-opacity-90 flex rounded-full px-3 py-1.5   text-white font-bold ">
+                  {candidate.location}
+                </div>
               </div>
             </div>
             <div className="md:grid md:grid-cols-2 hover:bg-gray-50 md:space-y-0 space-y-1 p-4 border-b">
               <p className="text-gray-600">Years of experience</p>
               <div className="flex">
-                <div
-                  className=" flex  items-center text-sm  -ml-2 bg-royal bg-opacity-90 flex rounded-full px-5 py-1.5   text-white font-bold "
-                  dangerouslySetInnerHTML={{
-                    __html: application.candidate.yearsOfExperience,
-                  }}
-                />
+                {" "}
+                <div className="  items-center text-sm  -ml-2 bg-royal bg-opacity-90 flex rounded-full px-3 py-1.5   text-white font-bold ">
+                  {candidate.experience}
+                </div>
               </div>
             </div>
             <div className="md:grid md:grid-cols-2 hover:bg-gray-50 md:space-y-0 space-y-1 p-4 border-b">
               <p className="text-gray-600">Salary</p>
               <div className="flex">
-                <div
-                  className=" flex  items-center text-sm  -ml-2 bg-royal bg-opacity-90 flex rounded-full px-3 py-1.5   text-white font-bold "
-                  dangerouslySetInnerHTML={{
-                    __html: application.candidate.salary,
-                  }}
-                />
+                {" "}
+                <div className="  items-center text-sm  -ml-2 bg-royal bg-opacity-90 flex rounded-full px-3 py-1.5   text-white font-bold ">
+                  {candidate.salary}
+                </div>
               </div>
             </div>
             <div className="md:grid md:grid-cols-2 hover:bg-gray-50 md:space-y-0 space-y-1 p-4 border-b">
               <p className="text-gray-600">specialism</p>
               <div className="flex">
-                <div
-                  className=" flex  items-center text-sm  -ml-2 bg-royal bg-opacity-90 flex rounded-full px-3 py-1.5   text-white font-bold "
-                  dangerouslySetInnerHTML={{
-                    __html: application.candidate.specialism,
-                  }}
-                />
+                {" "}
+                <div className="  items-center text-sm  -ml-2 bg-royal bg-opacity-90 flex rounded-full px-3 py-1.5   text-white font-bold ">
+                  {candidate.specialism}
+                </div>
               </div>
             </div>
             <div className="md:grid md:grid-cols-2 hover:bg-gray-50 md:space-y-0 space-y-1 p-4 border-b">
               <p className="text-gray-600">About</p>
-              <div
-                className=""
-                dangerouslySetInnerHTML={{
-                  __html: application.candidate.additionalInfo,
-                }}
-              />
+              {candidate.about}
             </div>
 
             <div className="p-4">
@@ -130,73 +136,75 @@ export default function CandidatePage({ app }) {
 
       <div>
         <Modal open={showModal} onClose={() => setShowModal(false)}>
-          {application.candidate.jobTitle}
-          {application.candidate.yearsOfExperience}
-          {application.candidate.locaiton}
-          {application.candidate.salary}
+          {candidate.candidaterole}
+          {candidate.experience}
+          {candidate.location}
+          {candidate.salary}
         </Modal>
       </div>
     </Candidatelayout>
   );
 }
 
-export async function getStaticPaths() {
-  const result = await client.query({
-    query: gql`
-      query getslugs {
-        candiates(first: 10) {
-          nodes {
-            slug
-          }
-        }
-      }
-    `,
-  });
-  console.log(result);
+export default CandidatePage;
+
+export const getStaticPaths = async () => {
+  const query = `*[_type == "candidate"]{
+    _id,
+    slug {
+        current
+    }
+}`;
+
+  const candidates = await sanityClient.fetch(query);
+
+  const paths = candidates.map((candidate) => ({
+    params: {
+      slug: candidate.slug.current,
+    },
+  }));
+
   return {
-    paths: result.data.candiates.nodes.map(({ slug }) => {
-      return {
-        params: { slug },
-      };
-    }),
-    fallback: true,
+    paths,
+    fallback: "blocking",
   };
-}
+};
 
-export async function getStaticProps({ params }) {
-  console.log(params);
-  const { slug } = params;
-  const result = await client.query({
-    query: gql`
-      query GetCandBySlug($slug: String!) {
-        candidateBy(slug: $slug) {
-          candidate {
-            jobTitle
-            additionalInfo
-            availability
-            jobTitle
-            locaiton
-            name
-            yearsOfExperience
-            specialism
-            salary
-            portfolio
-            id
-          }
-        }
-      }
-    `,
+export const getStaticProps = async ({ params, preview = false }) => {
+  const query = `*[_type == "candidate" && slug.current == $slug]{
+    _id,
+    candidaterole,
+    jobid,
 
-    variables: { slug },
-  });
+location,
+experience,
+salary,
+specialism,
+about,
+ slug,
+ 
+}`;
+
+  const queryParams = { slug: params.slug };
+
+  const data = await getClient(preview).fetch(query, queryParams);
+
+  if (!data) {
+    return {
+      notFound: true,
+    };
+  }
+
+  const candidate = filterDataToSingleItem(data, preview);
 
   return {
     props: {
-      app: result.data.candidateBy,
+      preview,
+      data: { candidate, query, queryParams },
     },
-    revalidate: 10,
+    revalidate: 60,
   };
-}
+};
 
 // <div>
 //   <Modal open={showModal} onClose={() => setShowModal(false)}></Modal>

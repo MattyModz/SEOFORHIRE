@@ -1,27 +1,53 @@
-import { gql } from "@apollo/client";
-import client from "../../lib/apollo";
+import { getClient, sanityClient, usePreviewSubscription } from "../../sanity";
 import Joblayout from "../../src/componants/Layout/Joblayout";
 import Modal from "../../src/componants/Modal/Modal";
 import { myContext } from "../../Context/Context";
 // import Form from "../../src/componants/Modal/Form";
 import { useRouter } from "next/router";
 import { myContextform } from "../../Context/Contextform";
-export default function PostPage({ job }) {
+
+function filterDataToSingleItem(data, preview) {
+  if (!Array.isArray(data)) {
+    return data;
+  }
+
+  if (data.length === 1) {
+    return data[0];
+  }
+
+  if (preview) {
+    return data.find((item) => item._id.startsWith(`drafts.`)) || data[0];
+  }
+
+  return data[0];
+}
+
+function PostPage({ data, preview }) {
+  const { data: previewData } = usePreviewSubscription(data?.query, {
+    params: data?.queryParams ?? {},
+    // The hook will return this on first render
+    // This is why it's important to fetch *draft* content server-side!
+    initialData: data?.job,
+    // The passed-down preview context determines whether this function does anything
+    enabled: preview,
+  });
+
   const { showModal, setShowModal } = myContext();
-  const { form, setForm } = myContextform();
-  console.log(form);
-  const joblist = job;
+  const { setForm } = myContextform();
+  console.log(data);
   const Router = useRouter();
   if (Router.isFallback) {
     return <h1>Loading Jobs</h1>;
   }
 
+  const job = filterDataToSingleItem(previewData, preview);
+
   return (
     <Joblayout
-      Herotitle={joblist.jobListing.positionTitle}
-      joblocation={joblist.jobListing.location}
-      jobsalary={joblist.jobListing.salary}
-      type={joblist.jobListing.type}
+      Herotitle={job.title}
+      joblocation={job.location}
+      jobsalary={job.salary}
+      term={job.term}
     >
       <div className="rounded-xl bg-white p-8 text-black ">
         <div className="">
@@ -52,7 +78,7 @@ export default function PostPage({ job }) {
               <p className="text-gray-600">Application for</p>
               <div className="flex">
                 <div className="  items-center text-sm  -ml-2 bg-royal bg-opacity-90 flex rounded-full px-3 py-1.5   text-white font-bold ">
-                  {joblist.jobListing.positionTitle}
+                  {job.title}
                 </div>
               </div>
             </div>
@@ -61,7 +87,7 @@ export default function PostPage({ job }) {
 
               <div className="flex">
                 <div className="   items-center text-sm  -ml-2 bg-royal bg-opacity-90 flex rounded-full px-3 py-1.5   text-white font-bold ">
-                  {joblist.jobListing.location}
+                  {job.location}
                 </div>
               </div>
             </div>
@@ -69,38 +95,23 @@ export default function PostPage({ job }) {
               <p className="text-gray-600">Salary</p>
               <div className="flex">
                 <div className="  items-center text-sm  -ml-2 bg-royal bg-opacity-90 flex rounded-full px-3 py-1.5   text-white font-bold ">
-                  {joblist.jobListing.salary}
+                  {job.salary}
                 </div>
               </div>
             </div>
 
             <div className=" hover:bg-gray-50 md:space-y-0 space-y-1 p-4 border-b">
               <p className="text-gray-600 font-bold">About</p>
-              <div
-                dangerouslySetInnerHTML={{
-                  __html: joblist.jobListing.responsibilities,
-                }}
-                className="py-2"
-              ></div>
+              <div>{job.about}</div>
             </div>
           </div>
           <div className=" hover:bg-gray-50 md:space-y-0 space-y-1 p-4 border-b">
             <p className="text-gray-600 font-bold">Requirements</p>
-            <div
-              dangerouslySetInnerHTML={{
-                __html: joblist.jobListing.candidateRequirements,
-              }}
-              className="py-2"
-            ></div>
+            <div>{job.requirments}</div>
           </div>
           <div className=" hover:bg-gray-50 md:space-y-0 space-y-1 p-4 border-b">
             <p className="text-gray-600 font-bold">Benefits</p>
-            <div
-              dangerouslySetInnerHTML={{
-                __html: joblist.jobListing.benefits,
-              }}
-              className="py-2"
-            />
+            <div>{job.benefits}</div>
           </div>
           <div />
         </div>
@@ -121,71 +132,72 @@ export default function PostPage({ job }) {
       </div>
       <div>
         <Modal open={showModal} onClose={() => setShowModal(false)}>
-          {joblist.jobListing.positionTitle}
-          {joblist.jobListing.type}
-          {joblist.jobListing.location}
-          {joblist.jobListing.salary}
+          {job.title}
+          {job.term}
+          {job.location}
+          {job.salary}
         </Modal>
       </div>
     </Joblayout>
   );
 }
 
-export async function getStaticPaths() {
-  const result = await client.query({
-    query: gql`
-      query JobsBySlug {
-        jobs(first: 5) {
-          nodes {
-            slug
-          }
-        }
-      }
-    `,
-  });
+export default PostPage;
+
+export const getStaticPaths = async () => {
+  const query = `*[_type == "job"]{
+    _id,
+    slug {
+        current
+    }
+}`;
+
+  const jobs = await sanityClient.fetch(query);
+
+  const paths = jobs.map((job) => ({
+    params: {
+      slug: job.slug.current,
+    },
+  }));
 
   return {
-    paths: result.data.jobs.nodes.map(({ slug }) => {
-      return {
-        params: { slug },
-      };
-    }),
-    fallback: true,
+    paths,
+    fallback: "blocking",
   };
-}
+};
 
-export async function getStaticProps({ params }) {
-  console.log(params);
-  const { slug } = params;
-  const result = await client.query({
-    query: gql`
-      query GetJobsBySlug($slug: String!) {
-        jobBy(slug: $slug) {
-          jobListing {
-            benefits
-            candidateRequirements
-            fieldGroupName
-            location
-            positionTitle
-            responsibilities
-            salary
-            type
-            intro
-          }
-        }
-      }
-    `,
+export const getStaticProps = async ({ params, preview = false }) => {
+  const query = `*[_type == "job" && slug.current == $slug]{
+ _id,
+ location,
+ title,
+ salary,
+ slug,
+ about,
+requirments,
+ benefits,
+}`;
 
-    variables: { slug },
-  });
+  const queryParams = { slug: params.slug };
+
+  const data = await getClient(preview).fetch(query, queryParams);
+
+  if (!data) {
+    return {
+      notFound: true,
+    };
+  }
+
+  const job = filterDataToSingleItem(data, preview);
 
   return {
     props: {
-      job: result.data.jobBy,
+      preview,
+      data: { job, query, queryParams },
     },
-    revalidate: 10,
+    revalidate: 60,
   };
-}
+};
 
 // <div>
 //   <Modal open={showModal} onClose={() => setShowModal(false)}></Modal>

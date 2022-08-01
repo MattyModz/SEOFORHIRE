@@ -13,7 +13,7 @@ export default function Joblisting({
   slug,
   salary,
   location,
-  type,
+  term,
   title,
 
   intro,
@@ -24,7 +24,7 @@ export default function Joblisting({
     body.style.overflow = showModal ? "hidden" : "auto";
   }, [showModal]);
   const { form, setForm } = myContextform();
-  console.log(form);
+
   return (
     <div className="lg:flex bg-white cursor-pointer border p-4 mb-2 p-2 lg:items-center rounded-xl lg:justify-between">
       <div className="flex-1 rounded-xl  py-4 min-w-0">
@@ -35,7 +35,7 @@ export default function Joblisting({
                 className="flex-shrink-0 mr-1.5 h-5 w-5 text-white"
                 aria-hidden="true"
               />
-              {type}
+              {term}
             </div>
           </div>
           <div className="flex">
@@ -108,7 +108,7 @@ export default function Joblisting({
       <div>
         <Modal open={showModal} onClose={() => setShowModal(false)}>
           {title}
-          {type}
+          {location}
           {location}
           {salary}
         </Modal>

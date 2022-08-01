@@ -14,8 +14,8 @@ export default function Joblayout({
 
   joblocation,
   jobsalary,
-  Jobtitle,
-  type,
+
+  term,
 }) {
   return (
     <section class="w-full ">
@@ -48,7 +48,7 @@ export default function Joblayout({
               className="flex-shrink-0 mr-1.5 h-5 w-5 text-white"
               aria-hidden="true"
             />
-            {type}
+            {term}
           </div>
 
           <div class="flex rounded-full  px-3 py-1.5 bg-gray-100 bg-opacity-10  text-gray-100 mb-4">
