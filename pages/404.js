@@ -1,9 +1,9 @@
 import Link from "next/link";
 export default function Four0Four() {
   return (
-    <section className=" grid grid-cols-1 content-center  h-screen">
+    <section className=" grid grid-cols-1 content-center bg-royal  h-screen">
       <div className="">
-        <div className="align-middle flex justify-center text-8xl font-inter font-bold bg-clip-text text-transparent bg-gradient-to-br from-[#FB8753] to-[#FB7877]">
+        <div className="align-middle flex justify-center text-8xl font-inter font-bold text-white">
           404
         </div>
         <div className=" flex justify-center text-white text-3xl">
