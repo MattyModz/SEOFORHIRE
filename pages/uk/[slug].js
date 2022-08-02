@@ -7,14 +7,16 @@ function DataToPage({ data }) {
         <title className="text-white text-4xl ">{data.title}</title>
         <meta name="description" content={data.description} />
       </Head>
-      <section className="text-center h-screen">
+      <section className="text-center ">
         <div>{data.title}</div>
         <div>{data.description}</div>
-        <span
-          dangerouslySetInnerHTML={{
-            __html: data.html,
-          }}
-        />
+        <div className="text-black">
+          <span
+            dangerouslySetInnerHTML={{
+              __html: data.html,
+            }}
+          />
+        </div>
       </section>
     </>
   );
