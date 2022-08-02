@@ -1,4 +1,3 @@
-//import client from "../lib/apollo";
 import Head from "next/head";
 function DataToPage({ data }) {
   console.log(data);
