@@ -45,7 +45,7 @@ export default function Candlisting({
                     className="flex-shrink-0 mr-1.5 h-5 w-5 text-black"
                     aria-hidden="true"
                   />
-                  {yearsOfExperience} years experience
+                  {yearsOfExperience} experience
                 </div>
               </div>
               <div className="flex">
