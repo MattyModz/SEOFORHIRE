@@ -98,7 +98,7 @@ export default function Blog({ posts }) {
 }
 
 export const getServerSideProps = async () => {
-  const query = `*[_type == "post"]{
+  const query = `*[_type == "post"][0..4]{
   _id,
     _createdAt,
   title,
