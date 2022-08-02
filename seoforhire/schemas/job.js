@@ -36,17 +36,17 @@ export default {
     {
       name: "about",
       title: "About",
-      type: "text",
+      type: "blockContent",
     },
     {
       name: "requirments",
       title: "Requirments",
-      type: "text",
+      type: "blockContent",
     },
     {
       name: "benefits",
       title: "Benefits",
-      type: "text",
+      type: "blockContent",
     },
   ],
 };

@@ -4,16 +4,18 @@ function DataToPage({ data }) {
   return (
     <>
       <Head>
-        <title className="text-white text-4xl">{data.title}</title>
+        <title className="text-white text-4xl ">{data.title}</title>
         <meta name="description" content={data.description} />
       </Head>
-      <div>{data.title}</div>
-      <div>{data.description}</div>
-      <span
-        dangerouslySetInnerHTML={{
-          __html: data.html,
-        }}
-      />
+      <section className="text-center h-screen">
+        <div>{data.title}</div>
+        <div>{data.description}</div>
+        <span
+          dangerouslySetInnerHTML={{
+            __html: data.html,
+          }}
+        />
+      </section>
     </>
   );
 }
