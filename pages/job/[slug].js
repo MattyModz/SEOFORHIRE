@@ -5,6 +5,7 @@ import { myContext } from "../../Context/Context";
 // import Form from "../../src/componants/Modal/Form";
 import { useRouter } from "next/router";
 import { myContextform } from "../../Context/Contextform";
+import PortableText from "react-portable-text";
 
 function filterDataToSingleItem(data, preview) {
   if (!Array.isArray(data)) {
@@ -102,16 +103,94 @@ function PostPage({ data, preview }) {
 
             <div className=" hover:bg-gray-50 md:space-y-0 space-y-1 p-4 border-b">
               <p className="text-gray-600 font-bold">About</p>
-              <div>{job.about}</div>
+              {job.about && (
+                <PortableText
+                  content={job.about}
+                  dataset={process.env.NEXT_PUBLIC_SANITY_DATASET}
+                  projectId={process.env.NEXT_PUBLIC_SANITY_PROJECT_ID}
+                  serializers={{
+                    h1: (props) => (
+                      <h1 className="text-6xl font-bold my-5" {...props} />
+                    ),
+                    h2: (props) => (
+                      <h2 className="text-4xl font-bold my-5" {...props} />
+                    ),
+                    h3: (props) => (
+                      <h2 className="text-3xl font-bold my-5" {...props} />
+                    ),
+                    li: ({ children }) => (
+                      <li className="ml-4 list-disc text-white">
+                        {" "}
+                        {children}{" "}
+                      </li>
+                    ),
+                    link: ({ href, children }) => (
+                      <a href={href} className="text-white hover:underline">
+                        {children}
+                      </a>
+                    ),
+                  }}
+                />
+              )}
             </div>
           </div>
           <div className=" hover:bg-gray-50 md:space-y-0 space-y-1 p-4 border-b">
             <p className="text-gray-600 font-bold">Requirements</p>
-            <div>{job.requirments}</div>
+            {job.requirments && (
+              <PortableText
+                content={job.requirments}
+                dataset={process.env.NEXT_PUBLIC_SANITY_DATASET}
+                projectId={process.env.NEXT_PUBLIC_SANITY_PROJECT_ID}
+                serializers={{
+                  h1: (props) => (
+                    <h1 className="text-6xl font-bold my-5" {...props} />
+                  ),
+                  h2: (props) => (
+                    <h2 className="text-4xl font-bold my-5" {...props} />
+                  ),
+                  h3: (props) => (
+                    <h2 className="text-3xl font-bold my-5" {...props} />
+                  ),
+                  li: ({ children }) => (
+                    <li className="ml-4 list-disc text-white"> {children} </li>
+                  ),
+                  link: ({ href, children }) => (
+                    <a href={href} className="text-white hover:underline">
+                      {children}
+                    </a>
+                  ),
+                }}
+              />
+            )}
           </div>
           <div className=" hover:bg-gray-50 md:space-y-0 space-y-1 p-4 border-b">
             <p className="text-gray-600 font-bold">Benefits</p>
-            <div>{job.benefits}</div>
+            {job.benefits && (
+              <PortableText
+                content={job.benefits}
+                dataset={process.env.NEXT_PUBLIC_SANITY_DATASET}
+                projectId={process.env.NEXT_PUBLIC_SANITY_PROJECT_ID}
+                serializers={{
+                  h1: (props) => (
+                    <h1 className="text-6xl font-bold my-5" {...props} />
+                  ),
+                  h2: (props) => (
+                    <h2 className="text-4xl font-bold my-5" {...props} />
+                  ),
+                  h3: (props) => (
+                    <h2 className="text-3xl font-bold my-5" {...props} />
+                  ),
+                  li: ({ children }) => (
+                    <li className="ml-4 list-disc text-white"> {children} </li>
+                  ),
+                  link: ({ href, children }) => (
+                    <a href={href} className="text-white hover:underline">
+                      {children}
+                    </a>
+                  ),
+                }}
+              />
+            )}
           </div>
           <div />
         </div>
@@ -173,6 +252,7 @@ export const getStaticProps = async ({ params, preview = false }) => {
  title,
  salary,
  slug,
+ term,
  about,
 requirments,
  benefits,
