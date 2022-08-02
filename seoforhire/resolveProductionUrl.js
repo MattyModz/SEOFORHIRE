@@ -7,7 +7,6 @@ const localUrl = `http://localhost:3000`;
 const baseUrl = window.location.hostname === "localhost" ? localUrl : remoteUrl;
 
 const pUrl = new URL(baseUrl);
-//
 
 export default function resolveProductionUrl(doc) {
   switch (doc._type) {
