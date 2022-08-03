@@ -181,10 +181,10 @@ function PostPage({ data, preview }) {
                     <h2 className="text-3xl font-bold my-5" {...props} />
                   ),
                   li: ({ children }) => (
-                    <li className="ml-4 list-disc text-white"> {children} </li>
+                    <li className="ml-4 list-disc text-black"> {children} </li>
                   ),
                   link: ({ href, children }) => (
-                    <a href={href} className="text-white hover:underline">
+                    <a href={href} className="text-black hover:underline">
                       {children}
                     </a>
                   ),

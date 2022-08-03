@@ -1,23 +1,39 @@
 import Head from "next/head";
+import Joblisting from "../../../src/componants/Hero/jobslist";
 function DataToPage({ data }) {
   console.log(data);
   return (
     <>
       <Head>
-        <title className="text-white text-4xl ">{data.title}</title>
+        <title className="text-white  text-4xl ">{data.title}</title>
         <meta name="description" content={data.description} />
       </Head>
-      <section className="text-center ">
-        <div>{data.title}</div>
-        <div>{data.description}</div>
-        <div className="text-black">
+      <section className="text-center bg-royal text-white font-inter ">
+        <div className="text-white font-inter">
           <span
+            className="text-white "
             dangerouslySetInnerHTML={{
               __html: data.html,
             }}
           />
         </div>
       </section>
+
+      <div
+        id="job"
+        className="container rounded-xl py-8 flex justify-center mx-auto   overflow-hidden "
+      >
+        <div className=" w-11/12  rounded-xl sm:w-2/3">
+          <Joblisting
+            key={data.title}
+            slug={data.title}
+            title={data.title}
+            salary={data.title}
+            location={data.title}
+            term={data.title}
+          />
+        </div>
+      </div>
     </>
   );
 }
