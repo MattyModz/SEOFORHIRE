@@ -11,7 +11,7 @@ const pUrl = new URL(baseUrl);
 export default function resolveProductionUrl(doc) {
   switch (doc._type) {
     case "job":
-      return `${pUrl}/api/preview?secret=${SANITY_PREVIEW_SECRET}&slug=job/${doc.slug.current}`;
+      return `${pUrl}/api/preview?secret=${SANITY_PREVIEW_SECRET}&slug=jobs/${doc.slug.current}`;
   }
   switch (doc._type) {
     case "candidate":
