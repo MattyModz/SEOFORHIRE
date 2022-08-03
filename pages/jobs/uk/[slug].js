@@ -9,7 +9,7 @@ function DataToPage({ data }) {
         <meta name="description" content={data.description} />
       </Head>
       <section className="text-center bg-royal text-white font-inter ">
-        <div className="text-white font-inter">
+        <div className="text-yellow-500 font-inter">
           <span
             className="text-white "
             dangerouslySetInnerHTML={{
@@ -21,7 +21,7 @@ function DataToPage({ data }) {
 
       <div
         id="job"
-        className="container rounded-xl py-8 flex justify-center mx-auto   overflow-hidden "
+        className=" bg-royal  py-8 flex justify-center mx-auto   overflow-hidden "
       >
         <div className=" w-11/12  rounded-xl sm:w-2/3">
           <Joblisting
