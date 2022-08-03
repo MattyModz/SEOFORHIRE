@@ -199,7 +199,7 @@ function PostPage({ data, preview }) {
           <button
             className="learn-more rounded-full bg-gray-200 bg-opacity-50"
             onClick={() => {
-              setShowModal(true, setForm("Form1"));
+              setShowModal(true, setForm("Form"));
             }}
           >
             <span className="circle" aria-hidden="true">
