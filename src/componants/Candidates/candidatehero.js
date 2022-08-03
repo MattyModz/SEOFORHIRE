@@ -43,7 +43,7 @@ export default function Candhero({
                   className="flex-shrink-0 mr-1.5 h-5 w-5 text-white"
                   aria-hidden="true"
                 />
-                {yearsOfExperience} experience
+                {yearsOfExperience}
               </div>
             </div>
             <div className="flex">
