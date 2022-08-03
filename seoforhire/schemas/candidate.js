@@ -12,6 +12,7 @@ export default {
     {
       name: "slug",
       title: "Slug",
+      description: "uses hyphens between words '-'",
       type: "slug",
       options: {
         source: "candidaterole",

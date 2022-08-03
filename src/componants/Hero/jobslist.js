@@ -89,7 +89,7 @@ export default function Joblisting({
         <div class="w-1/2  sm:w-1/2 md:w-1/2 lg:w-1/2 xl:w-1/2">
           <div className="mt-5 mr-2   lg:mt-0 lg:ml-4">
             <span className="">
-              <Link href={`/job/${slug}`}>
+              <Link href={`/jobs/${slug}`}>
                 <button class="learn-more bg-blue-300 bg-opacity-30 rounded-full ">
                   <span
                     class="circle border-2 border-opacity-50 border-blue-300"
