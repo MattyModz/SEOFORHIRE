@@ -57,7 +57,7 @@ export default function Joblisting({
             </div>
           </div>
         </div>
-        <Link href={`/job/${slug}`}>
+        <Link href={`/jobs/${slug}`}>
           <h2 className="text-2xl px-3 font-bold leading-7 text-black sm:text-3xl sm:truncate">
             {title}
           </h2>
