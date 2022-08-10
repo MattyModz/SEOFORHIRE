@@ -123,7 +123,7 @@ function Post({ data, preview }) {
                       <h2 className="text-4xl font-bold my-5" {...props} />
                     ),
                     h3: (props) => (
-                      <h2 className="text-3xl font-bold my-5" {...props} />
+                      <h2 className="text-2xl font-bold my-5" {...props} />
                     ),
                     li: ({ children }) => (
                       <li className="ml-4 list-disc text-white">

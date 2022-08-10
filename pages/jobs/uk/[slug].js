@@ -1,7 +1,8 @@
 import Head from "next/head";
 import Joblisting from "../../../src/componants/Hero/jobslist";
-function DataToPage({ data }) {
+function DataToPage({ data, salary }) {
   console.log(data);
+  console.log(salary);
   return (
     <>
       <Head>
