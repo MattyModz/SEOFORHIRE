@@ -1,4 +1,3 @@
-import { useState } from "react";
 import Form from "./Form";
 import Form1 from "./Form1";
 import Container from "../container";
@@ -6,17 +5,13 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { myContextform } from "../../../Context/Contextform";
 import {
-  BriefcaseIcon,
-  CalendarIcon,
   CurrencyPoundIcon,
-  LinkIcon,
   LocationMarkerIcon,
-  PencilIcon,
   CollectionIcon,
 } from "@heroicons/react/solid";
 
 export default function Applicationform({ children }) {
-  const { form, setForm } = myContextform();
+  const { form } = myContextform();
   console.log(form);
 
   return (

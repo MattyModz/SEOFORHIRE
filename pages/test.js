@@ -1,5 +1,5 @@
 import Avgsalary from "../src/componants/Programatic/avgsalary";
-import Joblisting from "../src/componants/Hero/jobslist";
+// import Joblisting from "../src/componants/Hero/jobslist";
 
 import Container from "../src/componants/container";
 import Apply from "../src/componants/Programatic/apply";

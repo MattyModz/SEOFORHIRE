@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useState } from "react";
-import { motion } from "framer-motion";
+
 import Container from "../container";
 import Link from "next/link";
 export default function Form() {
@@ -68,7 +68,7 @@ export default function Form() {
           <form
             acceptCharset="UTF-8"
             method="POST"
-            enctype="multipart/form-data"
+            encType="multipart/form-data"
             id="ajaxForm"
             onSubmit={handleSubmit}
             className=" grid  w-full gap-4 mx-auto sm:grid-cols-2   font-bold "
@@ -77,7 +77,7 @@ export default function Form() {
           >
             <div>
               <label
-                for="first-name"
+                htmlFor="first-name"
                 className="inline-block mb-2 font-bold text-sm font-medium text-white0 sm:text-base"
               >
                 First name
@@ -95,7 +95,7 @@ export default function Form() {
             </div>
             <div>
               <label
-                for="first-name"
+                htmlFor="first-name"
                 className="inline-block mb-2 font-bold text-sm font-medium text-white sm:text-base"
               >
                 Last name
@@ -113,7 +113,7 @@ export default function Form() {
             </div>
             <div>
               <label
-                for="first-name"
+                htmlFor="first-name"
                 className="inline-block mb-2 font-bold text-sm font-medium  sm:text-base"
               >
                 Email
@@ -132,7 +132,7 @@ export default function Form() {
             </div>
             <div>
               <label
-                for="Telephonenumber"
+                htmlFor="Telephonenumber"
                 className="inline-block mb-2 font-bold text-sm font-medium text-white sm:text-base"
               >
                 Tel

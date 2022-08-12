@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useState } from "react";
-import { motion } from "framer-motion";
+
 import Container from "../container";
 import Link from "next/link";
 export default function Formone() {
@@ -19,12 +19,12 @@ export default function Formone() {
     experience: "",
   });
 
-  const handleFileChange = () => (e) => {
-    setQueryhire((prevState) => ({
-      ...prevState,
-      files: e.target.files[0],
-    }));
-  };
+  // const handleFileChange = () => (e) => {
+  //   setQueryhire((prevState) => ({
+  //     ...prevState,
+  //     files: e.target.files[0],
+  //   }));
+  // };
 
   const handleChange = () => (e) => {
     const name = e.target.name;
@@ -72,7 +72,7 @@ export default function Formone() {
           <form
             acceptCharset="UTF-8"
             method="POST"
-            enctype="multipart/form-data"
+            encType="multipart/form-data"
             id="ajaxForm"
             onSubmit={handleSubmit}
             className=" grid  w-full gap-4 mx-auto sm:grid-cols-2   font-bold "
@@ -81,7 +81,7 @@ export default function Formone() {
           >
             <div>
               <label
-                for="name"
+                htmlFor="name"
                 className="inline-block mb-2 font-bold text-sm font-medium text-white0 sm:text-base"
               >
                 Name
@@ -99,7 +99,7 @@ export default function Formone() {
             </div>
             <div>
               <label
-                for="Company"
+                htmlFor="Company"
                 className="inline-block mb-2 font-bold text-sm font-medium text-white sm:text-base"
               >
                 Company
@@ -117,7 +117,7 @@ export default function Formone() {
             </div>
             <div>
               <label
-                for="first-name"
+                htmlFor="first-name"
                 className="inline-block mb-2 font-bold text-sm font-medium  sm:text-base"
               >
                 Email
@@ -136,7 +136,7 @@ export default function Formone() {
             </div>
             <div>
               <label
-                for="Telephonenumber"
+                htmlFor="Telephonenumber"
                 className="inline-block mb-2 font-bold text-sm font-medium text-white sm:text-base"
               >
                 Tel
@@ -154,7 +154,7 @@ export default function Formone() {
             </div>
             <div>
               <label
-                for="Telephonenumber"
+                htmlFor="Telephonenumber"
                 className="inline-block mb-2 font-bold text-sm font-medium text-white sm:text-base"
               >
                 salary range
@@ -187,7 +187,7 @@ export default function Formone() {
             </div>
             <div>
               <label
-                for="Telephonenumber"
+                htmlFor="Telephonenumber"
                 className="inline-block mb-2 font-bold text-sm font-medium text-white sm:text-base"
               >
                 Niche / specialism
@@ -209,7 +209,7 @@ export default function Formone() {
             </div>
             <div>
               <label
-                for="Telephonenumber"
+                htmlFor="Telephonenumber"
                 className="inline-block mb-2 font-bold text-sm font-medium text-white sm:text-base"
               >
                 Years of experience required

@@ -60,9 +60,9 @@ export default function Footer() {
                   aria-hidden="true"
                 >
                   <path
-                    fill-rule="evenodd"
+                    fillRule="evenodd"
                     d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"
-                    clip-rule="evenodd"
+                    clipRule="evenodd"
                   ></path>
                 </svg>
               </a>
@@ -79,20 +79,22 @@ export default function Footer() {
             <Image src="/logo.svg" height={50} width={50} />
           </a>
           <nav className="flex flex-col flex-wrap sm:items-center space-y-4 text-xs font-medium text-white sm:flex-row sm:space-x-3  lg:space-x-4 sm:space-y-0">
-            <a href="/" className="hover:text-white">
-              Home
-            </a>
+            <Link href={"/"}>
+              <a className="hover:text-white">Home</a>
+            </Link>
 
-            <a href="/media" className="hover:text-white">
-              Podcasts
-            </a>
-            <a href="/contact" className="hover:text-white">
-              Contact
-            </a>
-
-            <a href="/blog" className="hover:text-white">
-              Blog
-            </a>
+            <Link href={"/media"}>
+              {" "}
+              <a className="hover:text-white">Podcasts</a>
+            </Link>
+            <Link href={"/contact"}>
+              {" "}
+              <a className="hover:text-white">Contact</a>
+            </Link>
+            <Link href={"/blog"}>
+              {" "}
+              <a className="hover:text-white">Blog</a>
+            </Link>
           </nav>
           <p className="sm:text-center text-xs leading-5 text-white md:text-left">
             SEOforhire is a subsidiary of the Charlie Delta Group.
@@ -126,24 +128,16 @@ export default function Footer() {
         <div className="max-w-7xl border-l border-r border-gray-700 py-6 h-full px-10 mx-auto flex flex-col sm:items-center sm:justify-between md:flex-row md:space-y-0">
           © {new Date().getFullYear()}, SEOforHire
           <nav className="flex flex-col space-y-1.5 md:mt-0 mt-4 sm:flex-row sm:space-y-0 sm:space-x-3">
-            <a
-              href="/policy/terms-and-conditions"
-              className="transition hover:text-white"
-            >
-              Terms of Service
-            </a>
-            <a
-              href="/policy/privacy-policy"
-              className="transition hover:text-white"
-            >
-              Privacy Policy
-            </a>
-            <a
-              href="/policy/cookie-policy"
-              className="transition hover:text-white"
-            >
-              Cookie Policy
-            </a>
+            <Link href={"/policy/terms-and-conditions"}>
+              {" "}
+              <a className="transition hover:text-white">Terms of Service</a>
+            </Link>
+            <Link href={"/policy/privacy-policy"}>
+              <a className="transition hover:text-white">Privacy Policy</a>
+            </Link>
+            <Link href={"/policy/cookie-policy"}>
+              <a className="transition hover:text-white">Cookie Policy</a>
+            </Link>
           </nav>
         </div>
       </div>

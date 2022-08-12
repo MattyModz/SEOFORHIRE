@@ -1,19 +1,18 @@
 import Link from "next/link";
 import Modal from "../Modal/Modal";
 import Image from "next/image";
-import Form1 from "../Modal/Form1";
+
 import { myContextform } from "../../../Context/Contextform";
 import { useState, useEffect } from "react";
 import Container from "../container";
 import {
-  BriefcaseIcon,
   CurrencyPoundIcon,
   LocationMarkerIcon,
   CollectionIcon,
 } from "@heroicons/react/solid";
 export default function Candlisting({
   jobTitle,
-  availability,
+
   location,
   specialism,
   yearsOfExperience,
@@ -23,7 +22,7 @@ export default function Candlisting({
   slug,
 }) {
   const [showModal, setShowModal] = useState(false);
-  const { form, setForm } = myContextform();
+  const { setForm } = myContextform();
 
   useEffect(() => {
     const body = document.querySelector("body");

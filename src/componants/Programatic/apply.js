@@ -3,7 +3,7 @@ import React from "react";
 import Link from "next/link";
 import Modal from "../Modal/Modal";
 import { useState, useEffect } from "react";
-import Form from "../Modal/Form";
+
 import { myContextform } from "../../../Context/Contextform";
 import {
   BriefcaseIcon,
@@ -11,21 +11,13 @@ import {
   LocationMarkerIcon,
 } from "@heroicons/react/solid";
 
-export default function Apply({
-  slug,
-  salary,
-  location,
-  term,
-  title,
-
-  intro,
-}) {
+export default function Apply({ slug, salary, location, term, title }) {
   const [showModal, setShowModal] = useState(false);
   useEffect(() => {
     const body = document.querySelector("body");
     body.style.overflow = showModal ? "hidden" : "auto";
   }, [showModal]);
-  const { form, setForm } = myContextform();
+  const { setForm } = myContextform();
 
   return (
     <div className=" bg-white cursor-pointer border p-4 mb-2 p-2 lg:items-center rounded-xl lg:justify-between">
@@ -66,40 +58,40 @@ export default function Apply({
         </Link>
       </div>
 
-      <div class="block md:flex flex-wrap ">
-        <div class="w-1/2  sm:w-1/2 md:w-1/2 lg:w-1/2 xl:w-1/2">
+      <div className="block md:flex flex-wrap ">
+        <div className="w-1/2  sm:w-1/2 md:w-1/2 lg:w-1/2 xl:w-1/2">
           <div className="mt-3    lg:mt-0 ">
             <span className="">
               <button
-                class="learn-more bg-gray-100 rounded-full"
+                className="learn-more bg-gray-100 rounded-full"
                 onClick={() => {
                   setShowModal(true, setForm("Form"));
                 }}
               >
                 <span
-                  class="circle border-2 border-opacity-50 border-blue-300"
+                  className="circle border-2 border-opacity-50 border-blue-300"
                   aria-hidden="true"
                 >
-                  <span class="icon arrow"></span>
+                  <span className="icon arrow"></span>
                 </span>
-                <span class="button-text">Apply</span>
+                <span className="button-text">Apply</span>
               </button>
             </span>
           </div>
         </div>
 
-        <div class="w-1/2  sm:w-1/2 md:w-1/2 lg:w-1/2 xl:w-1/2">
+        <div className="w-1/2  sm:w-1/2 md:w-1/2 lg:w-1/2 xl:w-1/2">
           <div className="mt-5    lg:mt-0 lg:ml-4">
             <span className="">
               <Link href={`/jobs/${slug}`}>
-                <button class="learn-more bg-blue-300 bg-opacity-30 rounded-full ">
+                <button className="learn-more bg-blue-300 bg-opacity-30 rounded-full ">
                   <span
-                    class="circle border-2 border-opacity-50 border-blue-300"
+                    className="circle border-2 border-opacity-50 border-blue-300"
                     aria-hidden="true"
                   >
-                    <span class="icon arrow"></span>
+                    <span className="icon arrow"></span>
                   </span>
-                  <span class="button-text ">View</span>
+                  <span className="button-text ">View</span>
                 </button>
               </Link>
             </span>
@@ -118,5 +110,5 @@ export default function Apply({
     </div>
   );
 }
-// <div class="flex rounded-full inline-block px-3 py-1.5 bg-royal bg-opacity-80  text-gray-100 mb-4"></div>
+// <div className="flex rounded-full inline-block px-3 py-1.5 bg-royal bg-opacity-80  text-gray-100 mb-4"></div>
 //   <div className="text-black">{intro}</div>

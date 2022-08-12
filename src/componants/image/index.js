@@ -2,7 +2,7 @@ import Img from "next/image";
 import PropTypes from "prop-types";
 import cx from "classnames";
 import { DEFAULT_IMG_URL } from "../../utils/Constants/images";
-//import { imageConfigDefault } from 'next/dist/server/image-config';
+// import { imageConfigDefault } from 'next/dist/server/image-config';
 
 /**
  * Image Component.
@@ -23,7 +23,7 @@ const Image = (props) => {
     sourceUrl,
     className,
     layout,
-    objectFit,
+
     containerClassNames,
     showDefault,
     ...rest
