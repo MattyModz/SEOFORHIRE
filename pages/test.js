@@ -1,36 +1,36 @@
 import Avgsalary from "../src/componants/Programatic/avgsalary";
 import Joblisting from "../src/componants/Hero/jobslist";
+
 import Container from "../src/componants/container";
 import Apply from "../src/componants/Programatic/apply";
+// import Chart from "../src/componants/Programatic/chart";
+import Authorcard from "../src/componants/Blog/authorcard";
+import Chart from "../src/componants/Programatic/chart";
+import Body from "../src/componants/Programatic/body";
+import Social from "../src/componants/Programatic/social";
 export default function test({ salary }) {
   console.log(salary.month);
 
   return (
-    <section className=" ">
+    <section className=" bg-gray-50">
       <Avgsalary location={"manchester"} Averagesalary={"£60,000"} />
-      <div className="text-black ">
-        <h1 className="text-center font-bold">Seo jobs in manchester</h1>
+      <div className="text-black -mt-40 ">
         <Container>
           <div className="lg:flex p-8">
-            <div className=" lg:w-2/3 text-black px-4">
+            <div className=" lg:w-2/3 text-black lg:px-4 py-8">
               {" "}
-              Are you looking for a new and exciting SEO job in Manchester? If
-              you have a passion for all things digital and a desire to help
-              businesses grow online, then a career in SEO could be perfect for
-              you. SEO is a fast-paced and ever-changing industry, which means
-              that there are always new opportunities and challenges to keep you
-              on your toes. Manchester is a hotbed of digital activity, with a
-              growing number of businesses investing in SEO to help them compete
-              in an increasingly competitive online marketplace. As an SEO
-              professional, you could find yourself working in a variety of
-              industries, from ecommerce and retail to travel an
+              <Chart />
+              <Body />
             </div>
-            <div className="lg:w-1/3 text-white py-8 ">
+            <div className="sm:block hidden absolute h-screen">
+              <div className=" relative ">
+                {" "}
+                <Social />
+              </div>
+            </div>
+            <div className="lg:w-1/3 text-white lg:p-8 -mt-5">
               {" "}
-              <div className="bg-royal p-8 rounded-xl">
-                <h3 className="font-interr font-bold text-center mb-4">
-                  Seo jobs in Manchester
-                </h3>
+              <div className=" lg:p-8 rounded-xl">
                 <Container>
                   <Apply
                     key="test"
@@ -48,6 +48,7 @@ export default function test({ salary }) {
                     location="Manchester"
                     term="test"
                   />
+                  <Authorcard />
                 </Container>
               </div>
             </div>
