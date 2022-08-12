@@ -43,12 +43,7 @@ export default function Modal({
             X
           </button>
 
-          <Applicationform
-            children={children}
-            type={type}
-            location={location}
-            salary={salary}
-          />
+          <Applicationform type={type} location={location} salary={salary} />
         </div>
       </div>
     </>,
