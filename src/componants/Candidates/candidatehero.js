@@ -21,7 +21,7 @@ export default function Candhero({
   slug,
 }) {
   const [showModal, setShowModal] = useState(false);
-  const { form, setForm } = myContextform();
+  const { setForm } = myContextform();
 
   useEffect(() => {
     const body = document.querySelector("body");

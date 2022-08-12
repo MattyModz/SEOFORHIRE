@@ -1,5 +1,3 @@
-import { useForm } from "react-hook-form";
-
 export default function Contactform() {
   return (
     <div className="">
@@ -11,7 +9,7 @@ export default function Contactform() {
         >
           <div>
             <label
-              for="first-name"
+              htmlFor="first-name"
               className="inline-block mb-2 text-sm font-medium text-gray-500 sm:text-base"
             ></label>
             <input
@@ -24,7 +22,7 @@ export default function Contactform() {
 
           <div className="sm:col-span-2">
             <label
-              for="Email"
+              htmlFor="Email"
               className="inline-block mb-2 text-sm font-medium text-gray-500 sm:text-base"
             ></label>
             <input
@@ -37,7 +35,7 @@ export default function Contactform() {
 
           <div className="sm:col-span-2">
             <label
-              for="PhoneNumber"
+              htmlFor="PhoneNumber"
               className="inline-block mb-2 text-sm font-medium text-gray-500 sm:text-base"
             ></label>
             <input
@@ -50,7 +48,7 @@ export default function Contactform() {
 
           <div className="sm:col-span-2">
             <label
-              for="message"
+              htmlFor="message"
               className="inline-block mb-2 text-sm font-medium text-gray-500 sm:text-base"
             ></label>
             <textarea

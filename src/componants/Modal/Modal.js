@@ -44,7 +44,7 @@ export default function Modal({
           </button>
 
           <Applicationform
-            children
+            children={children}
             type={type}
             location={location}
             salary={salary}

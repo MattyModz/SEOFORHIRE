@@ -1,15 +1,13 @@
 import Link from "next/link";
 
-import Chart from "./chart";
-
 export default function Avgsalary({ Averagesalary, location }) {
   return (
     <section className="px-8 py-16  flex flex-wrap w-full bg-gradient-to-br from-[#1A0976] via-[#100750] to-black ">
-      <div class="w-full max-w-6xl mx-auto py-8">
-        <h1 class="text-3xl sm:text-3xl md:text-4xl lg:text-6xl font-bold mb-2 text-white sm:text-center text-left">
+      <div className="w-full max-w-6xl mx-auto py-8">
+        <h1 className="text-3xl sm:text-3xl md:text-4xl lg:text-6xl font-bold mb-2 text-white sm:text-center text-left">
           Seo jobs in Manchester
         </h1>
-        <p class="w-full text-left sm:text-center mb-8 md:text-lg text-gray-50">
+        <p className="w-full text-left sm:text-center mb-8 md:text-lg text-gray-50">
           Average yearly salary for seo jobs in manchester data from ...
         </p>
         <div className="flex flex-col items-center justify-center w-full mb-10 sm:flex-row sm:mb-20">
