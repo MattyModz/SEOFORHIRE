@@ -79,22 +79,29 @@ export default function Footer() {
             <Image src="/logo.svg" height={50} width={50} />
           </a>
           <nav className="flex flex-col flex-wrap sm:items-center space-y-4 text-xs font-medium text-white sm:flex-row sm:space-x-3  lg:space-x-4 sm:space-y-0">
-            <Link href={"/"}>
-              <a className="hover:text-white">Home</a>
-            </Link>
-
-            <Link href={"/media"}>
-              {" "}
-              <a className="hover:text-white">Podcasts</a>
-            </Link>
-            <Link href={"/contact"}>
-              {" "}
-              <a className="hover:text-white">Contact</a>
-            </Link>
-            <Link href={"/blog"}>
-              {" "}
-              <a className="hover:text-white">Blog</a>
-            </Link>
+            <div>
+              <Link href={"/"}>
+                <a className="hover:text-white">Home</a>
+              </Link>
+            </div>
+            <div>
+              <Link href={"/media"}>
+                {" "}
+                <a className="hover:text-white">Podcasts</a>
+              </Link>
+            </div>
+            <div>
+              <Link href={"/contact"}>
+                {" "}
+                <a className="hover:text-white">Contact</a>
+              </Link>
+            </div>
+            <div>
+              <Link href={"/blog"}>
+                {" "}
+                <a className="hover:text-white">Blog</a>
+              </Link>
+            </div>
           </nav>
           <p className="sm:text-center text-xs leading-5 text-white md:text-left">
             SEOforhire is a subsidiary of the Charlie Delta Group.
