@@ -35,19 +35,18 @@ export default function Footer() {
           <div className="flex sm:flex-row flex-col items-start sm:items-center">
             Visit our social channels
             <nav className="flex sm:ml-3 md:mt-0 mt-3 items-center space-x-3">
-              <a
-                href="https://twitter.com/SEOforHireLTD"
-                className="transition flex hover:text-white"
-              >
-                <svg
-                  className="w-5 h-5"
-                  aria-hidden="true"
-                  fill="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84"></path>
-                </svg>
-              </a>
+              <Link href={"https://twitter.com/SEOforHireLTD"}>
+                <a className="transition flex hover:text-white">
+                  <svg
+                    className="w-5 h-5"
+                    aria-hidden="true"
+                    fill="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84"></path>
+                  </svg>
+                </a>
+              </Link>
               <a
                 href="https://m.facebook.com/seoforhireLTD/"
                 className="transition flex hover:text-white"
@@ -79,28 +78,17 @@ export default function Footer() {
             <Image src="/logo.svg" height={50} width={50} />
           </a>
           <nav className="flex flex-col flex-wrap sm:items-center space-y-4 text-xs font-medium text-white sm:flex-row sm:space-x-3  lg:space-x-4 sm:space-y-0">
-            <div>
-              <Link href={"/"}>
-                <a className="hover:text-white">Home</a>
-              </Link>
+            <div className="hover:text-white">
+              <Link href={"/"}> Home</Link>
             </div>
-            <div>
-              <Link href={"/media"}>
-                {" "}
-                <a className="hover:text-white">Podcasts</a>
-              </Link>
+            <div className="hover:text-white">
+              <Link href={"/media"}> Podcasts</Link>
             </div>
-            <div>
-              <Link href={"/contact"}>
-                {" "}
-                <a className="hover:text-white">Contact</a>
-              </Link>
+            <div className="hover:text-white">
+              <Link href={"/media"}> Contact</Link>
             </div>
-            <div>
-              <Link href={"/blog"}>
-                {" "}
-                <a className="hover:text-white">Blog</a>
-              </Link>
+            <div className="hover:text-white">
+              <Link href={"/media"}> Blog</Link>
             </div>
           </nav>
           <p className="sm:text-center text-xs leading-5 text-white md:text-left">
@@ -135,16 +123,17 @@ export default function Footer() {
         <div className="max-w-7xl border-l border-r border-gray-700 py-6 h-full px-10 mx-auto flex flex-col sm:items-center sm:justify-between md:flex-row md:space-y-0">
           © {new Date().getFullYear()}, SEOforHire
           <nav className="flex flex-col space-y-1.5 md:mt-0 mt-4 sm:flex-row sm:space-y-0 sm:space-x-3">
-            <Link href={"/policy/terms-and-conditions"}>
-              {" "}
-              <a className="transition hover:text-white">Terms of Service</a>
-            </Link>
-            <Link href={"/policy/privacy-policy"}>
-              <a className="transition hover:text-white">Privacy Policy</a>
-            </Link>
-            <Link href={"/policy/cookie-policy"}>
-              <a className="transition hover:text-white">Cookie Policy</a>
-            </Link>
+            <div className="transition hover:text-white">
+              <Link href={"/policy/terms-and-conditions"}>
+                Terms and conditions
+              </Link>
+            </div>
+            <div className="transition hover:text-white">
+              <Link href={"/policy/privacy-policy"}> privacy-policy</Link>
+            </div>
+            <div className="transition hover:text-white">
+              <Link href={"/policy/cookie-policy"}> Cookie Policy</Link>
+            </div>
           </nav>
         </div>
       </div>

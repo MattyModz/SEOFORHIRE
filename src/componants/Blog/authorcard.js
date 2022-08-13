@@ -13,7 +13,7 @@ function Authorcard() {
               height={100}
               className="rounded-full"
             />
-            <div className="flex py-2">
+            <div className="flex ">
               <a
                 href="https://uk.linkedin.com/in/josh-peacock-589438220"
                 className="flex-1 block p-1 text-center text-gray-300 transition duration-200 ease-out  hover:text-white"
