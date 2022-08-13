@@ -23,7 +23,7 @@ const OVERLAY_STYLES = {
 
 export default function Modal({
   open,
-  props,
+  children,
   onClose,
   type,
   location,
@@ -44,7 +44,7 @@ export default function Modal({
           </button>
 
           <Applicationform
-            props={props}
+            children={children}
             type={type}
             location={location}
             salary={salary}
