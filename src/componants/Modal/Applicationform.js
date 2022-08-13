@@ -10,7 +10,7 @@ import {
   CollectionIcon,
 } from "@heroicons/react/solid";
 
-export default function Applicationform({ children }) {
+export default function Applicationform({ props }) {
   const { form } = myContextform();
   console.log(form);
 
@@ -36,7 +36,7 @@ export default function Applicationform({ children }) {
               <Image src={"/logo.png"} width={50} height={50} alt="Logo" />
               <p className="text-xs font-bold text-blue-500 uppercase"></p>
               <h2 className="mt-1 text-2xl font-bold text-left text-white lg:text-3xl md:mt-2">
-                {form === "Form1" ? "Hire" : "Apply"} - {children[0]}
+                {form === "Form1" ? "Hire" : "Apply"} - {props[0]}
               </h2>
 
               <div className="py-8 md:flex sm:block  ">
@@ -46,7 +46,7 @@ export default function Applicationform({ children }) {
                       className="flex-shrink-0 mr-1.5 h-5 w-5 text-white"
                       aria-hidden="true"
                     />
-                    <div>{children[1]} </div>
+                    <div>{props[1]} </div>
                   </div>
                 </div>
 
@@ -57,7 +57,7 @@ export default function Applicationform({ children }) {
                       aria-hidden="true"
                     />
 
-                    <h6 className=""> {children[2]}</h6>
+                    <h6 className=""> {props[2]}</h6>
                   </div>
                 </div>
 
@@ -67,7 +67,7 @@ export default function Applicationform({ children }) {
                       className="flex-shrink-0 mr-1.5 h-5 w-5 text-gray-100"
                       aria-hidden="true"
                     />
-                    {children[3]}
+                    {props[3]}
                   </div>
                 </div>
               </div>
