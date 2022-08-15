@@ -1,5 +1,5 @@
 import React from "react";
-import Image from "next/image";
+
 export default function Social() {
   return (
     <div className="py-2  block bg-royal rounded-xl p-3  sticky">
