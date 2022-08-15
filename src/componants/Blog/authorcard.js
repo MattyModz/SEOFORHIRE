@@ -4,19 +4,19 @@ function Authorcard() {
   return (
     <div>
       {" "}
-      <div className="px-8 py-8 mt-3 text-gray-500 rounded-2xl bg-royal dark:bg-gray-900 dark:text-gray-400">
+      <div className="px-8  py-8 mt-3 text-gray-500 rounded-2xl bg-royal dark:bg-gray-900 dark:text-gray-400">
         <div className="flex flex-wrap items-start sm:space-x-6 sm:flex-nowrap">
-          <div className="relative flex-shrink-0 w-24 h-24   ">
+          <div className=" relative flex-shrink-0 w-24 h-24  lg:mb-8 ">
             <Image
               src={"/josh.jpg"}
               width={100}
               height={100}
-              className="rounded-full"
+              className="rounded-full "
             />
-            <div className="flex ">
+            <div className="flex  py-2 ">
               <a
                 href="https://uk.linkedin.com/in/josh-peacock-589438220"
-                className="flex-1 block p-1 text-center text-gray-300 transition duration-200 ease-out  hover:text-white"
+                className="flex-1 block lg:p-1 text-center text-gray-300 transition duration-200 ease-out  hover:text-white"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -29,7 +29,7 @@ function Authorcard() {
 
               <a
                 href="https://twitter.com/JPeaco"
-                className="flex-1 block p-1 text-center text-gray-300 transition duration-200 ease-out   hover:text-white"
+                className="flex-1 block lg:p-1 text-center text-gray-300 transition duration-200 ease-out   hover:text-white"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -42,10 +42,12 @@ function Authorcard() {
             </div>
           </div>
           <div>
-            <div className="mb-3">
-              <h4 className="text-lg font-medium text-white">Josh Peacock</h4>
+            <div className="lg:hidden xl:block 2xl:block  ">
+              <h4 className="text-lg  xl:block 2xl:block font-medium text-white lg:py-0 py-10">
+                Josh Peacock
+              </h4>
             </div>
-            <div className="text-white">
+            <div className="text-white lg:hidden xl:block 2xl:block -mt-8 lg:-mt-0 ">
               My vision for SEO For Hire is simple - to be the most
               knowledgeable, ethical and transparent player in the game.{" "}
             </div>

@@ -32,7 +32,7 @@ export default function Apply({ slug, salary, location, term, title }) {
               {term}
             </div>
           </div>
-          <div className="flex">
+          <div className="flex lg:hidden xl:block 2xl:block">
             <div className="mt-2 flex  items-center text-sm  bg-royal bg-opacity-90 flex rounded-full px-3 py-1.5   text-white font-bold mb-4">
               <LocationMarkerIcon
                 className="flex-shrink-0 mr-1.5 h-5 w-5 text-white"
@@ -58,9 +58,9 @@ export default function Apply({ slug, salary, location, term, title }) {
         </Link>
       </div>
 
-      <div className="block md:flex flex-wrap ">
+      <div className="sm:block lg:block flex-wrap block xl:flex 2xl:flex ">
         <div className="w-1/2  sm:w-1/2 md:w-1/2 lg:w-1/2 xl:w-1/2">
-          <div className="mt-3    lg:mt-0 ">
+          <div className="mt-3   py-2 lg:mt-0 ">
             <span className="">
               <button
                 className="learn-more bg-gray-100 rounded-full"
@@ -81,9 +81,9 @@ export default function Apply({ slug, salary, location, term, title }) {
         </div>
 
         <div className="w-1/2  sm:w-1/2 md:w-1/2 lg:w-1/2 xl:w-1/2">
-          <div className="mt-5    lg:mt-0 lg:ml-4">
+          <div className="mt-5    lg:mt-0 xlg:ml-4 lg:py-2">
             <span className="">
-              <Link href={`/jobs/${slug}`}>
+              <Link href={`/jobs/seo-manager`}>
                 <button className="learn-more bg-blue-300 bg-opacity-30 rounded-full ">
                   <span
                     className="circle border-2 border-opacity-50 border-blue-300"

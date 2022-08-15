@@ -28,7 +28,7 @@ export default function test({ salary }) {
                 <Social />
               </div>
             </div>
-            <div className="lg:w-1/3 text-white lg:p-8 -mt-5">
+            <div className="lg:w-1/3 text-white lg:p-8 -mt-5 ">
               {" "}
               <div className=" lg:p-8 rounded-xl">
                 <Container>

@@ -5,13 +5,38 @@ import {
   Tooltip,
   CartesianGrid,
 } from "recharts";
+import React, { useEffect, useState } from "react";
+import Charthead from "./charthead";
+const easeOutQuad = (t) => t * (2 - t);
+const frameDuration = 1000 / 60;
+
+const CountUpAnimation = ({ children, duration = 2000 }) => {
+  const countTo = parseInt(children, 10);
+  const [count, setCount] = useState(0);
+
+  useEffect(() => {
+    let frame = 0;
+    const totalFrames = Math.round(duration / frameDuration);
+    const counter = setInterval(() => {
+      frame++;
+      const progress = easeOutQuad(frame / totalFrames);
+      setCount(countTo * progress);
+
+      if (frame === totalFrames) {
+        clearInterval(counter);
+      }
+    }, frameDuration);
+  }, []);
+
+  return Math.floor(count);
+};
 
 const data = [
-  { Month: "M", Traffic: 11000 },
-  { Month: "J", Traffic: 15000 },
-  { Month: "F", Traffic: 18000 },
-  { Month: "A", Traffic: 19000 },
-  { Month: "J", Traffic: 22000 },
+  { Month: "M", Traffic: 66259.88 },
+  { Month: "J", Traffic: 66255.67 },
+  { Month: "F", Traffic: 69187.26 },
+  { Month: "A", Traffic: 69491.77 },
+  { Month: "J", Traffic: 69707.75 },
 ];
 
 function CustomTooltip({ active, payload, label }) {
@@ -28,6 +53,8 @@ function CustomTooltip({ active, payload, label }) {
 export default function Chart() {
   return (
     <div className="w-full relative md:pr-48">
+      <Charthead />
+
       <ResponsiveContainer
         className=" bg-[#95CFD9] py-12 rounded-t-xl lg:rounded-b-xl shadow-lg "
         width="100%"
@@ -66,7 +93,7 @@ export default function Chart() {
               Average Salary:
             </p>
             <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-slate-800">
-              £60,000
+              £<CountUpAnimation>60000</CountUpAnimation>
             </h3>
           </div>
           <a
