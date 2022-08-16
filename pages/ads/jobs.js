@@ -1,12 +1,30 @@
-import Proglayout from "../../src/componants/Layout/Proglayout";
 import { YoutubeVideoPlayer } from "../../src/componants/Podcast/youtubePlayer";
-import Counter from "../../src/componants/Programatic/application/counter";
+import CountdownTimer from "../../src/componants/Programatic/application/CountdownTimer";
+import Modal from "../../src/componants/Modal/Modal";
+import { myContextform } from "../../Context/Contextform";
+import { myContext } from "../../Context/Context";
+import { motion } from "framer-motion";
 import {
   BriefcaseIcon,
   CurrencyPoundIcon,
   LocationMarkerIcon,
 } from "@heroicons/react/solid";
 export default function Jobs() {
+  const THREE_DAYS_IN_MS = 0.01 * 24 * 60 * 60 * 1000;
+  const NOW_IN_MS = new Date().getTime();
+
+  const dateTimeAfterThreeDays = NOW_IN_MS + THREE_DAYS_IN_MS;
+
+  const { showModal, setShowModal } = myContext();
+  const { setForm } = myContextform();
+
+  const job = {
+    title: "hello",
+    term: "Remote",
+    salary: "£60k",
+    location: "Manchester",
+  };
+
   return (
     <>
       <div className="w-full bg-royal">
@@ -25,8 +43,17 @@ export default function Jobs() {
                 <div className="relative">
                   <div className="absolute"></div>
 
-                  <div className="relative grid grid-cols-1 lg:grid-cols-5 gap-y-12 gap-x-16 xl:gap-x-20">
-                    <div className="flex flex-col justify-between lg:col-span-3">
+                  <div className="  relative grid grid-cols-1 lg:grid-cols-5 gap-y-12 gap-x-16 xl:gap-x-20">
+                    <motion.div
+                      className=" flex flex-col justify-between lg:col-span-3"
+                      initial={{ opacity: 0, y: -20 }}
+                      whileInView={{
+                        opacity: 1,
+                        y: 0,
+                        transition: { duration: 0.35 },
+                      }}
+                      viewport={{ once: true }}
+                    >
                       <div>
                         <h1 className="text-4xl font-bold text-white text-center sm:text-5xl">
                           Seo Manager Manchester
@@ -58,7 +85,7 @@ export default function Jobs() {
                               £60,000
                             </div>
                           </div>
-                          <p className="lg:hidden block">
+                          <p className="lg:hidden block text-white">
                             This is a breif description of the job being
                             advertised users can apply for the job hear
                           </p>
@@ -68,25 +95,37 @@ export default function Jobs() {
                       <div className="mt-8 lg:mt-auto">
                         <div class="relative bg-royal">
                           <div class="relative mx-auto">
-                            <div class="lg:max-w-6xl lg:mx-auto">
+                            <div class="lg:max-w-5xl lg:mx-auto">
                               <YoutubeVideoPlayer
                                 id={
-                                  "https://www.youtube.com/watch?v=gowNOEwZ2LI"
+                                  "https://www.youtube.com/watch?v=3qcomA9xLJo"
                                 }
                               />
                             </div>
                           </div>
                         </div>
                       </div>
-                    </div>
+                    </motion.div>
 
-                    <div className="lg:col-span-2">
-                      <div className="text-white">THS IS A COUNTDOWN</div>
-                      <p className="text-lg font-bold text-white">
+                    <motion.div
+                      className="lg:col-span-2 "
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{
+                        opacity: 1,
+                        y: 0,
+                        transition: { duration: 0.55 },
+                      }}
+                      viewport={{ once: true }}
+                    >
+                      <div className="flex justify-center">
+                        <CountdownTimer targetDate={dateTimeAfterThreeDays} />
+                      </div>
+                      <p className="text-lg font-bold text-white py-4">
                         Apply for role
                       </p>
-                      <form action="#" method="POST" className="mt-4 space-y-4">
-                        <div>
+                      {/* <form action="" method="POST" className="mt-4 space-y-4"> */}
+                      <div className="mt-4 space-y-4">
+                        <div className="mt-4 space-y-4">
                           <label htmlFor="" className="sr-only">
                             {" "}
                             Full name{" "}
@@ -122,13 +161,18 @@ export default function Jobs() {
                           <div className="absolute transitiona-all duration-1000 opacity-70 -inset-px bg-gradient-to-r from-[#44BCFF] via-[#FF44EC] to-[#FF675E] rounded-xl blur-lg filter group-hover:opacity-100 group-hover:duration-200"></div>
 
                           <button
-                            type="submit"
+                            // type="submit"
+                            onClick={() => {
+                              setShowModal(true, setForm("Form"));
+                            }}
                             className="relative inline-flex items-center justify-center w-full px-8 py-3 text-base sm:py-3.5 font-bold text-white transition-all duration-200 bg-gray-900 rounded-lg sm:text-sm hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900 border border-transparent"
                           >
                             Apply for SEO Manager
                           </button>
                         </div>
-                      </form>
+                      </div>
+
+                      {/* </form> */}
 
                       <div className="mt-8 sm:mt-12">
                         <p className="text-xs font-bold tracking-widest text-white uppercase text-opacity-70">
@@ -157,7 +201,7 @@ export default function Jobs() {
                           />
                         </div>
                       </div>
-                    </div>
+                    </motion.div>
                   </div>
                 </div>
               </div>
@@ -264,6 +308,12 @@ export default function Jobs() {
               </div>
             </div>
           </div>
+          <Modal open={showModal} onClose={() => setShowModal(false)}>
+            {job.title}
+            {job.term}
+            {job.location}
+            {job.salary}
+          </Modal>
         </section>
       </div>
     </>
