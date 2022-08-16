@@ -80,11 +80,11 @@ export default function Proglayout({
           Apply Now
         </button>
       </div>
-      <div class="relative bg-royal">
-        <div class="relative mx-auto">
-          <div class="lg:max-w-6xl lg:mx-auto">
+      <div className="relative bg-royal">
+        <div className="relative mx-auto">
+          <div className="lg:max-w-6xl lg:mx-auto">
             <img
-              class="transform scale-110"
+              className="transform scale-110"
               src="https://cdn.rareblocks.xyz/collection/clarity/images/hero/2/illustration.png"
               alt=""
             />
