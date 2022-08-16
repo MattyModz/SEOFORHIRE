@@ -93,9 +93,9 @@ export default function Jobs() {
                       </div>
 
                       <div className="mt-8 lg:mt-auto">
-                        <div class="relative bg-royal">
-                          <div class="relative mx-auto">
-                            <div class="lg:max-w-5xl lg:mx-auto">
+                        <div className="relative bg-royal">
+                          <div className="relative mx-auto">
+                            <div className="lg:max-w-5xl lg:mx-auto">
                               <YoutubeVideoPlayer
                                 id={
                                   "https://www.youtube.com/watch?v=3qcomA9xLJo"
@@ -245,8 +245,8 @@ export default function Jobs() {
                             {" "}
                             <input type="checkbox" />
                             <p className="ml-2">
-                              Do you have a company that's been successful, but
-                              for some reason you're feeling stuck?
+                              Do you have a company that&apos;s been successful,
+                              but for some reason you&apos;re feeling stuck?
                             </p>
                           </div>{" "}
                           <div className="flex">
