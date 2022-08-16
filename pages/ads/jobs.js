@@ -186,7 +186,7 @@ export default function Jobs() {
       <div className="w-full bg-royal">
         <section className="pb-12 py-12 bg- sm:pb-16 lg:pb-20">
           <div className="px-4 mx-auto sm:px-6 lg:px-8 max-w-7xl">
-            <div className="relative py-12 overflow-hidden bg-gray-50/20  rounded-xl sm:py-16 lg:py-20">
+            <div className="relative py-12 overflow-hidden bg-gray-50/10  rounded-xl sm:py-16 lg:py-20">
               <div className="absolute inset-0">
                 <img
                   className="object-contain object-right w-full h-full transform scale-125"
