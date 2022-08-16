@@ -1,6 +1,3 @@
-import { Component } from "react";
-import Link from "next/link";
-import Testindex from "../../src/componants/Testamonials";
 import Proglayout from "../../src/componants/Layout/Proglayout";
 export default function Jobs() {
   return (
@@ -107,7 +104,7 @@ export default function Jobs() {
                       </p>
                       <form action="#" method="POST" className="mt-4 space-y-4">
                         <div>
-                          <label for="" className="sr-only">
+                          <label htmlFor="" className="sr-only">
                             {" "}
                             Full name{" "}
                           </label>
@@ -123,7 +120,7 @@ export default function Jobs() {
                         </div>
 
                         <div>
-                          <label for="" className="sr-only">
+                          <label htmlFor="" className="sr-only">
                             {" "}
                             Email address{" "}
                           </label>
