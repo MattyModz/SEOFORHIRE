@@ -236,7 +236,7 @@ export default function Jobs() {
                           className="mt-4 space-y-4"
                         />
                         <div>
-                          <label for="" className="sr-only">
+                          <label htmlFor="" className="sr-only">
                             {" "}
                             Full name{" "}
                           </label>
@@ -252,7 +252,7 @@ export default function Jobs() {
                         </div>
 
                         <div>
-                          <label for="" className="sr-only">
+                          <label htmlFor="" className="sr-only">
                             {" "}
                             Email address{" "}
                           </label>
