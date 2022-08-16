@@ -5,7 +5,7 @@ import {
   CurrencyPoundIcon,
   LocationMarkerIcon,
 } from "@heroicons/react/solid";
-export default function Joblayout({
+export default function Proglayout({
   children,
   Herotitle,
 
@@ -16,7 +16,7 @@ export default function Joblayout({
 }) {
   return (
     <section className="w-full ">
-      <div className=" w-full   flex flex-col items-center px-8 pt-12 pb-24 mx-auto  bg-gradient-to-br from-[#190873] via-[#100750] to-black sm:pt-20 sm:pb-32 md:pb-48 lg:pb-56 xl:pb-64 sm:px-0">
+      <div className=" w-full   flex flex-col items-center px-8  pb-24 mx-auto  bg-royal   md:pb-48 lg:pb-56 xl:pb-64 sm:px-0">
         <div className="w-full     sm:w-11/12 lg:w-2/3 lg:mb-10">
           <motion.div
             initial="pageInitial"
@@ -72,6 +72,22 @@ export default function Joblayout({
             <div className=" bg-white box-content w-full h-auto ">
               {children}
             </div>
+          </div>
+        </div>
+      </div>
+      <div className="flex justify-center ">
+        <button className="flex justify-center px-3 rounded-xl bg-blue-300 font-interr">
+          Apply Now
+        </button>
+      </div>
+      <div class="relative bg-royal">
+        <div class="relative mx-auto">
+          <div class="lg:max-w-6xl lg:mx-auto">
+            <img
+              class="transform scale-110"
+              src="https://cdn.rareblocks.xyz/collection/clarity/images/hero/2/illustration.png"
+              alt=""
+            />
           </div>
         </div>
       </div>
