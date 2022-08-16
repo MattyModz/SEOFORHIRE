@@ -1,23 +1,16 @@
 import Proglayout from "../../src/componants/Layout/Proglayout";
+import { YoutubeVideoPlayer } from "../../src/componants/Podcast/youtubePlayer";
+import Counter from "../../src/componants/Programatic/application/counter";
+import {
+  BriefcaseIcon,
+  CurrencyPoundIcon,
+  LocationMarkerIcon,
+} from "@heroicons/react/solid";
 export default function Jobs() {
   return (
     <>
-      <section className="sticky top-0 z-99">
-        <div className="w-full bg-royal flex justify-center">
-          <div className="w-full  justify-center   bg-blue-900 text-white  font-inter text-2xl">
-            Number of Applicants:
-          </div>
-        </div>
-      </section>
-      <Proglayout
-        Herotitle={"Seo Manager Manchester"}
-        joblocation={"Remote"}
-        jobsalary={"60,000"}
-        term={"Full time"}
-      />
-
       <div className="w-full bg-royal">
-        <section className="pb-12 py-12 bg- sm:pb-16 lg:pb-20">
+        <section className="pb-12  bg- sm:pb-16 lg:pb-20">
           <div className="px-4 mx-auto sm:px-6 lg:px-8 max-w-7xl">
             <div className="relative py-12 overflow-hidden bg-royal rounded-xl sm:py-16 lg:py-20">
               <div className="absolute inset-0">
@@ -35,72 +28,62 @@ export default function Jobs() {
                   <div className="relative grid grid-cols-1 lg:grid-cols-5 gap-y-12 gap-x-16 xl:gap-x-20">
                     <div className="flex flex-col justify-between lg:col-span-3">
                       <div>
-                        <h1 className="text-4xl font-bold text-white sm:text-5xl">
-                          Get
-                          <span className="relative inline">
-                            <img
-                              className="absolute top-0 w-auto h-8 -right-8"
-                              src="https://landingfoliocom.imgix.net/store/collection/clarity-blog/images/hero/3/design-element.svg"
-                              alt=""
-                            />
-                            marketing{" "}
-                          </span>
-                          <br />
-                          inspirations weekly
+                        <h1 className="text-4xl font-bold text-white text-center sm:text-5xl">
+                          Seo Manager Manchester
                         </h1>
-                        <p className="mt-6 text-base font-normal leading-7 text-white text-opacity-80">
-                          Lorem ipsum dolor sit amet, consectetur adipiscing
-                          elit. Vehicula massa in enim luctus. Rutrum arcu.
-                        </p>
+
+                        <div className="mt-6 text-base font-normal leading-7 text-white text-opacity-80">
+                          <div className="  justify-center lg:flex md:flex flex ">
+                            <div className="flex rounded-full  px-3 py-1.5 bg-gray-100 bg-opacity-10  text-gray-100 mb-4">
+                              <BriefcaseIcon
+                                className="flex-shrink-0 mr-1.5 h-5 w-5 text-white"
+                                aria-hidden="true"
+                              />
+                              Remote
+                            </div>
+
+                            <div className="flex rounded-full  px-3 py-1.5 bg-gray-100 bg-opacity-10  text-gray-100 mb-4">
+                              <LocationMarkerIcon
+                                className="flex-shrink-0 mr-1.5 h-5 w-5 text-white"
+                                aria-hidden="true"
+                              />
+                              <div>Manchester</div>
+                            </div>
+
+                            <div className="flex rounded-full  px-3 py-1.5 bg-gray-100 bg-opacity-10 text-gray-100 mb-4">
+                              <CurrencyPoundIcon
+                                className="flex-shrink-0 mr-1.5 h-5 w-5 text-gray-100"
+                                aria-hidden="true"
+                              />
+                              £60,000
+                            </div>
+                          </div>
+                          <p className="lg:hidden block">
+                            This is a breif description of the job being
+                            advertised users can apply for the job hear
+                          </p>
+                        </div>
                       </div>
 
                       <div className="mt-8 lg:mt-auto">
-                        <div className="flex -space-x-2">
-                          <img
-                            className="inline-block w-12 h-12 rounded-full sm:w-14 sm:h-14 ring-[3px] ring-white"
-                            src="https://landingfoliocom.imgix.net/store/collection/clarity-blog/images/hero/3/avatar-1.png"
-                            alt=""
-                          />
-                          <img
-                            className="inline-block w-12 h-12 rounded-full sm:w-14 sm:h-14 ring-[3px] ring-white"
-                            src="https://landingfoliocom.imgix.net/store/collection/clarity-blog/images/hero/3/avatar-2.png"
-                            alt=""
-                          />
-                          <img
-                            className="inline-block w-12 h-12 rounded-full sm:w-14 sm:h-14 ring-[3px] ring-white"
-                            src="https://landingfoliocom.imgix.net/store/collection/clarity-blog/images/hero/3/avatar-3.png"
-                            alt=""
-                          />
-                          <img
-                            className="inline-block w-12 h-12 rounded-full sm:w-14 sm:h-14 ring-[3px] ring-white"
-                            src="https://landingfoliocom.imgix.net/store/collection/clarity-blog/images/hero/3/avatar-4.png"
-                            alt=""
-                          />
-                          <img
-                            className="inline-block w-12 h-12 rounded-full sm:w-14 sm:h-14 ring-[3px] ring-white"
-                            src="https://landingfoliocom.imgix.net/store/collection/clarity-blog/images/hero/3/avatar-5.png"
-                            alt=""
-                          />
-                          <img
-                            className="inline-block w-12 h-12 rounded-full sm:w-14 sm:h-14 ring-[3px] ring-white"
-                            src="https://landingfoliocom.imgix.net/store/collection/clarity-blog/images/hero/3/avatar-6.png"
-                            alt=""
-                          />
-                          <img
-                            className="inline-block w-12 h-12 rounded-full sm:w-14 sm:h-14 ring-[3px] ring-white"
-                            src="https://landingfoliocom.imgix.net/store/collection/clarity-blog/images/hero/3/avatar-7.png"
-                            alt=""
-                          />
+                        <div class="relative bg-royal">
+                          <div class="relative mx-auto">
+                            <div class="lg:max-w-6xl lg:mx-auto">
+                              <YoutubeVideoPlayer
+                                id={
+                                  "https://www.youtube.com/watch?v=gowNOEwZ2LI"
+                                }
+                              />
+                            </div>
+                          </div>
                         </div>
-                        <p className="mt-4 text-base font-medium text-white">
-                          Join other 3200+ Marketers now
-                        </p>
                       </div>
                     </div>
 
                     <div className="lg:col-span-2">
+                      <div className="text-white">THS IS A COUNTDOWN</div>
                       <p className="text-lg font-bold text-white">
-                        Join our email list
+                        Apply for role
                       </p>
                       <form action="#" method="POST" className="mt-4 space-y-4">
                         <div>
@@ -114,7 +97,7 @@ export default function Jobs() {
                               name=""
                               id=""
                               className="block w-full px-4 py-3 text-base sm:py-3.5 sm:text-sm font-medium text-gray-900 placeholder-gray-500 border border-gray-300 rounded-lg focus:ring-gray-900 focus:border-gray-900"
-                              placeholder="ex: James Darek"
+                              placeholder="Name"
                             />
                           </div>
                         </div>
@@ -142,14 +125,14 @@ export default function Jobs() {
                             type="submit"
                             className="relative inline-flex items-center justify-center w-full px-8 py-3 text-base sm:py-3.5 font-bold text-white transition-all duration-200 bg-gray-900 rounded-lg sm:text-sm hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900 border border-transparent"
                           >
-                            Join LandingFolio Newsletter For Free
+                            Apply for SEO Manager
                           </button>
                         </div>
                       </form>
 
                       <div className="mt-8 sm:mt-12">
                         <p className="text-xs font-bold tracking-widest text-white uppercase text-opacity-70">
-                          Featured on
+                          Trusted by
                         </p>
                         <div className="inline-grid grid-cols-2 gap-8 mt-8 lg:gap-x-12">
                           <img
@@ -183,7 +166,7 @@ export default function Jobs() {
         </section>
       </div>
 
-      <div className="w-full bg-royal">
+      <div className="w-full bg-royal -mt-24">
         <section className="pb-12 py-12 bg- sm:pb-16 lg:pb-20">
           <div className="px-4 mx-auto sm:px-6 lg:px-8 max-w-7xl">
             <div className="relative py-12 overflow-hidden bg-gray-50/10  rounded-xl sm:py-16 lg:py-20">
@@ -197,8 +180,6 @@ export default function Jobs() {
 
               <div className="relative max-w-5xl px-4 mx-auto sm:px-6 lg:px-8">
                 <div className="relative">
-                  <div className="absolute"></div>
-
                   <div className="relative grid grid-cols-1 lg:grid-cols-1 gap-y-12 gap-x-16 xl:gap-x-20">
                     <div className="flex flex-col justify-between lg:col-span-3">
                       <div>
@@ -211,12 +192,27 @@ export default function Jobs() {
                           <div className="flex">
                             {" "}
                             <input type="checkbox" />
-                            <p className="ml-2">This is a statment</p>
+                            <p className="ml-2">
+                              Do you want to grow your business online, but you
+                              have NO IDEA where to start?
+                            </p>
                           </div>{" "}
                           <div className="flex">
                             {" "}
                             <input type="checkbox" />
-                            <p className="ml-2">This is a statment</p>
+                            <p className="ml-2">
+                              Do you have a company that's been successful, but
+                              for some reason you're feeling stuck?
+                            </p>
+                          </div>{" "}
+                          <div className="flex">
+                            {" "}
+                            <input type="checkbox" />
+                            <p className="ml-2">
+                              Do you want direct live access to experts who can
+                              help you with your funnels, strategy offer,
+                              marketing, sales, and ANY question you have?
+                            </p>
                           </div>{" "}
                         </div>
                       </div>
@@ -238,22 +234,6 @@ export default function Jobs() {
                         <div>
                           <label htmlFor="" className="sr-only">
                             {" "}
-                            Full name{" "}
-                          </label>
-                          <div className="">
-                            <input
-                              type="text"
-                              name=""
-                              id=""
-                              className="block w-full px-4 py-3 text-base sm:py-3.5 sm:text-sm font-medium text-gray-900 placeholder-gray-500 border border-gray-300 rounded-lg focus:ring-gray-900 focus:border-gray-900"
-                              placeholder="ex: James Darek"
-                            />
-                          </div>
-                        </div>
-
-                        <div>
-                          <label htmlFor="" className="sr-only">
-                            {" "}
                             Email address{" "}
                           </label>
                           <div className="">
@@ -265,6 +245,17 @@ export default function Jobs() {
                               placeholder="Email address"
                             />
                           </div>
+                        </div>
+
+                        <div className="relative group">
+                          <div className="absolute transitiona-all duration-1000 opacity-70 -inset-px bg-gradient-to-r from-[#44BCFF] via-[#FF44EC] to-[#FF675E] rounded-xl blur-lg filter group-hover:opacity-100 group-hover:duration-200"></div>
+
+                          <button
+                            type="submit"
+                            className="relative inline-flex items-center justify-center w-full px-8 py-3 text-base sm:py-3.5 font-bold text-white transition-all duration-200 bg-gray-900 rounded-lg sm:text-sm hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900 border border-transparent"
+                          >
+                            Apply for SEO Manager
+                          </button>
                         </div>
                       </div>
                     </div>

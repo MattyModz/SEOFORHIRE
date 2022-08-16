@@ -1,10 +1,10 @@
 import React from "react";
 
 import Link from "next/link";
-import Modal from "../Modal/Modal";
+import Modal from "../../Modal/Modal";
 import { useState, useEffect } from "react";
 
-import { myContextform } from "../../../Context/Contextform";
+import { myContextform } from "../../../../Context/Contextform";
 import {
   BriefcaseIcon,
   CurrencyPoundIcon,

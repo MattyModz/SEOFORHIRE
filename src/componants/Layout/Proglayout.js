@@ -75,22 +75,6 @@ export default function Proglayout({
           </div>
         </div>
       </div>
-      <div className="flex justify-center ">
-        <button className="flex justify-center px-3 rounded-xl bg-blue-300 font-interr">
-          Apply Now
-        </button>
-      </div>
-      <div className="relative bg-royal">
-        <div className="relative mx-auto">
-          <div className="lg:max-w-6xl lg:mx-auto">
-            <img
-              className="transform scale-110"
-              src="https://cdn.rareblocks.xyz/collection/clarity/images/hero/2/illustration.png"
-              alt=""
-            />
-          </div>
-        </div>
-      </div>
     </section>
   );
 }
