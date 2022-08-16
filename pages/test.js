@@ -1,13 +1,13 @@
-import Avgsalary from "../src/componants/Programatic/avgsalary";
+import Avgsalary from "../src/componants/Programatic/landing/avgsalary";
 // import Joblisting from "../src/componants/Hero/jobslist";
 
 import Container from "../src/componants/container";
-import Apply from "../src/componants/Programatic/apply";
+import Apply from "../src/componants/Programatic/landing/apply";
 // import Chart from "../src/componants/Programatic/chart";
 import Authorcard from "../src/componants/Blog/authorcard";
-import Chart from "../src/componants/Programatic/chart";
-import Body from "../src/componants/Programatic/body";
-import Social from "../src/componants/Programatic/social";
+import Chart from "../src/componants/Programatic/landing/chart";
+import Body from "../src/componants/Programatic/landing/body";
+import Social from "../src/componants/Programatic/landing/social";
 export default function test({ salary }) {
   console.log(salary.month);
 
