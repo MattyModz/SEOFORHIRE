@@ -39,27 +39,28 @@ export default function Letter() {
                     <div className="py-4 text-xl">
                       What does{" "}
                       <span className="font-bold">
-                        'One Funnel Away' mean for you...?{" "}
+                        &apos;One Funnel Away&apos; mean for you...?{" "}
                       </span>{" "}
                       <br />
                       <br />
-                      For everyone it's different... <br />
+                      For everyone it&apos;s different... <br />
                       <br />
                       For some of you,{" "}
                       <span className="underline">
-                        you're in a job that you hate,
+                        you&apos;re in a job that you hate,
                       </span>{" "}
-                      and you're trying to get out. <br /> <br /> For others,
-                      you are entrepreneurs with your own company...{" "}
-                      <span className="underline">but you're stuck,</span>
-                      and you're not sure why. And for others of you, you're
-                      looking for that one funnel that will help you to{" "}
+                      and you&apos;re trying to get out. <br /> <br /> For
+                      others, you are entrepreneurs with your own company...{" "}
+                      <span className="underline">but you&apos;re stuck,</span>
+                      and you&apos;re not sure why. And for others of you,
+                      you&apos;re looking for that one funnel that will help you
+                      to{" "}
                       <span className="font-bold">
                         have more impact on the world!
                       </span>{" "}
                       <br /> <br /> Before I share with you MY GOAL for this
-                      'One Funnel Away challenge for YOU... let me ask you a few
-                      questions...
+                      &apos;One Funnel Away challenge for YOU... let me ask you
+                      a few questions...
                     </div>
                   </div>
                 </div>{" "}
@@ -82,5 +83,5 @@ export default function Letter() {
 
 // <div className="text-center text-2xl p-4">
 //   If You Checked ANY Of The Boxes Above, Then I Want To Invite You To Join
-//   The 'One Funnel Away' Challenge And Change Your Business Forever!{" "}
+//   The &apos;One Funnel Away&apos; Challenge And Change Your Business Forever!{" "}
 // </div>;
