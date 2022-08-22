@@ -2,11 +2,11 @@ import React from "react";
 
 export default function Social() {
   return (
-    <div className="py-2  block bg-royal rounded-xl p-3  sticky">
+    <div className="py-2  block bg-white rounded-xl p-3  sticky">
       <div className="">
         <a
           href="https://uk.linkedin.com/in/josh-peacock-589438220"
-          className=" bg-royal text-gray-300 transition duration-200 ease-out  hover:text-white"
+          className=" bg-royal text-royal transition duration-200 ease-out  hover:text-white"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -19,7 +19,7 @@ export default function Social() {
 
         <a
           href="https://twitter.com/JPeaco"
-          className="text-center text-gray-300 transition duration-200 ease-out   hover:text-white bg-royal"
+          className="text-center text-royal transition duration-200 ease-out   hover:text-white bg-royal"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"

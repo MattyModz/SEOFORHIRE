@@ -20,9 +20,9 @@ export default function Letter() {
               }}
               viewport={{ once: true }}
             >
-              <div className=" w-full">
+              <div className=" w-full lg:flex">
                 {" "}
-                <div className="lg:w-3/4 ">
+                <div className=" lg:w-3/4  ">
                   <div className=" text-base font-normal leading-7 text-black text-opacity-80">
                     <div className="text-xl">
                       <span className="font-bold text-xl text-royal">
@@ -64,12 +64,12 @@ export default function Letter() {
                     </div>
                   </div>
                 </div>{" "}
-                <div className="text-center">
+                <div className="text-center lg:w-1/4 ">
                   <Image
                     className="rounded-full "
                     src={"/josh.jpg"}
-                    width={250}
-                    height={250}
+                    width={230}
+                    height={230}
                   />
                 </div>
               </div>

@@ -11,12 +11,8 @@ import {
   LocationMarkerIcon,
 } from "@heroicons/react/solid";
 import Letter from "../../src/componants/Programatic/application/letter";
+
 export default function Jobs() {
-  const THREE_DAYS_IN_MS = 0.01 * 24 * 60 * 60 * 1000;
-  const NOW_IN_MS = new Date().getTime();
-
-  const dateTimeAfterThreeDays = NOW_IN_MS + THREE_DAYS_IN_MS;
-
   const { showModal, setShowModal } = myContext();
   const { setForm } = myContextform();
 
@@ -27,9 +23,61 @@ export default function Jobs() {
     location: "Manchester",
   };
 
+  // declare today
+
+  var today = new Date().getDate();
+  const deadline = today + 3;
+  console.log(deadline);
+  // handle countdown
+
+  const THREE_DAYS_IN_MS = 3 * 24 * 60 * 60 * 1000;
+  const NOW_IN_MS = new Date().getTime();
+  const dateTimeAfterThreeDays = NOW_IN_MS + THREE_DAYS_IN_MS;
+
+  // // handle month format
+
+  const monthNames = [
+    "Jan",
+    "Feb",
+    "Mar",
+    "Apr",
+    "May",
+    "June",
+    "July",
+    "Aug",
+    "Sept",
+    "Oct",
+    "Nov",
+    "Dec",
+  ];
+
+  const monthint = new Date().getMonth();
+  const month = monthNames[monthint];
+
+  // handles suffix to date
+
+  const nth = function (deadline) {
+    if (deadline > 3 && deadline < 21) return "th";
+    switch (deadline % 10) {
+      case 1:
+        return "st";
+      case 2:
+        return "nd";
+      case 3:
+        return "rd";
+      default:
+        return "th";
+    }
+  };
+
+  console.log(nth(deadline));
+
+  // final output
+  const Deadlineformat = month + " " + deadline + nth(deadline);
+
   return (
     <>
-      <div className="w-full sm:h-full  bg-royal">
+      <div className="w-full   bg-royal">
         <div className=" flex justify-center px-3">
           {/* <h1 className="text-xl font-bold text-white ">
             Ready to change your job for a career? Apply for the Seo Manager
@@ -44,9 +92,10 @@ export default function Jobs() {
             />
           </div>
         </div>
+
         <section className=" sm:pb-16 lg:pb-20">
           <div className="px-4 mx-auto sm:px-6 lg:px-8 max-w-7xl">
-            <div className="relative py-12 overflow-hidden bg-royal rounded-xl sm:py-16 lg:py-20">
+            <div className="relative  overflow-hidden bg-royal rounded-xl py-4 ">
               <div className="absolute inset-0">
                 <img
                   className="object-contain object-right w-full h-full transform scale-125"
@@ -71,17 +120,25 @@ export default function Jobs() {
                       viewport={{ once: true }}
                     >
                       <div className=" -mt-8 lg:-mt-0">
-                        <YoutubeVideoPlayer
-                          id={"https://www.youtube.com/watch?v=3qcomA9xLJo"}
-                        />
+                        <div className="relative">
+                          <iframe
+                            src="https://player.vimeo.com/video/419659699?h=f41e09cf66&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
+                            frameborder="0"
+                            allow="autoplay; fullscreen; picture-in-picture"
+                            allowfullscreen
+                            className=" w-full h-full"
+                            title="Front page Banner vid"
+                          ></iframe>
+                        </div>
+                        <script src="https://player.vimeo.com/api/player.js"></script>
                       </div>
-                      <p className="py-4 text-white text-center  text-xl">
+                      <p className="py-4 text-white text-center  lg:text-2xl text-xl">
                         The <span className="underline">Life</span>You Want, The{" "}
                         <span className="underline">Marriage</span>You Want...{" "}
-                        <span className="underline">The Family</span>
+                        <span className="underline">The Family </span>
                         That You Want, Is Going To Be{" "}
                         <span className="font-bold">
-                          Fueled By The Business You Build...
+                          Fueled By A Career That You Thrive In...
                         </span>
                       </p>
                       <div className="mt-8 lg:mt-auto">
@@ -107,27 +164,33 @@ export default function Jobs() {
                       <div className="mt-6 text-base font-normal leading-7 text-white text-opacity-80 ">
                         <div className="  justify-center lg:flex md:flex flex ">
                           <div className="flex rounded-full  px-3 py-1.5 bg-gray-100 bg-opacity-10  text-gray-100 mb-4">
-                            <BriefcaseIcon
-                              className="flex-shrink-0 mr-1.5 h-5 w-5 text-white"
-                              aria-hidden="true"
-                            />
-                            Remote
+                            <div className="py-1.5">
+                              <BriefcaseIcon
+                                className=" mr-1 h-4 w-4 text-white"
+                                aria-hidden="true"
+                              />
+                            </div>
+                            <div className="font-semibold">Remote</div>
                           </div>
 
                           <div className="flex rounded-full  px-3 py-1.5 bg-gray-100 bg-opacity-10  text-gray-100 mb-4">
-                            <LocationMarkerIcon
-                              className="flex-shrink-0 mr-1.5 h-5 w-5 text-white"
-                              aria-hidden="true"
-                            />
-                            <div>Manchester</div>
+                            <div className="py-1.5">
+                              <LocationMarkerIcon
+                                className=" mr-1 h-4 w-4 text-white"
+                                aria-hidden="true"
+                              />
+                            </div>
+                            <div className="font-semibold">Manchester</div>
                           </div>
 
                           <div className="flex rounded-full  px-3 py-1.5 bg-gray-100 bg-opacity-10 text-gray-100 mb-4">
-                            <CurrencyPoundIcon
-                              className="flex-shrink-0 mr-1.5 h-5 w-5 text-gray-100"
-                              aria-hidden="true"
-                            />
-                            £60,000
+                            <div className="py-1.5">
+                              <CurrencyPoundIcon
+                                className=" mr-1 h-4 w-4 text-white"
+                                aria-hidden="true"
+                              />
+                            </div>
+                            <div className="font-semibold">60,000</div>
                           </div>
                         </div>
                         {/* <p className="lg:hidden block text-white">
@@ -135,9 +198,10 @@ export default function Jobs() {
                             advertised users can apply for the job hear
                           </p> */}
                       </div>
+
                       <p className="text-white text-xl font-bold text-center ">
                         Application Deadline Ends
-                        <span className="text-red-400"> Aug 21st</span>
+                        <span className="text-red-400"> {Deadlineformat}</span>
                       </p>
                       {/* <form action="" method="POST" className="mt-4 space-y-4"> */}
                       <div className="mt-4 space-y-4">
@@ -152,7 +216,7 @@ export default function Jobs() {
                               name=""
                               id=""
                               className="block w-full px-4 py-3 text-base sm:py-3.5 sm:text-sm font-medium text-gray-900 placeholder-gray-500 border border-gray-300 rounded-lg focus:ring-gray-900 focus:border-gray-900"
-                              placeholder="Name"
+                              placeholder="First Name"
                             />
                           </div>
                         </div>
@@ -191,7 +255,6 @@ export default function Jobs() {
                         Application deadline
                       </p> */}
                       {/* </form> */}
-
                       <div className="mt-8 sm:mt-12">
                         <p className="text-xs font-bold tracking-widest text-white uppercase text-opacity-70">
                           Trusted by
@@ -214,7 +277,7 @@ export default function Jobs() {
                           />
                           <img
                             className="object-contain w-auto h-6"
-                            src="https://landingfoliocom.imgix.net/store/collection/clarity-blog/images/hero/3/logo-4.svg"
+                            src="/Sage.svg"
                             alt=""
                           />
                         </div>
@@ -259,32 +322,42 @@ export default function Jobs() {
                           <br />
                           Where Your Answer Is YES!
                         </h1>
-                        <div className="py-12 text-xl text-white ">
+
+                        <div className="py-12 text-2xl text-white ">
                           <div className="flex">
-                            {" "}
-                            <input type="checkbox" />
-                            <p className="ml-2">
-                              Do you want to grow your business online, but you
-                              have NO IDEA where to start?
-                            </p>
-                          </div>{" "}
-                          <div className="flex">
-                            {" "}
-                            <input type="checkbox" />
-                            <p className="ml-2">
-                              Do you have a company that&apos;s been successful,
-                              but for some reason you&apos;re feeling stuck?
-                            </p>
-                          </div>{" "}
-                          <div className="flex">
-                            {" "}
-                            <input type="checkbox" />
-                            <p className="ml-2">
-                              Do you want direct live access to experts who can
-                              help you with your funnels, strategy offer,
-                              marketing, sales, and ANY question you have?
-                            </p>
-                          </div>{" "}
+                            <div>
+                              <input type="checkbox" />
+                            </div>
+                            <div>
+                              <p className="ml-2 ">
+                                Do you want to grow your business online, but
+                                you have NO IDEA where to start?
+                              </p>
+                            </div>
+                          </div>
+                          <div className="flex py-2">
+                            <div>
+                              <input type="checkbox" />
+                            </div>
+                            <div>
+                              <p className="ml-2 ">
+                                Do you have a company that's been successful,
+                                but for some reason you're feeling stuck?
+                              </p>
+                            </div>
+                          </div>
+                          <div className="flex py-2">
+                            <div>
+                              <input type="checkbox" />
+                            </div>
+                            <div>
+                              <p className="ml-2 ">
+                                Do you want direct live access to experts who
+                                can help you with your funnels, strategy offer,
+                                marketing, sales, and ANY question you have?
+                              </p>
+                            </div>
+                          </div>
                         </div>
                       </div>
 

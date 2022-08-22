@@ -20,6 +20,15 @@ export default function test({ salary }) {
             <div className=" lg:w-2/3 text-black lg:px-4 py-8">
               {" "}
               <Chart />
+              <div className="sm:block hidden py-4 ">
+                The average <span className="font-bold">SEO</span> salary in the
+                United Kingdom is <span className="font-bold">£32,500 </span>
+                per year or <span className="font-bold">£16.67 </span> per hour.
+                Entry level positions start at{" "}
+                <span className="font-bold">£27,000 </span> per year while most
+                experienced workers make up to{" "}
+                <span className="font-bold">£45,000 </span> per year.
+              </div>
               <Body />
             </div>
             <div className="sm:block hidden absolute h-screen">
