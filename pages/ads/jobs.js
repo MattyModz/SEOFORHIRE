@@ -25,7 +25,7 @@ export default function Jobs() {
 
   // declare today
 
-  let today = new Date().getDate();
+  const today = new Date().getDate();
   const deadline = today + 3;
   console.log(deadline);
   // handle countdown
