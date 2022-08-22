@@ -25,7 +25,7 @@ export default function Jobs() {
 
   // declare today
 
-  var today = new Date().getDate();
+  let today = new Date().getDate();
   const deadline = today + 3;
   console.log(deadline);
   // handle countdown
@@ -125,12 +125,15 @@ export default function Jobs() {
                             src="https://player.vimeo.com/video/419659699?h=f41e09cf66&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
                             frameBorder="0"
                             allow="autoplay; fullscreen; picture-in-picture"
-                            allowFullscreen
+                            allowFullScreen
                             className=" w-full h-full"
                             title="Front page Banner vid"
                           ></iframe>
                         </div>
-                        <script src="https://player.vimeo.com/api/player.js"></script>
+                        <script
+                          src="https://player.vimeo.com/api/player.js"
+                          async
+                        ></script>
                       </div>
                       <p className="py-4 text-white text-center  lg:text-2xl text-xl">
                         The <span className="underline">Life</span>You Want, The{" "}
