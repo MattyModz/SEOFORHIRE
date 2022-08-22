@@ -1,5 +1,5 @@
 import Head from "next/head";
-import Joblisting from "../../../src/componants/Hero/jobslist";
+
 import Avgsalary from "../../../src/componants/Programatic/landing/avgsalary";
 // import Joblisting from "../src/componants/Hero/jobslist";
 
@@ -8,7 +8,7 @@ import Apply from "../../../src/componants/Programatic/landing/apply";
 // import Chart from "../src/componants/Programatic/chart";
 import Authorcard from "../../../src/componants/Blog/authorcard";
 import Chart from "../../../src/componants/Programatic/landing/chart";
-import Body from "../../../src/componants/Programatic/landing/body";
+
 import Social from "../../../src/componants/Programatic/landing/social";
 function DataToPage({ data, salary }) {
   console.log(data);
@@ -16,7 +16,9 @@ function DataToPage({ data, salary }) {
   return (
     <>
       <Head>
-        <title className="text-white  text-4xl ">{data.title}</title>
+        <title className="text-white  text-4xl ">
+          Seo jobs in {data.title}
+        </title>
         <meta name="description" content={data.description} />
       </Head>
 
