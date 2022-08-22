@@ -1,13 +1,6 @@
-import {
-  ResponsiveContainer,
-  AreaChart,
-  Area,
-  Tooltip,
-  CartesianGrid,
-} from "recharts";
+import { ResponsiveContainer, AreaChart, Area, CartesianGrid } from "recharts";
 import React, { useEffect, useState } from "react";
-import Charthead from "./charthead";
-// import Charthead from "./charthead";
+
 const easeOutQuad = (t) => t * (2 - t);
 const frameDuration = 1000 / 60;
 
@@ -40,25 +33,25 @@ const data = [
   { Traffic: 69707.75 },
 ];
 
-const data1 = [
-  { Traffic: 66259.88 },
-  { Traffic: 66255.67 },
-  { Traffic: 69187.26 },
-  { Traffic: 71491.77 },
-  { Traffic: 75707.75 },
-];
+// const data1 = [
+//   { Traffic: 66259.88 },
+//   { Traffic: 66255.67 },
+//   { Traffic: 69187.26 },
+//   { Traffic: 71491.77 },
+//   { Traffic: 75707.75 },
+// ];
 
-function CustomTooltip({ active, payload, label }) {
-  if (active) {
-    return (
-      <div className="tooltip">
-        <p>{label}</p>
-        <p>Traffic: {payload[0].value}</p>
-      </div>
-    );
-  }
-  return null;
-}
+// function CustomTooltip({ active, payload, label }) {
+//   if (active) {
+//     return (
+//       <div className="tooltip">
+//         <p>{label}</p>
+//         <p>Traffic: {payload[0].value}</p>
+//       </div>
+//     );
+//   }
+//   return null;
+// }
 
 export default function Chart() {
   return (

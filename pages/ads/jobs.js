@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { YoutubeVideoPlayer } from "../../src/componants/Podcast/youtubePlayer";
+// import { YoutubeVideoPlayer } from "../../src/componants/Podcast/youtubePlayer";
 import CountdownTimer from "../../src/componants/Programatic/application/CountdownTimer";
 import Modal from "../../src/componants/Modal/Modal";
 import { myContextform } from "../../Context/Contextform";
@@ -123,9 +123,9 @@ export default function Jobs() {
                         <div className="relative">
                           <iframe
                             src="https://player.vimeo.com/video/419659699?h=f41e09cf66&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
-                            frameborder="0"
+                            frameBorder="0"
                             allow="autoplay; fullscreen; picture-in-picture"
-                            allowfullscreen
+                            allowFullscreen
                             className=" w-full h-full"
                             title="Front page Banner vid"
                           ></iframe>
@@ -341,8 +341,9 @@ export default function Jobs() {
                             </div>
                             <div>
                               <p className="ml-2 ">
-                                Do you have a company that's been successful,
-                                but for some reason you're feeling stuck?
+                                Do you have a company that&apos;s been
+                                successful, but for some reason you&apos;re
+                                feeling stuck?
                               </p>
                             </div>
                           </div>
