@@ -48,13 +48,6 @@ function Jobs({ data, preview }) {
   const { showModal, setShowModal } = myContext();
   const { setForm } = myContextform();
 
-  const job = {
-    title: "hello",
-    term: "Remote",
-    salary: "£60k",
-    location: "Manchester",
-  };
-
   // declare today
 
   const today = new Date().getDate();
@@ -348,7 +341,7 @@ function Jobs({ data, preview }) {
       />
 
       <div className="w-full bg-gray-50 ">
-        <section className="pb-12 py-12 bg- sm:pb-16 lg:pb-20">
+        <section className="pb-12 py-12  sm:pb-16 lg:pb-20">
           <div className="px-4 mx-auto sm:px-6 lg:px-8 max-w-7xl">
             <div className="relative py-12 overflow-hidden bg-royal/90  rounded-xl sm:py-16 lg:py-20">
               <div className="absolute inset-0">

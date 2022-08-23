@@ -1,6 +1,6 @@
 import { ResponsiveContainer, AreaChart, Area, CartesianGrid } from "recharts";
 import React, { useEffect, useState } from "react";
-
+import Link from "next/link";
 const easeOutQuad = (t) => t * (2 - t);
 const frameDuration = 1000 / 60;
 
@@ -115,12 +115,12 @@ export default function Chart({ location }) {
             </h3>
           </div>
           <div className="text-gray-500 ">Based on 10000 salaries</div>
-          <a
+          <Link
             href="/ads/jobs/glasgow"
             className="bg-royal px-6 py-4  mt-4 text-sm font-semibold rounded-full text-white"
           >
             Explore jobs in {location}
-          </a>
+          </Link>
           <div className="lg:hidden py-4">
             The average <span className="font-bold">SEO</span> salary in the
             United Kingdom is <span className="font-bold">£32,500 </span>
