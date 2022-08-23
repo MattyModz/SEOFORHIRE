@@ -119,7 +119,7 @@ export default function Chart({ location }) {
             href="/ads/jobs/glasgow"
             className="bg-royal px-6 py-4  mt-4 text-sm font-semibold rounded-full text-white"
           >
-            Explore jobs in {location}
+            <div>Explore jobs in {location}</div>
           </Link>
           <div className="lg:hidden py-4">
             The average <span className="font-bold">SEO</span> salary in the
