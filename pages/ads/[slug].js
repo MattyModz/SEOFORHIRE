@@ -474,7 +474,7 @@ export const getStaticPaths = async () => {
 
 export const getStaticProps = async ({ params, preview = false }) => {
   const query = `*[_type == "jobfunnel" && slug.current == $slug]{
- 
+ id,
  title,
  location,
  term,
