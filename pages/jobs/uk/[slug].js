@@ -112,3 +112,22 @@ export async function getServerSideProps(context) {
 }
 
 export default DataToPage;
+
+// export async function getStaticProps() {
+//   // Call an external API endpoint to get posts.
+//   // You can use any data fetching library
+//   const res = await fetch(
+//     "http://api.adzuna.com/v1/api/jobs/gb/history?app_id=31f67d84&app_key=b35a8a7a633ffc64a20d55e7c75443d5&location0=UK&location1=manchester&category=it-jobs&content-type=application/json"
+//   );
+//   const salary = await res.json();
+//   if (!salary) {
+//     return {
+//       notFound: true,
+//     };
+//   }
+//   return {
+//     props: {
+//       salary,
+//     },
+//   };
+// }

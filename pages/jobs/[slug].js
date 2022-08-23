@@ -6,7 +6,7 @@ import { myContext } from "../../Context/Context";
 import { useRouter } from "next/router";
 import { myContextform } from "../../Context/Contextform";
 import PortableText from "react-portable-text";
-
+import Head from "next/head";
 function filterDataToSingleItem(data, preview) {
   if (!Array.isArray(data)) {
     return data;
@@ -44,68 +44,108 @@ function PostPage({ data, preview }) {
   const job = filterDataToSingleItem(previewData, preview);
 
   return (
-    <Joblayout
-      Herotitle={job.title}
-      joblocation={job.location}
-      jobsalary={job.salary}
-      term={job.term}
-    >
-      <div className="rounded-xl bg-white p-8 text-black ">
-        <div className="">
-          <button
-            className="learn-more rounded-full bg-gray-200 bg-opacity-50"
-            onClick={() => {
-              setShowModal(true, setForm("Form"));
-            }}
-          >
-            <span className="circle" aria-hidden="true">
-              <span className="icon arrow"></span>
-            </span>
-            <span className="button-text">Apply</span>
-          </button>
-        </div>
-      </div>
-
-      <div className="rounded-xl bg-white p-8 text-black w- ">
-        <div className="max-w-9xl  bg-white w-full rounded-lg shadow-xl ">
-          <div className="p-4 border-b ">
-            <h2 className="text-2xl ">Job description</h2>
-            <p className="text-sm text-gray-500">
-              position desceiption and information.
-            </p>
+    <>
+      <Head>
+        <title className="text-white  text-4xl ">
+          Apply - {job.title}, {job.location}
+        </title>
+        {/* <meta name="description" content={data} /> */}
+      </Head>
+      <Joblayout
+        Herotitle={job.title}
+        joblocation={job.location}
+        jobsalary={job.salary}
+        term={job.term}
+      >
+        <div className="rounded-xl bg-white p-8 text-black ">
+          <div className="">
+            <button
+              className="learn-more rounded-full bg-gray-200 bg-opacity-50"
+              onClick={() => {
+                setShowModal(true, setForm("Form"));
+              }}
+            >
+              <span className="circle" aria-hidden="true">
+                <span className="icon arrow"></span>
+              </span>
+              <span className="button-text">Apply</span>
+            </button>
           </div>
-          <div>
-            <div className="md:grid md:grid-cols-2 hover:bg-gray-50 md:space-y-0 space-y-1 p-4 border-b">
-              <p className="text-gray-600">Application for</p>
-              <div className="flex">
-                <div className="  items-center text-sm  -ml-2 bg-royal bg-opacity-90 flex rounded-full px-3 py-1.5   text-white font-bold ">
-                  {job.title}
-                </div>
-              </div>
-            </div>
-            <div className="md:grid md:grid-cols-2 hover:bg-gray-50 md:space-y-0 space-y-1 p-4 border-b">
-              <p className="text-gray-600">Location</p>
+        </div>
 
-              <div className="flex">
-                <div className="   items-center text-sm  -ml-2 bg-royal bg-opacity-90 flex rounded-full px-3 py-1.5   text-white font-bold ">
-                  {job.location}
+        <div className="rounded-xl bg-white p-8 text-black w- ">
+          <div className="max-w-9xl  bg-white w-full rounded-lg shadow-xl ">
+            <div className="p-4 border-b ">
+              <h2 className="text-2xl ">Job description</h2>
+              <p className="text-sm text-gray-500">
+                position desceiption and information.
+              </p>
+            </div>
+            <div>
+              <div className="md:grid md:grid-cols-2 hover:bg-gray-50 md:space-y-0 space-y-1 p-4 border-b">
+                <p className="text-gray-600">Application for</p>
+                <div className="flex">
+                  <div className="  items-center text-sm  -ml-2 bg-royal bg-opacity-90 flex rounded-full px-3 py-1.5   text-white font-bold ">
+                    {job.title}
+                  </div>
                 </div>
               </div>
-            </div>
-            <div className="md:grid md:grid-cols-2 hover:bg-gray-50 md:space-y-0 space-y-1 p-4 border-b">
-              <p className="text-gray-600">Salary</p>
-              <div className="flex">
-                <div className="  items-center text-sm  -ml-2 bg-royal bg-opacity-90 flex rounded-full px-3 py-1.5   text-white font-bold ">
-                  {job.salary}
-                </div>
-              </div>
-            </div>
+              <div className="md:grid md:grid-cols-2 hover:bg-gray-50 md:space-y-0 space-y-1 p-4 border-b">
+                <p className="text-gray-600">Location</p>
 
+                <div className="flex">
+                  <div className="   items-center text-sm  -ml-2 bg-royal bg-opacity-90 flex rounded-full px-3 py-1.5   text-white font-bold ">
+                    {job.location}
+                  </div>
+                </div>
+              </div>
+              <div className="md:grid md:grid-cols-2 hover:bg-gray-50 md:space-y-0 space-y-1 p-4 border-b">
+                <p className="text-gray-600">Salary</p>
+                <div className="flex">
+                  <div className="  items-center text-sm  -ml-2 bg-royal bg-opacity-90 flex rounded-full px-3 py-1.5   text-white font-bold ">
+                    {job.salary}
+                  </div>
+                </div>
+              </div>
+
+              <div className=" hover:bg-gray-50 md:space-y-0 space-y-1 p-4 border-b">
+                <p className="text-gray-600 font-bold">About</p>
+                {job.about && (
+                  <PortableText
+                    content={job.about}
+                    dataset={process.env.NEXT_PUBLIC_SANITY_DATASET}
+                    projectId={process.env.NEXT_PUBLIC_SANITY_PROJECT_ID}
+                    serializers={{
+                      h1: (props) => (
+                        <h1 className="text-6xl font-bold my-5" {...props} />
+                      ),
+                      h2: (props) => (
+                        <h2 className="text-4xl font-bold my-5" {...props} />
+                      ),
+                      h3: (props) => (
+                        <h2 className="text-3xl font-bold my-5" {...props} />
+                      ),
+                      li: ({ children }) => (
+                        <li className="ml-4 list-disc text-white">
+                          {" "}
+                          {children}{" "}
+                        </li>
+                      ),
+                      link: ({ href, children }) => (
+                        <a href={href} className="text-white hover:underline">
+                          {children}
+                        </a>
+                      ),
+                    }}
+                  />
+                )}
+              </div>
+            </div>
             <div className=" hover:bg-gray-50 md:space-y-0 space-y-1 p-4 border-b">
-              <p className="text-gray-600 font-bold">About</p>
-              {job.about && (
+              <p className="text-gray-600 font-bold">Requirements</p>
+              {job.requirments && (
                 <PortableText
-                  content={job.about}
+                  content={job.requirments}
                   dataset={process.env.NEXT_PUBLIC_SANITY_DATASET}
                   projectId={process.env.NEXT_PUBLIC_SANITY_PROJECT_ID}
                   serializers={{
@@ -119,13 +159,13 @@ function PostPage({ data, preview }) {
                       <h2 className="text-3xl font-bold my-5" {...props} />
                     ),
                     li: ({ children }) => (
-                      <li className="ml-4 list-disc text-white">
+                      <li className="ml-4 list-disc text-black">
                         {" "}
                         {children}{" "}
                       </li>
                     ),
                     link: ({ href, children }) => (
-                      <a href={href} className="text-white hover:underline">
+                      <a href={href} className="text-black hover:underline">
                         {children}
                       </a>
                     ),
@@ -133,91 +173,65 @@ function PostPage({ data, preview }) {
                 />
               )}
             </div>
+            <div className=" hover:bg-gray-50 md:space-y-0 space-y-1 p-4 border-b">
+              <p className="text-gray-600 font-bold">Benefits</p>
+              {job.benefits && (
+                <PortableText
+                  content={job.benefits}
+                  dataset={process.env.NEXT_PUBLIC_SANITY_DATASET}
+                  projectId={process.env.NEXT_PUBLIC_SANITY_PROJECT_ID}
+                  serializers={{
+                    h1: (props) => (
+                      <h1 className="text-6xl font-bold my-5" {...props} />
+                    ),
+                    h2: (props) => (
+                      <h2 className="text-4xl font-bold my-5" {...props} />
+                    ),
+                    h3: (props) => (
+                      <h2 className="text-3xl font-bold my-5" {...props} />
+                    ),
+                    li: ({ children }) => (
+                      <li className="ml-4 list-disc text-black">
+                        {" "}
+                        {children}{" "}
+                      </li>
+                    ),
+                    link: ({ href, children }) => (
+                      <a href={href} className="text-black hover:underline">
+                        {children}
+                      </a>
+                    ),
+                  }}
+                />
+              )}
+            </div>
+            <div />
           </div>
-          <div className=" hover:bg-gray-50 md:space-y-0 space-y-1 p-4 border-b">
-            <p className="text-gray-600 font-bold">Requirements</p>
-            {job.requirments && (
-              <PortableText
-                content={job.requirments}
-                dataset={process.env.NEXT_PUBLIC_SANITY_DATASET}
-                projectId={process.env.NEXT_PUBLIC_SANITY_PROJECT_ID}
-                serializers={{
-                  h1: (props) => (
-                    <h1 className="text-6xl font-bold my-5" {...props} />
-                  ),
-                  h2: (props) => (
-                    <h2 className="text-4xl font-bold my-5" {...props} />
-                  ),
-                  h3: (props) => (
-                    <h2 className="text-3xl font-bold my-5" {...props} />
-                  ),
-                  li: ({ children }) => (
-                    <li className="ml-4 list-disc text-black"> {children} </li>
-                  ),
-                  link: ({ href, children }) => (
-                    <a href={href} className="text-black hover:underline">
-                      {children}
-                    </a>
-                  ),
-                }}
-              />
-            )}
-          </div>
-          <div className=" hover:bg-gray-50 md:space-y-0 space-y-1 p-4 border-b">
-            <p className="text-gray-600 font-bold">Benefits</p>
-            {job.benefits && (
-              <PortableText
-                content={job.benefits}
-                dataset={process.env.NEXT_PUBLIC_SANITY_DATASET}
-                projectId={process.env.NEXT_PUBLIC_SANITY_PROJECT_ID}
-                serializers={{
-                  h1: (props) => (
-                    <h1 className="text-6xl font-bold my-5" {...props} />
-                  ),
-                  h2: (props) => (
-                    <h2 className="text-4xl font-bold my-5" {...props} />
-                  ),
-                  h3: (props) => (
-                    <h2 className="text-3xl font-bold my-5" {...props} />
-                  ),
-                  li: ({ children }) => (
-                    <li className="ml-4 list-disc text-black"> {children} </li>
-                  ),
-                  link: ({ href, children }) => (
-                    <a href={href} className="text-black hover:underline">
-                      {children}
-                    </a>
-                  ),
-                }}
-              />
-            )}
-          </div>
-          <div />
-        </div>
 
-        <div className="p-4">
-          <button
-            className="learn-more rounded-full bg-gray-200 bg-opacity-50"
-            onClick={() => {
-              setShowModal(true, setForm("Form"));
-            }}
-          >
-            <span className="circle" aria-hidden="true">
-              <span className="icon arrow"></span>
-            </span>
-            <span className="button-text">Apply</span>
-          </button>
+          <div className="p-4">
+            <button
+              className="learn-more rounded-full bg-gray-200 bg-opacity-50"
+              onClick={() => {
+                setShowModal(true, setForm("Form"));
+              }}
+            >
+              <span className="circle" aria-hidden="true">
+                <span className="icon arrow"></span>
+              </span>
+              <span className="button-text">Apply</span>
+            </button>
+          </div>
         </div>
-      </div>
-      <div>
-        <Modal open={showModal} onClose={() => setShowModal(false)}>
-          {job.title}
-          {job.term}
-          {job.location}
-          {job.salary}
-        </Modal>
-      </div>
-    </Joblayout>
+        <div>
+          <Modal open={showModal} onClose={() => setShowModal(false)}>
+            {job.title}
+            {job.term}
+            {job.location}
+            {job.salary}
+          </Modal>
+        </div>
+      </Joblayout>
+    </>
   );
 }
 

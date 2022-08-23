@@ -7,8 +7,9 @@ export default function Avgsalary({ Averagesalary, location }) {
         <h1 className="text-3xl sm:text-3xl md:text-4xl lg:text-6xl font-bold mb-2 text-white sm:text-center text-left">
           Seo Jobs in {location}
         </h1>
+
         <p className="w-full text-left sm:text-center mb-8 md:text-lg text-gray-50">
-          Average yearly salary for seo jobs in manchester data from ...
+          Average yearly salary for seo jobs in {location}
         </p>
         <div className="flex flex-col items-center justify-center w-full mb-10 sm:flex-row sm:mb-20">
           <Link href="#candidate">

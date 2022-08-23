@@ -1,8 +1,9 @@
 import React from "react";
-
+import PortableText from "react-portable-text";
 import { motion } from "framer-motion";
 import Image from "next/image";
-export default function Letter() {
+import { urlFor } from "../../../../sanity";
+export default function Letter({ from, location, body, img }) {
   return (
     <section className="  container px-8">
       <br />
@@ -28,46 +29,62 @@ export default function Letter() {
                       <span className="font-bold text-xl text-royal">
                         From:
                       </span>{" "}
-                      Russell Brunson
+                      {from}
                       <br />
                       <span className="font-bold text-xl text-royal">
                         Where:
                       </span>{" "}
-                      Boise, Idaho
+                      {location}
                       <br />
                     </div>
                     <div className="py-4 text-xl">
-                      What does{" "}
-                      <span className="font-bold">
-                        &apos;One Funnel Away&apos; mean for you...?{" "}
-                      </span>{" "}
-                      <br />
-                      <br />
-                      For everyone it&apos;s different... <br />
-                      <br />
-                      For some of you,{" "}
-                      <span className="underline">
-                        you&apos;re in a job that you hate,
-                      </span>{" "}
-                      and you&apos;re trying to get out. <br /> <br /> For
-                      others, you are entrepreneurs with your own company...{" "}
-                      <span className="underline">but you&apos;re stuck,</span>
-                      and you&apos;re not sure why. And for others of you,
-                      you&apos;re looking for that one funnel that will help you
-                      to{" "}
-                      <span className="font-bold">
-                        have more impact on the world!
-                      </span>{" "}
-                      <br /> <br /> Before I share with you MY GOAL for this
-                      &apos;One Funnel Away challenge for YOU... let me ask you
-                      a few questions...
+                      {" "}
+                      <PortableText
+                        content={body}
+                        dataset={process.env.NEXT_PUBLIC_SANITY_DATASET}
+                        projectId={process.env.NEXT_PUBLIC_SANITY_PROJECT_ID}
+                        serializers={{
+                          h1: (props) => (
+                            <h1
+                              className="text-6xl font-bold my-5"
+                              {...props}
+                            />
+                          ),
+                          h2: (props) => (
+                            <h2
+                              className="text-4xl font-bold my-5"
+                              {...props}
+                            />
+                          ),
+                          h3: (props) => (
+                            <h2
+                              className="text-2xl font-bold my-5"
+                              {...props}
+                            />
+                          ),
+                          li: ({ children }) => (
+                            <li className="ml-4 list-disc text-white">
+                              {" "}
+                              {children}{" "}
+                            </li>
+                          ),
+                          link: ({ href, children }) => (
+                            <a
+                              href={href}
+                              className="text-white hover:underline"
+                            >
+                              {children}
+                            </a>
+                          ),
+                        }}
+                      />
                     </div>
                   </div>
                 </div>{" "}
                 <div className="text-center lg:w-1/4 ">
                   <Image
                     className="rounded-full "
-                    src={"/josh.jpg"}
+                    src={urlFor(img).url()}
                     width={230}
                     height={230}
                   />

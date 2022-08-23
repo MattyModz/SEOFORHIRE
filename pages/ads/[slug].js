@@ -1,5 +1,6 @@
 import Image from "next/image";
 // import { YoutubeVideoPlayer } from "../../src/componants/Podcast/youtubePlayer";
+
 import CountdownTimer from "../../src/componants/Programatic/application/CountdownTimer";
 import Modal from "../../src/componants/Modal/Modal";
 import { myContextform } from "../../Context/Contextform";
@@ -11,8 +12,39 @@ import {
   LocationMarkerIcon,
 } from "@heroicons/react/solid";
 import Letter from "../../src/componants/Programatic/application/letter";
+import { getClient, sanityClient, usePreviewSubscription } from "../../sanity";
+import React from "react";
+import PortableText from "react-portable-text";
 
-export default function Jobs() {
+function filterDataToSingleItem(data, preview) {
+  if (!Array.isArray(data)) {
+    return data;
+  }
+
+  if (data.length === 1) {
+    return data[0];
+  }
+
+  if (preview) {
+    return data.find((item) => item._id.startsWith(`drafts.`)) || data[0];
+  }
+
+  return data[0];
+}
+
+function Jobs({ data, preview }) {
+  const { data: previewData } = usePreviewSubscription(data?.query, {
+    params: data?.queryParams ?? {},
+    // The hook will return this on first render
+    // This is why it's important to fetch *draft* content server-side!
+    initialData: data?.application,
+    // The passed-down preview context determines whether this function does anything
+    enabled: preview,
+  });
+
+  const application = filterDataToSingleItem(previewData, preview);
+  console.log(application);
+
   const { showModal, setShowModal } = myContext();
   const { setForm } = myContextform();
 
@@ -135,7 +167,7 @@ export default function Jobs() {
                           async
                         ></script>
                       </div>
-                      <p className="py-4 text-white text-center  lg:text-2xl text-xl">
+                      <p className="py-4 text-white text-center  lg:text-4xl text-2xl">
                         The <span className="underline">Life</span>You Want, The{" "}
                         <span className="underline">Marriage</span>You Want...{" "}
                         <span className="underline">The Family </span>
@@ -173,7 +205,9 @@ export default function Jobs() {
                                 aria-hidden="true"
                               />
                             </div>
-                            <div className="font-semibold">Remote</div>
+                            <div className="font-semibold">
+                              {application.term}
+                            </div>
                           </div>
 
                           <div className="flex rounded-full  px-3 py-1.5 bg-gray-100 bg-opacity-10  text-gray-100 mb-4">
@@ -183,7 +217,9 @@ export default function Jobs() {
                                 aria-hidden="true"
                               />
                             </div>
-                            <div className="font-semibold">Manchester</div>
+                            <div className="font-semibold">
+                              {application.location}
+                            </div>
                           </div>
 
                           <div className="flex rounded-full  px-3 py-1.5 bg-gray-100 bg-opacity-10 text-gray-100 mb-4">
@@ -193,7 +229,9 @@ export default function Jobs() {
                                 aria-hidden="true"
                               />
                             </div>
-                            <div className="font-semibold">60,000</div>
+                            <div className="font-semibold">
+                              {application.salary}
+                            </div>
                           </div>
                         </div>
                         {/* <p className="lg:hidden block text-white">
@@ -250,7 +288,7 @@ export default function Jobs() {
                             }}
                             className="relative inline-flex items-center justify-center w-full px-8 py-3 text-base sm:py-3.5 font-bold text-white transition-all duration-200 bg-gray-900 rounded-lg sm:text-sm hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900 border border-transparent"
                           >
-                            Apply for SEO Manager
+                            Apply for {application.title}
                           </button>
                         </div>
                       </div>
@@ -265,22 +303,23 @@ export default function Jobs() {
                         <div className="inline-grid grid-cols-2 gap-8 mt-8 lg:gap-x-12">
                           <img
                             className="object-contain w-auto h-6"
-                            src="https://landingfoliocom.imgix.net/store/collection/clarity-blog/images/hero/3/logo-1.svg"
-                            alt=""
-                          />
-                          <img
-                            className="object-contain w-auto h-6"
-                            src="https://landingfoliocom.imgix.net/store/collection/clarity-blog/images/hero/3/logo-2.svg"
-                            alt=""
-                          />
-                          <img
-                            className="object-contain w-auto h-6"
-                            src="https://landingfoliocom.imgix.net/store/collection/clarity-blog/images/hero/3/logo-3.svg"
-                            alt=""
-                          />
-                          <img
-                            className="object-contain w-auto h-6"
                             src="/Sage.svg"
+                            alt=""
+                          />
+
+                          <img
+                            className="object-contain w-auto h-6"
+                            src="/Boyd-Digital-logo.svg"
+                            alt=""
+                          />
+                          <img
+                            className="object-contain w-auto h-6"
+                            src="/GM.svg"
+                            alt=""
+                          />
+                          <img
+                            className="object-contain w-auto h-6"
+                            src="/seopartnersw.png"
                             alt=""
                           />
                         </div>
@@ -293,15 +332,20 @@ export default function Jobs() {
           </div>
         </section>
       </div>
-      <div className="text-4xl py-8 text-center    font-bold text-royal  border-t border-b ">
+      <div className="lg:text-6xl text-4xl py-8 text-center    font-bold text-royal  border-t border-b ">
         Just one application
         <br />{" "}
-        <span className="text-3xl text-blue-800 font-bold">
+        <span className="lg:text-5xl text-3xl text-blue-800 font-bold">
           {" "}
           can change your life
         </span>
       </div>
-      <Letter />
+      <Letter
+        from={application.employer_name}
+        location={application.employer_company}
+        body={application.letter}
+        img={application.image}
+      />
 
       <div className="w-full bg-gray-50 ">
         <section className="pb-12 py-12 bg- sm:pb-16 lg:pb-20">
@@ -314,31 +358,30 @@ export default function Jobs() {
                   alt=""
                 />
               </div>
-
               <div className="relative max-w-5xl px-4 mx-auto sm:px-6 lg:px-8">
                 <div className="relative">
                   <div className="relative grid grid-cols-1 lg:grid-cols-1 gap-y-12 gap-x-16 xl:gap-x-20">
                     <div className="flex flex-col justify-between lg:col-span-3">
                       <div>
-                        <h1 className="text-3xl font-bold text-white sm:text-4xl text-center">
+                        <h1 className="lg:text-5xl font-bold text-white  text-center">
                           Please Check All Of The Questions
                           <br />
                           Where Your Answer Is YES!
                         </h1>
 
-                        <div className="py-12 text-2xl text-white ">
-                          <div className="flex">
+                        <div className="py-12 lg:text-3xl text-2xl text-white ">
+                          <div className="flex py-4">
                             <div>
                               <input type="checkbox" />
                             </div>
                             <div>
-                              <p className="ml-2 ">
+                              <p className="ml-2   ">
                                 Do you want to grow your business online, but
                                 you have NO IDEA where to start?
                               </p>
                             </div>
                           </div>
-                          <div className="flex py-2">
+                          <div className="flex py-4">
                             <div>
                               <input type="checkbox" />
                             </div>
@@ -350,7 +393,7 @@ export default function Jobs() {
                               </p>
                             </div>
                           </div>
-                          <div className="flex py-2">
+                          <div className="flex py-4">
                             <div>
                               <input type="checkbox" />
                             </div>
@@ -374,16 +417,101 @@ export default function Jobs() {
                 </div>
               </div>
             </div>
+            <PortableText
+              content={application.body}
+              dataset={process.env.NEXT_PUBLIC_SANITY_DATASET}
+              projectId={process.env.NEXT_PUBLIC_SANITY_PROJECT_ID}
+              serializers={{
+                h1: (props) => (
+                  <h1 className="text-6xl font-bold my-5" {...props} />
+                ),
+                h2: (props) => (
+                  <h2 className="text-4xl font-bold my-5" {...props} />
+                ),
+                h3: (props) => (
+                  <h2 className="text-2xl font-bold my-5" {...props} />
+                ),
+                li: ({ children }) => (
+                  <li className="ml-4 list-disc text-white"> {children} </li>
+                ),
+                link: ({ href, children }) => (
+                  <a href={href} className="text-white hover:underline">
+                    {children}
+                  </a>
+                ),
+              }}
+            />
           </div>
 
           <Modal open={showModal} onClose={() => setShowModal(false)}>
-            {job.title}
-            {job.term}
-            {job.location}
-            {job.salary}
+            {application.title}
+            {application.term}
+            {application.location}
+            {application.salary}
           </Modal>
         </section>
       </div>
     </>
   );
 }
+
+export default Jobs;
+
+export const getStaticPaths = async () => {
+  const query = `*[_type == "jobfunnel"]{
+    _id,
+    slug {
+        current
+    }
+}`;
+
+  const applications = await sanityClient.fetch(query);
+
+  const paths = applications.map((application) => ({
+    params: {
+      slug: application.slug.current,
+    },
+  }));
+
+  return {
+    paths,
+    fallback: "blocking",
+  };
+};
+
+export const getStaticProps = async ({ params, preview = false }) => {
+  const query = `*[_type == "jobfunnel" && slug.current == $slug]{
+ 
+ title,
+ location,
+ term,
+ salary,
+ employer_name,
+ employer_company,
+ image,
+ letter,
+ body,
+ slug,
+
+}`;
+
+  const queryParams = { slug: params.slug };
+
+  const data = await getClient(preview).fetch(query, queryParams);
+
+  if (!data) {
+    return {
+      notFound: true,
+    };
+  }
+
+  const application = filterDataToSingleItem(data, preview);
+
+  return {
+    props: {
+      preview,
+      data: { application, query, queryParams },
+    },
+    revalidate: 60,
+  };
+};

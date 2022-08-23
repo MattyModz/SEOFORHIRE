@@ -57,7 +57,7 @@ export default function Chart({ location }) {
   return (
     <div className="w-full relative md:pr-48">
       <div className=" relative -mb-6">
-        <div className="">
+        {/* <div className="">
           <div className="flex -mb-14 lg:ml-12 ml-4 ">
             <select
               className="bg-white p-2 px-3 mr-2 text-sm font-bold rounded-full text-royal"
@@ -71,7 +71,7 @@ export default function Chart({ location }) {
               <option value="3 year ">Technichal SEO </option>
             </select>
           </div>
-        </div>
+        </div> */}
       </div>
       <ResponsiveContainer
         className=" bg-royal py-12 z-10 rounded-t-xl lg:rounded-b-xl shadow-lg "
@@ -116,7 +116,7 @@ export default function Chart({ location }) {
           </div>
           <div className="text-gray-500 ">Based on 10000 salaries</div>
           <a
-            href="#_"
+            href="/ads/jobs/glasgow"
             className="bg-royal px-6 py-4  mt-4 text-sm font-semibold rounded-full text-white"
           >
             Explore jobs in {location}
