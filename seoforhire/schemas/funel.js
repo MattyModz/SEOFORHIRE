@@ -18,11 +18,7 @@ export default {
         maxLength: 96,
       },
     },
-    {
-      name: "videourl",
-      title: "Videourl",
-      type: "string",
-    },
+
     {
       name: "location",
       title: "Location",

@@ -143,7 +143,7 @@ function Jobs({ data, preview }) {
                       <div className=" -mt-8 lg:-mt-0">
                         <div className="relative">
                           <iframe
-                            src={application.videourl}
+                            src="https://vimeo.com/manage/videos/419659699"
                             frameBorder="0"
                             allow="autoplay; fullscreen; picture-in-picture"
                             allowFullScreen
@@ -481,7 +481,7 @@ export const getStaticProps = async ({ params, preview = false }) => {
  letter,
  body,
  slug,
- videourl
+ 
 
 }`;
 
