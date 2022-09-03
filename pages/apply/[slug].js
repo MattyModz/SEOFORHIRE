@@ -447,7 +447,7 @@ function Jobs({ data, preview }) {
 export default Jobs;
 
 export const getStaticPaths = async () => {
-  const query = `*[_type == "jobfunnel"]{
+  const query = `*[_type == "funel"]{
     _id,
     slug {
         current
@@ -469,7 +469,7 @@ export const getStaticPaths = async () => {
 };
 
 export const getStaticProps = async ({ params, preview = false }) => {
-  const query = `*[_type == "jobfunnel" && slug.current == $slug]{
+  const query = `*[_type == "funel" && slug.current == $slug]{
  id,
  title,
  location,
