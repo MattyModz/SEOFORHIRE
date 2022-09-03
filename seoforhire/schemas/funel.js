@@ -19,6 +19,11 @@ export default {
       },
     },
     {
+      name: "videourl",
+      title: "Videourl",
+      type: "string",
+    },
+    {
       name: "location",
       title: "Location",
       type: "string",

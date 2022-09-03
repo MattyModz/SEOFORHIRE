@@ -12,7 +12,7 @@ import author from "./author";
 import candidate from "./candidate";
 import job from "./job";
 import policy from "./policy";
-import JobFunnel from "./JobFunnel";
+import funel from "./funel";
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
   // We name our schema
@@ -29,7 +29,7 @@ export default createSchema({
     job,
     candidate,
     policy,
-    JobFunnel,
+    funel,
     // When added to this list, object types can be used as
     // { type: 'typename' } in other document schemas
     blockContent,

@@ -25,10 +25,6 @@ function filterDataToSingleItem(data, preview) {
     return data[0];
   }
 
-  if (preview) {
-    return data.find((item) => item._id.startsWith(`drafts.`)) || data[0];
-  }
-
   return data[0];
 }
 
@@ -147,7 +143,7 @@ function Jobs({ data, preview }) {
                       <div className=" -mt-8 lg:-mt-0">
                         <div className="relative">
                           <iframe
-                            src="https://player.vimeo.com/video/419659699?h=f41e09cf66&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
+                            src={application.videourl}
                             frameBorder="0"
                             allow="autoplay; fullscreen; picture-in-picture"
                             allowFullScreen
@@ -485,6 +481,7 @@ export const getStaticProps = async ({ params, preview = false }) => {
  letter,
  body,
  slug,
+ videourl
 
 }`;
 
