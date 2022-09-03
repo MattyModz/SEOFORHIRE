@@ -27,7 +27,7 @@ export default function resolveProductionUrl(doc) {
   }
   switch (doc._type) {
     case "jobfunnel":
-      return `${pUrl}/api/preview?secret=${SANITY_PREVIEW_SECRET}&slug=ads/${doc.slug.current}`;
+      return `${pUrl}/api/preview?secret=${SANITY_PREVIEW_SECRET}&slug=apply/${doc.slug.current}`;
   }
 }
 
