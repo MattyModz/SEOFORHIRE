@@ -416,7 +416,7 @@ function Jobs({ data, preview }) {
                   <li className="ml-4 list-disc text-white"> {children} </li>
                 ),
                 link: ({ href, children }) => (
-                  <a href={href} className="text-white hover:underline">
+                  <a href={href} className="text-royal hover:underline">
                     {children}
                   </a>
                 ),
