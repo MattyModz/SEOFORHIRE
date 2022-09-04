@@ -1,6 +1,6 @@
 export default {
   name: "funel",
-  title: "Job Funnel",
+  title: "Funel",
   type: "document",
   fields: [
     {
