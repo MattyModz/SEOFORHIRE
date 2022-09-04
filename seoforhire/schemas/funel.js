@@ -62,6 +62,21 @@ export default {
         hotspot: true,
       },
     },
+    {
+      name: "checkbox1",
+      title: "Checkbox",
+      type: "string",
+    },
+    {
+      name: "checkbox2",
+      title: "Checkbox",
+      type: "string",
+    },
+    {
+      name: "checkbox3",
+      title: "Checkbox",
+      type: "string",
+    },
 
     {
       name: "letter",

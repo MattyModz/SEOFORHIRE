@@ -367,10 +367,7 @@ function Jobs({ data, preview }) {
                               <input type="checkbox" />
                             </div>
                             <div>
-                              <p className="ml-2   ">
-                                Do you want to grow your business online, but
-                                you have NO IDEA where to start?
-                              </p>
+                              <p className="ml-2   ">{application.checkbox1}</p>
                             </div>
                           </div>
                           <div className="flex py-4">
@@ -378,11 +375,7 @@ function Jobs({ data, preview }) {
                               <input type="checkbox" />
                             </div>
                             <div>
-                              <p className="ml-2 ">
-                                Do you have a company that&apos;s been
-                                successful, but for some reason you&apos;re
-                                feeling stuck?
-                              </p>
+                              <p className="ml-2 ">{application.checkbox2}</p>
                             </div>
                           </div>
                           <div className="flex py-4">
@@ -390,11 +383,7 @@ function Jobs({ data, preview }) {
                               <input type="checkbox" />
                             </div>
                             <div>
-                              <p className="ml-2 ">
-                                Do you want direct live access to experts who
-                                can help you with your funnels, strategy offer,
-                                marketing, sales, and ANY question you have?
-                              </p>
+                              <p className="ml-2 ">{application.checkbox3}</p>
                             </div>
                           </div>
                         </div>
@@ -485,6 +474,9 @@ export const getStaticProps = async ({ params, preview = false }) => {
  body,
  slug,
  videourl,
+  checkbox1,
+   checkbox2,
+    checkbox3,
  
 
 }`;
