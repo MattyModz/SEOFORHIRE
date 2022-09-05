@@ -22,8 +22,8 @@ module.exports = withBundleAnalyzer({
       "2.gravatar.com",
       "i.ytimg.com",
       "cdn.sanity.io",
-"video.vimeo.com",
-"Vimeo.com",
+"player.vimeo.com",
+"vimeo.com",
 
 
     ],
