@@ -110,7 +110,7 @@ function Jobs({ data, preview }) {
           <div className="py-4">
             <Image
               className=" p"
-              src={"/headline.png"}
+              src={"/SFHtitle.svg"}
               width={800}
               height={180}
             />
