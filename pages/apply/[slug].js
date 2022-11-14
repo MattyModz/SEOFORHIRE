@@ -1,6 +1,6 @@
 import Image from "next/image";
 // import { YoutubeVideoPlayer } from "../../src/componants/Podcast/youtubePlayer";
-import Authorcard from "../../src/componants/Blog/authorcard";
+
 import CountdownTimer from "../../src/componants/Programatic/application/CountdownTimer";
 import Modal from "../../src/componants/Modal/Modal";
 import { myContextform } from "../../Context/Contextform";
