@@ -1,6 +1,6 @@
 import Image from "next/image";
 // import { YoutubeVideoPlayer } from "../../src/componants/Podcast/youtubePlayer";
-
+import Authorcard from "../../src/componants/Blog/authorcard";
 import CountdownTimer from "../../src/componants/Programatic/application/CountdownTimer";
 import Modal from "../../src/componants/Modal/Modal";
 import { myContextform } from "../../Context/Contextform";
@@ -189,8 +189,8 @@ function Jobs({ data, preview }) {
                         <CountdownTimer targetDate={dateTimeAfterThreeDays} />
                       </div>
                       <div className="mt-6 text-base font-normal leading-7 text-white text-opacity-80 ">
-                        <div className="  justify-center lg:flex md:flex flex ">
-                          <div className="flex rounded-full  px-3 py-1.5 bg-gray-100 bg-opacity-10  text-gray-100 mb-4">
+                        <div className="  justify-center  ">
+                          <div className="flex  rounded-full  px-3 py-1.5 bg-gray-100 bg-opacity-10  text-gray-100 mb-4">
                             <div className="py-1.5">
                               <BriefcaseIcon
                                 className=" mr-1 h-4 w-4 text-white"
@@ -388,6 +388,25 @@ function Jobs({ data, preview }) {
                           </div>
                         </div>
                       </div>
+                      {application?.culturehandbookURL && (
+                        <a
+                          href={`${application.culturehandbookURL}?dl=`}
+                          // type="submit"
+
+                          className="relative inline-flex  items-center justify-center w-full px-8 py-3 text-base sm:py-3.5 font-bold text-white transition-all duration-200 bg-gray-900 rounded-lg sm:text-sm hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900 border border-transparent"
+                        >
+                          {application.employer_company} Culture Handbook
+                        </a>
+                      )}
+
+                      {application?.careerroadmapURL && (
+                        <a
+                          href={`${application.careerroadmapURL}?dl=`}
+                          className="mt-2 relative inline-flex items-center justify-center w-full px-8 py-3 text-base sm:py-3.5 font-bold text-white transition-all duration-200 bg-gray-900 rounded-lg sm:text-sm hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-900 border border-transparent"
+                        >
+                          {application.employer_company} Career Roadmap
+                        </a>
+                      )}
 
                       <br />
                       <br />
@@ -467,6 +486,9 @@ export const getStaticProps = async ({ params, preview = false }) => {
  location,
  term,
  salary,
+
+ "culturehandbookURL": culturehandbook.asset->url,
+  "careerroadmapURL": careerroadmap.asset->url,
  employer_name,
  employer_company,
  image,
