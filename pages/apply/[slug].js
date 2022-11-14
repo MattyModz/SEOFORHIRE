@@ -413,7 +413,7 @@ function Jobs({ data, preview }) {
                   <h2 className="text-2xl font-bold my-5" {...props} />
                 ),
                 li: ({ children }) => (
-                  <li className="ml-4 list-disc text-white"> {children} </li>
+                  <li className="ml-4 list-disc text-black"> {children} </li>
                 ),
                 link: ({ href, children }) => (
                   <a href={href} className="text-royal hover:underline">
