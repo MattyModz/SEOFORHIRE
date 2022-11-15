@@ -81,14 +81,12 @@ export default function Footer() {
             <div className="hover:text-white">
               <Link href={"/"}> Home</Link>
             </div>
+      
             <div className="hover:text-white">
-              <Link href={"/media"}> Podcasts</Link>
+              <Link href={"/contact"}> Contact</Link>
             </div>
             <div className="hover:text-white">
-              <Link href={"/media"}> Contact</Link>
-            </div>
-            <div className="hover:text-white">
-              <Link href={"/media"}> Blog</Link>
+              <Link href={"/blog"}> Blog</Link>
             </div>
           </nav>
           <p className="sm:text-center text-xs leading-5 text-white md:text-left">
