@@ -61,19 +61,19 @@ function Jobs({ data, preview }) {
   // // handle month format
 
  // const monthNames = [
-    "Jan",
-    "Feb",
-    "Mar",
-    "Apr",
-    "May",
-    "June",
-    "July",
-    "Aug",
-    "Sept",
-    "Oct",
-    "Nov",
-    "Dec",
-  ];
+   // "Jan",
+   // "Feb",
+   // "Mar",
+   // "Apr",
+   // "May",
+   // "June",
+   // "July",
+   // "Aug",
+   // "Sept",
+   // "Oct",
+   // "Nov",
+  //  "Dec",
+ // ];
 
 //  const monthint = new Date().getMonth();
   // const month = monthNames[monthint];
