@@ -76,7 +76,7 @@ function Jobs({ data, preview }) {
   ];
 
   const monthint = new Date().getMonth();
-  const month = monthNames[monthint];
+  // const month = monthNames[monthint];
 
   // handles suffix to date
 
