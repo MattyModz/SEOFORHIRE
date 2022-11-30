@@ -97,7 +97,7 @@ function Jobs({ data, preview }) {
   console.log(nth(deadline));
 
   // final output
-  const Deadlineformat = month + " " + deadline + nth(deadline);
+  // const Deadlineformat = month + " " + deadline + nth(deadline);
 
   return (
     <>
