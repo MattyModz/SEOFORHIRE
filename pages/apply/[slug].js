@@ -234,7 +234,7 @@ function Jobs({ data, preview }) {
 
                       <p className="text-white text-xl font-bold text-center ">
                         Application Deadline Ends
-                        <span className="text-red-400"> {Deadlineformat}</span>
+                        <span className="text-red-400"> Dec 3rd</span>
                       </p>
                       {/* <form action="" method="POST" className="mt-4 space-y-4"> */}
                       <div className="mt-4 space-y-4">
