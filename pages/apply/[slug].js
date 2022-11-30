@@ -60,7 +60,7 @@ function Jobs({ data, preview }) {
 
   // // handle month format
 
-  const monthNames = [
+ // const monthNames = [
     "Jan",
     "Feb",
     "Mar",
@@ -75,7 +75,7 @@ function Jobs({ data, preview }) {
     "Dec",
   ];
 
-  const monthint = new Date().getMonth();
+//  const monthint = new Date().getMonth();
   // const month = monthNames[monthint];
 
   // handles suffix to date
