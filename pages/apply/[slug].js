@@ -60,25 +60,25 @@ function Jobs({ data, preview }) {
 
   // // handle month format
 
- // const monthNames = [
-   // "Jan",
-   // "Feb",
-   // "Mar",
-   // "Apr",
-   // "May",
-   // "June",
-   // "July",
-   // "Aug",
-   // "Sept",
-   // "Oct",
-   // "Nov",
-  //  "Dec",
- // ];
+ const monthNames = [
+   "Jan",
+    "Feb",
+    "Mar",
+    "Apr",
+    "May",
+    "June",
+    "July",
+    "Aug",
+    "Sept",
+    "Oct",
+   "Nov",
+    "Dec",
+  ];
 
-//  const monthint = new Date().getMonth();
-  // const month = monthNames[monthint];
+  const monthint = new Date().getMonth();
+   const month = monthNames[monthint];
 
-  // handles suffix to date
+   handles suffix to date
 
   const nth = function (deadline) {
     if (deadline > 3 && deadline < 21) return "th";
@@ -97,7 +97,7 @@ function Jobs({ data, preview }) {
   console.log(nth(deadline));
 
   // final output
-  // const Deadlineformat = month + " " + deadline + nth(deadline);
+   const Deadlineformat = month + " " + deadline + nth(deadline);
 
   return (
     <>
@@ -234,7 +234,7 @@ function Jobs({ data, preview }) {
 
                       <p className="text-white text-xl font-bold text-center ">
                         Application Deadline Ends
-                        <span className="text-red-400"> Dec 3rd</span>
+                        <span className="text-red-400">  {Deadlineformat}</span>
                       </p>
                       {/* <form action="" method="POST" className="mt-4 space-y-4"> */}
                       <div className="mt-4 space-y-4">
