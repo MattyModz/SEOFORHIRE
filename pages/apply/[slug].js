@@ -78,7 +78,7 @@ function Jobs({ data, preview }) {
   const monthint = new Date().getMonth();
    const month = monthNames[monthint];
 
-   handles suffix to date
+  // handles suffix to date
 
   const nth = function (deadline) {
     if (deadline > 3 && deadline < 21) return "th";
